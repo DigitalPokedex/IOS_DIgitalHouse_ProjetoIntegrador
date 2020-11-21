@@ -21,7 +21,7 @@ class TabBarController: UITabBarController {
 
         /// DAQUI
 
-        if let viewController1 = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as? ViewController {
+        if let viewController1 = UIStoryboard(name: "Home", bundle: nil).instantiateInitialViewController() as? HomeViewController {
             let image = UIImage(named: "PokemonIcon")
             let selectedImage = UIImage(named: "ActivePokemonIcon")
             viewController1.tabBarItem = UITabBarItem(title: "Pokémon", image: image, selectedImage: selectedImage)
