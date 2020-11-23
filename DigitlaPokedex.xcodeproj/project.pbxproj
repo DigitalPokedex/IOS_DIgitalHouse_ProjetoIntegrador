@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0B5138852568985500F1FC11 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5138842568985500F1FC11 /* Colors.swift */; };
+		0B99B0DB256AFD430028EE6C /* ScreenSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B99B0DA256AFD430028EE6C /* ScreenSettings.swift */; };
 		0BEAFA8E2568973300110547 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEAFA852568973300110547 /* ViewController.swift */; };
 		0BEAFA8F2568973300110547 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BEAFA862568973300110547 /* Main.storyboard */; };
 		0BEAFA902568973300110547 /* LoginScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BEAFA892568973300110547 /* LoginScreen.storyboard */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		0B5138842568985500F1FC11 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		0B99B0DA256AFD430028EE6C /* ScreenSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSettings.swift; sourceTree = "<group>"; };
 		0BEAFA852568973300110547 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0BEAFA872568973300110547 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0BEAFA892568973300110547 /* LoginScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginScreen.storyboard; sourceTree = "<group>"; };
@@ -72,6 +74,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B99B0D9256AFD030028EE6C /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				0B5138842568985500F1FC11 /* Colors.swift */,
+				0B99B0DA256AFD430028EE6C /* ScreenSettings.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		0B99B0DE256B43BA0028EE6C /* Button */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
 		0BEAFA842568973300110547 /* FirstScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +146,8 @@
 		CA1B260C2559852F00EA0BAA /* DigitlaPokedex */ = {
 			isa = PBXGroup;
 			children = (
+				0B99B0DE256B43BA0028EE6C /* Button */,
+				0B99B0D9256AFD030028EE6C /* Settings */,
 				CADFBCC325599154009F02E1 /* Classes */,
 				0BEAFA842568973300110547 /* FirstScreen */,
 				0BEAFA882568973300110547 /* LoginScreen */,
@@ -141,7 +161,6 @@
 				CA1B26162559853300EA0BAA /* Assets.xcassets */,
 				CA1B26182559853300EA0BAA /* LaunchScreen.storyboard */,
 				CA1B261B2559853300EA0BAA /* Info.plist */,
-				0B5138842568985500F1FC11 /* Colors.swift */,
 			);
 			path = DigitlaPokedex;
 			sourceTree = "<group>";
@@ -319,6 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B99B0DB256AFD430028EE6C /* ScreenSettings.swift in Sources */,
 				0BEAFA912568973300110547 /* LoginScreenViewController.swift in Sources */,
 				0BEAFA8E2568973300110547 /* ViewController.swift in Sources */,
 				CADFBCBD255989EA009F02E1 /* PokemonFavoritesViewController.swift in Sources */,

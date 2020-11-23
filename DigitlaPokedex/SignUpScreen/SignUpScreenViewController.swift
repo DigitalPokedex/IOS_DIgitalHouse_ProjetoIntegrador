@@ -9,21 +9,35 @@ import UIKit
 
 class SignUpScreenViewController: UIViewController {
 
+    @IBOutlet weak var inputsContainer: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        view.addSubview(inputsContainer)
+    }
+    @IBAction func previousScreenAction(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        //inputsContainer.frame.size.height = CGFloat(300)
+        inputsContainer.layer.cornerRadius = 35
+        inputsContainer.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        inputsContainer.layer.masksToBounds = true
+        let screenHeight = ScreenSettings.screenHeight
+        let screenWidth = ScreenSettings.screenWidth
+        var containerHeight = CGFloat(380)
+        if screenHeight * 0.7278 >= containerHeight {
+            if screenHeight * 0.7278 > 591 {
+                containerHeight = CGFloat(591)
+            } else {
+                containerHeight = screenHeight * 0.7278
+            }
+        }
+        
+        inputsContainer.frame = CGRect(x: 0, y: screenHeight - CGFloat(containerHeight), width: screenWidth, height: containerHeight)
+        
     }
-    */
 
 }
