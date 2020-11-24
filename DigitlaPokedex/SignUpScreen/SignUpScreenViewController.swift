@@ -40,4 +40,8 @@ class SignUpScreenViewController: UIViewController {
         
     }
 
+    @IBAction func saveButtonAction(_ sender: Any) {
+        let viewController = UIStoryboard(name: "InitialFavoritesRegistration", bundle: nil).instantiateInitialViewController() as! InitialFavoritesRegistrationViewController
+        navigationController?.pushViewController(viewController, animated: true)
+    }
 }
