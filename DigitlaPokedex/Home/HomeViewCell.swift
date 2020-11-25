@@ -9,4 +9,16 @@ import UIKit
 
 class HomeViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var labelName: UILabel!
+    @IBOutlet weak var labelId: UILabel!
+    @IBOutlet weak var imageViewPokemon: UIImageView!
+    @IBOutlet weak var labelType: UILabel!
+    
+    func setup(pokemon: PokemonTemp) {
+        imageViewPokemon.image = UIImage(named: pokemon.image)
+        labelName.text = pokemon.name
+        labelId.text = "#00\(String(pokemon.id))"
+        labelType.text = pokemon.description
+    }
+    
 }
