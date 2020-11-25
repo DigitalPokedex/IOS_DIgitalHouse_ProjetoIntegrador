@@ -24,8 +24,8 @@ class LoginScreenViewController: UIViewController {
         loginContainer.layer.masksToBounds = true
         loginButton.layer.cornerRadius = 15
         passwordInput.layer.cornerRadius = 35
-        
-
+        configureTextInputs()
+        self.hideKeyboardWhenTappedAround()
         
     }
     override func viewDidLayoutSubviews() {
@@ -39,6 +39,18 @@ class LoginScreenViewController: UIViewController {
         }
     }
 
+    func configureTextInputs() {
+        let emailLeftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 15.0, height: 2.0))
+        emailInput.leftView = emailLeftView
+        emailInput.leftViewMode = .always
+        emailInput.layer.cornerRadius = 15
+        
+        let passwordLeftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 15.0, height: 2.0))
+        passwordInput.leftView = passwordLeftView
+        passwordInput.leftViewMode = .always
+        passwordInput.layer.cornerRadius = 15
+    }
+    
     @IBAction func previousScreenAction(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
