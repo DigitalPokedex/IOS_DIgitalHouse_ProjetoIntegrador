@@ -12,10 +12,12 @@ class FavoritesViewCell: UICollectionViewCell {
     @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var labelId: UILabel!
     @IBOutlet weak var imageViewPokemon: UIImageView!
+    @IBOutlet weak var labelDescription: UILabel!
     
     func setup(pokemon: PokemonTemp) {
         imageViewPokemon.image = UIImage(named: pokemon.image)
         labelName.text = pokemon.name
         labelId.text = String(pokemon.id)
+        labelDescription.text = pokemon.description
     }
 }

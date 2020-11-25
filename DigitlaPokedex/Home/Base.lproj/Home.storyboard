@@ -72,16 +72,33 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ofz-Vz-ggj">
+                                                    <rect key="frame" x="66" y="52" width="40" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="4om-Ph-h2M" secondAttribute="trailing" constant="8" id="5Y6-5c-69b"/>
                                                 <constraint firstAttribute="bottom" secondItem="Mlo-6m-igr" secondAttribute="bottom" constant="25" id="8dS-k1-KlH"/>
                                                 <constraint firstItem="d32-vj-xPv" firstAttribute="top" secondItem="4om-Ph-h2M" secondAttribute="bottom" constant="3" id="EnR-UV-T6b"/>
                                                 <constraint firstItem="Mlo-6m-igr" firstAttribute="leading" secondItem="8aB-Jm-Tg0" secondAttribute="leading" constant="8" id="LTR-BT-ZPh"/>
+                                                <constraint firstItem="Ofz-Vz-ggj" firstAttribute="leading" secondItem="Mlo-6m-igr" secondAttribute="trailing" constant="8" symbolic="YES" id="Nbm-H8-Rtm"/>
                                                 <constraint firstItem="d32-vj-xPv" firstAttribute="leading" secondItem="Mlo-6m-igr" secondAttribute="trailing" constant="8" symbolic="YES" id="VCl-Th-s0M"/>
                                                 <constraint firstItem="Mlo-6m-igr" firstAttribute="top" secondItem="8aB-Jm-Tg0" secondAttribute="top" constant="15" id="fR7-UF-pIG"/>
                                                 <constraint firstItem="4om-Ph-h2M" firstAttribute="top" secondItem="8aB-Jm-Tg0" secondAttribute="top" constant="15" id="g4E-xU-3O6"/>
                                                 <constraint firstItem="4om-Ph-h2M" firstAttribute="leading" secondItem="Mlo-6m-igr" secondAttribute="trailing" constant="8" symbolic="YES" id="i3N-pA-rnf"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ofz-Vz-ggj" secondAttribute="trailing" constant="79" id="sM6-BM-5iX"/>
+                                                <constraint firstItem="Ofz-Vz-ggj" firstAttribute="top" secondItem="d32-vj-xPv" secondAttribute="bottom" constant="2.5" id="zJr-Do-dYu"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="185" height="100"/>
@@ -89,6 +106,7 @@
                                             <outlet property="imageViewPokemon" destination="Mlo-6m-igr" id="IOL-Yx-UyN"/>
                                             <outlet property="labelId" destination="d32-vj-xPv" id="yaM-Wa-tli"/>
                                             <outlet property="labelName" destination="4om-Ph-h2M" id="pcV-Fh-JdU"/>
+                                            <outlet property="labelType" destination="Ofz-Vz-ggj" id="jJ8-2e-mao"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

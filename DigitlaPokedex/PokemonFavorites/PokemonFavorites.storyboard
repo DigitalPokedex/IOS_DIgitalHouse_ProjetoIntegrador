@@ -77,21 +77,39 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfU-7D-XzP">
+                                                    <rect key="frame" x="66" y="50" width="40" height="14.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="OR6-ZH-yZ1" secondAttribute="trailing" constant="8" id="0Zp-ul-O7A"/>
                                                 <constraint firstItem="Ch3-m7-zOM" firstAttribute="top" secondItem="s1Z-oX-s6p" secondAttribute="top" constant="15" id="2lK-CE-Os9"/>
+                                                <constraint firstItem="yfU-7D-XzP" firstAttribute="leading" secondItem="Ch3-m7-zOM" secondAttribute="trailing" constant="8" symbolic="YES" id="3Sw-qe-fTb"/>
                                                 <constraint firstItem="Ch3-m7-zOM" firstAttribute="leading" secondItem="s1Z-oX-s6p" secondAttribute="leading" constant="8" id="3fj-ws-zgs"/>
+                                                <constraint firstAttribute="trailing" secondItem="yfU-7D-XzP" secondAttribute="trailing" constant="79" id="JK3-bV-JFY"/>
                                                 <constraint firstItem="OR6-ZH-yZ1" firstAttribute="leading" secondItem="Ch3-m7-zOM" secondAttribute="trailing" constant="8" symbolic="YES" id="RGU-FC-gko"/>
                                                 <constraint firstAttribute="bottom" secondItem="Ch3-m7-zOM" secondAttribute="bottom" constant="25" id="S4u-CG-N0k"/>
                                                 <constraint firstItem="OR6-ZH-yZ1" firstAttribute="top" secondItem="s1Z-oX-s6p" secondAttribute="top" constant="15" id="aSg-dG-ZhG"/>
                                                 <constraint firstItem="yhX-Kz-s5X" firstAttribute="top" secondItem="OR6-ZH-yZ1" secondAttribute="bottom" constant="3" id="flb-Cp-b4t"/>
                                                 <constraint firstItem="yhX-Kz-s5X" firstAttribute="leading" secondItem="Ch3-m7-zOM" secondAttribute="trailing" constant="8" symbolic="YES" id="j7L-Sh-eRh"/>
+                                                <constraint firstItem="yfU-7D-XzP" firstAttribute="top" secondItem="yhX-Kz-s5X" secondAttribute="bottom" constant="0.5" id="xzx-rY-lAj"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="185" height="100"/>
                                         <connections>
                                             <outlet property="imageViewPokemon" destination="Ch3-m7-zOM" id="T7C-C9-3qv"/>
+                                            <outlet property="labelDescription" destination="yfU-7D-XzP" id="gcp-zz-gYO"/>
                                             <outlet property="labelId" destination="yhX-Kz-s5X" id="34g-qd-b61"/>
                                             <outlet property="labelName" destination="OR6-ZH-yZ1" id="4nc-9R-Aj6"/>
                                         </connections>
