@@ -11,6 +11,7 @@ class InitialFavoritesRegistrationViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchWrapper: UIView!
     var favoritesList = [Pokemon]()
     var allPokemonList = [Pokemon]()
     override func viewDidLoad() {
@@ -19,24 +20,34 @@ class InitialFavoritesRegistrationViewController: UIViewController {
         collectionView.dataSource = self
         tableView.delegate = self
         tableView.dataSource = self
-        favoritesList.append(Pokemon(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png", name: "Bulbasaur", id: 1, types: ["Grass", "Poison"]))
-        favoritesList.append(Pokemon(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png", name: "Charizard", id: 6, types: ["Fire", "Flying"]))
-        favoritesList.append(Pokemon(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/249.png", name: "Lugia", id: 249, types: ["Psychic", "Flying"]))
-        favoritesList.append(Pokemon(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png", name: "Mewtwo", id: 150, types: ["Psychic"]))
-        
-        allPokemonList.append(Pokemon(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png", name: "Ivysaur", id: 2, types: ["Grass", "Poison"]))
-        allPokemonList.append(Pokemon(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png", name: "Venusaur", id: 3, types: ["Grass", "Poison"]))
-        allPokemonList.append(Pokemon(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png", name: "Charmander", id: 4, types: ["Fire"]))
-        allPokemonList.append(Pokemon(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png", name: "Charmeleon", id: 5, types: ["Fire"]))
-        allPokemonList.append(Pokemon(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png", name: "Squirtle", id: 7, types: ["Water"]))
-        allPokemonList.append(Pokemon(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/8.png", name: "Wartotle", id: 8, types: ["Water"]))
+        searchWrapper.layer.cornerRadius = 10
+        searchWrapper.layer.backgroundColor = Colors.primary.cgColor
+        loadDataFavorites()
+        loadDataPokemon()
         collectionView.reloadData()
     }
     
     @IBAction func previousScreenAction(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
-
+    func loadDataFavorites() {
+        favoritesList.append(Pokemon(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png", name: "Bulbasaur", id: 1, types: ["Grass", "Poison"]))
+        favoritesList.append(Pokemon(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png", name: "Charizard", id: 6, types: ["Fire", "Flying"]))
+        favoritesList.append(Pokemon(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png", name: "Mewtwo", id: 150, types: ["Psychic"]))
+        favoritesList.append(Pokemon(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/249.png", name: "Lugia", id: 249, types: ["Psychic", "Flying"]))
+    }
+    func loadDataPokemon() {
+        allPokemonList.append(Pokemon(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png", name: "Bulbasaur", id: 1, types: ["Grass", "Poison"]))
+        allPokemonList.append(Pokemon(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png", name: "Ivysaur", id: 2, types: ["Grass", "Poison"]))
+        allPokemonList.append(Pokemon(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png", name: "Venusaur", id: 3, types: ["Grass", "Poison"]))
+        allPokemonList.append(Pokemon(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png", name: "Charmander", id: 4, types: ["Fire"]))
+        allPokemonList.append(Pokemon(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png", name: "Charmeleon", id: 5, types: ["Fire"]))
+        allPokemonList.append(Pokemon(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png", name: "Charizard", id: 6, types: ["Fire", "Flying"]))
+        allPokemonList.append(Pokemon(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png", name: "Squirtle", id: 7, types: ["Water"]))
+        allPokemonList.append(Pokemon(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/8.png", name: "Wartotle", id: 8, types: ["Water"]))
+        allPokemonList.append(Pokemon(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png", name: "Mewtwo", id: 150, types: ["Psychic"]))
+        allPokemonList.append(Pokemon(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/249.png", name: "Lugia", id: 249, types: ["Psychic", "Flying"]))
+    }
 }
 
 extension InitialFavoritesRegistrationViewController: UICollectionViewDelegate {
@@ -71,8 +82,4 @@ extension InitialFavoritesRegistrationViewController: UITableViewDataSource {
         cell.setup(pokemon: allPokemonList[indexPath.row])
         return cell
     }
-    
-    
-    
-    
 }
