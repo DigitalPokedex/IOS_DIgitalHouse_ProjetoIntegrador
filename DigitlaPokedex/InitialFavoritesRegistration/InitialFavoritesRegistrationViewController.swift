@@ -21,7 +21,6 @@ class InitialFavoritesRegistrationViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         searchWrapper.layer.cornerRadius = 10
-        searchWrapper.layer.backgroundColor = Colors.primary.cgColor
         loadDataFavorites()
         loadDataPokemon()
         collectionView.reloadData()
@@ -36,6 +35,7 @@ class InitialFavoritesRegistrationViewController: UIViewController {
         favoritesList.append(Pokemon(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png", name: "Mewtwo", id: 150, types: ["Psychic"]))
         favoritesList.append(Pokemon(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/249.png", name: "Lugia", id: 249, types: ["Psychic", "Flying"]))
     }
+    
     func loadDataPokemon() {
         allPokemonList.append(Pokemon(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png", name: "Bulbasaur", id: 1, types: ["Grass", "Poison"]))
         allPokemonList.append(Pokemon(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png", name: "Ivysaur", id: 2, types: ["Grass", "Poison"]))
