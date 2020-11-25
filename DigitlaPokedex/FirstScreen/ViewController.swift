@@ -30,7 +30,6 @@ class ViewController: UIViewController {
     }
     @IBAction func loginAction(_ sender: Any) {
         let loginViewController = UIStoryboard(name: "LoginScreen", bundle: nil).instantiateInitialViewController() as! LoginScreenViewController
-        let tabbar = TabBarController.shared
         navigationController?.pushViewController(loginViewController, animated: true)
     }
     @IBAction func signUpAction(_ sender: Any) {
