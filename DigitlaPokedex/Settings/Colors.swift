@@ -4,6 +4,7 @@ import Foundation
 enum Colors {
     static let primary = UIColor(rgb: 0x89A6D6)
     static let grey = UIColor(rgb: 0x000000).withAlphaComponent(0.05)
+    static let transparent = UIColor(rgb: 0x000000).withAlphaComponent(0.0)
 }
 // Usage Examples:
 //   - let color = UIColor(red: 0xFF, green: 0xFF, blue: 0xFF)

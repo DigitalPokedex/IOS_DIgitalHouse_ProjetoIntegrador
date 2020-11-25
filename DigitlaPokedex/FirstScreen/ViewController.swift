@@ -27,10 +27,10 @@ class ViewController: UIViewController {
         signupButton?.layer.cornerRadius = 10
         signupButton?.layer.borderWidth = 1.5
         signupButton?.layer.borderColor = Colors.primary.cgColor
+        signupButton.backgroundColor = .white
     }
     @IBAction func loginAction(_ sender: Any) {
         let loginViewController = UIStoryboard(name: "LoginScreen", bundle: nil).instantiateInitialViewController() as! LoginScreenViewController
-        let tabbar = TabBarController.shared
         navigationController?.pushViewController(loginViewController, animated: true)
     }
     @IBAction func signUpAction(_ sender: Any) {
