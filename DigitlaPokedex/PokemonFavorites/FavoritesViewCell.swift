@@ -17,7 +17,7 @@ class FavoritesViewCell: UICollectionViewCell {
     func setup(pokemon: PokemonTemp) {
         imageViewPokemon.image = UIImage(named: pokemon.image)
         labelName.text = pokemon.name
-        labelId.text = String(pokemon.id)
+        labelId.text = "#00\(String(pokemon.id))"
         labelDescription.text = pokemon.description
     }
 }
