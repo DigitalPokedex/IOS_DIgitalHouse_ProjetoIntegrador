@@ -17,9 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TAx-JP-Ehc">
-                                <rect key="frame" x="0.0" y="170" width="414" height="692"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TAx-JP-Ehc">
+                                <rect key="frame" x="16" y="170" width="382" height="692"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="G0r-9a-NzF">
                                     <size key="itemSize" width="185" height="100"/>
@@ -111,18 +110,33 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4vV-kD-7Xa">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4vV-kD-7Xa">
                                 <rect key="frame" x="121" y="44" width="172" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="NWU-xi-12d"/>
+                                </constraints>
                             </imageView>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CJj-Nq-ECN">
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="CJj-Nq-ECN">
                                 <rect key="frame" x="0.0" y="114" width="414" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CJj-Nq-ECN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="24R-Zb-6ca"/>
+                            <constraint firstItem="4vV-kD-7Xa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="5eE-h4-wFa"/>
+                            <constraint firstItem="4vV-kD-7Xa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="121" id="9mG-Dc-hqZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TAx-JP-Ehc" secondAttribute="trailing" constant="16" id="Ana-aY-G9t"/>
+                            <constraint firstItem="TAx-JP-Ehc" firstAttribute="leading" secondItem="CJj-Nq-ECN" secondAttribute="leading" constant="16" id="JYn-j2-jw1"/>
+                            <constraint firstItem="CJj-Nq-ECN" firstAttribute="top" secondItem="4vV-kD-7Xa" secondAttribute="bottom" constant="16" id="LLM-sO-TZP"/>
+                            <constraint firstItem="CJj-Nq-ECN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="T0B-i7-okp"/>
+                            <constraint firstItem="TAx-JP-Ehc" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="a5O-zE-MjS"/>
+                            <constraint firstItem="TAx-JP-Ehc" firstAttribute="top" secondItem="CJj-Nq-ECN" secondAttribute="bottom" id="iuX-jK-Suc"/>
+                            <constraint firstItem="4vV-kD-7Xa" firstAttribute="centerX" secondItem="TAx-JP-Ehc" secondAttribute="centerX" id="mK5-4O-kGa"/>
+                            <constraint firstItem="4vV-kD-7Xa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ndB-4E-v7t"/>
+                            <constraint firstItem="TAx-JP-Ehc" firstAttribute="top" secondItem="CJj-Nq-ECN" secondAttribute="bottom" id="yKw-KX-umR"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionViewPokemon" destination="TAx-JP-Ehc" id="ZBF-yy-zoX"/>
