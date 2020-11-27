@@ -31,12 +31,15 @@
 		CA1B2625255987FC00EA0BAA /* PokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1B2624255987FC00EA0BAA /* PokemonDetailViewController.swift */; };
 		CA24C1E025681D9600849519 /* FavoritesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA24C1DF25681D9600849519 /* FavoritesViewCell.swift */; };
 		CA24C1E325681DAE00849519 /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA24C1E225681DAE00849519 /* HomeViewCell.swift */; };
-		CA24C1ED2568223000849519 /* Borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA24C1EC2568223000849519 /* Borders.swift */; };
+		CA24C1ED2568223000849519 /* UITextFieldBordersExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA24C1EC2568223000849519 /* UITextFieldBordersExtensions.swift */; };
 		CA28AB552568C9CF00ED2157 /* PokemonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA28AB542568C9CF00ED2157 /* PokemonController.swift */; };
 		CA28AB582568CB5700ED2157 /* PokemonTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA28AB572568CB5700ED2157 /* PokemonTemp.swift */; };
 		CA28AB5B256BD4CF00ED2157 /* Evolutions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA28AB5A256BD4CF00ED2157 /* Evolutions.storyboard */; };
 		CA28AB5E256BD4E900ED2157 /* EvolutionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA28AB5D256BD4E900ED2157 /* EvolutionsViewController.swift */; };
 		CA28AB61256BD5CD00ED2157 /* SearchProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA28AB60256BD5CD00ED2157 /* SearchProtocol.swift */; };
+		CA65BAAB2571435900207EC0 /* FirstScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA65BAAA2571435900207EC0 /* FirstScreenViewModel.swift */; };
+		CA65BAAE25714CC000207EC0 /* UIButtonBordersExtensions copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA65BAAD25714CC000207EC0 /* UIButtonBordersExtensions copy.swift */; };
+		CA65BAB225714CD000207EC0 /* UILabelBordersExtensions copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA65BAB125714CD000207EC0 /* UILabelBordersExtensions copy.swift */; };
 		CA953A9D25713C7400363E2E /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA953A9C25713C7400363E2E /* APIManager.swift */; };
 		CADFBCB92559887C009F02E1 /* PokemonDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CADFBCB82559887C009F02E1 /* PokemonDetail.storyboard */; };
 		CADFBCBD255989EA009F02E1 /* PokemonFavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADFBCBC255989EA009F02E1 /* PokemonFavoritesViewController.swift */; };
@@ -73,12 +76,15 @@
 		CA1B2624255987FC00EA0BAA /* PokemonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewController.swift; sourceTree = "<group>"; };
 		CA24C1DF25681D9600849519 /* FavoritesViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewCell.swift; sourceTree = "<group>"; };
 		CA24C1E225681DAE00849519 /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
-		CA24C1EC2568223000849519 /* Borders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Borders.swift; sourceTree = "<group>"; };
+		CA24C1EC2568223000849519 /* UITextFieldBordersExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldBordersExtensions.swift; sourceTree = "<group>"; };
 		CA28AB542568C9CF00ED2157 /* PokemonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonController.swift; sourceTree = "<group>"; };
 		CA28AB572568CB5700ED2157 /* PokemonTemp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonTemp.swift; sourceTree = "<group>"; };
 		CA28AB5A256BD4CF00ED2157 /* Evolutions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Evolutions.storyboard; path = DigitlaPokedex/ViewController/PokemonEvolutions/Evolutions.storyboard; sourceTree = SOURCE_ROOT; };
 		CA28AB5D256BD4E900ED2157 /* EvolutionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EvolutionsViewController.swift; path = DigitlaPokedex/ViewController/PokemonEvolutions/EvolutionsViewController.swift; sourceTree = SOURCE_ROOT; };
 		CA28AB60256BD5CD00ED2157 /* SearchProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProtocol.swift; sourceTree = "<group>"; };
+		CA65BAAA2571435900207EC0 /* FirstScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenViewModel.swift; sourceTree = "<group>"; };
+		CA65BAAD25714CC000207EC0 /* UIButtonBordersExtensions copy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButtonBordersExtensions copy.swift"; sourceTree = "<group>"; };
+		CA65BAB125714CD000207EC0 /* UILabelBordersExtensions copy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabelBordersExtensions copy.swift"; sourceTree = "<group>"; };
 		CA953A9C25713C7400363E2E /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		CADFBCB82559887C009F02E1 /* PokemonDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PokemonDetail.storyboard; sourceTree = "<group>"; };
 		CADFBCBC255989EA009F02E1 /* PokemonFavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonFavoritesViewController.swift; sourceTree = "<group>"; };
@@ -237,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				CA28AB542568C9CF00ED2157 /* PokemonController.swift */,
+				CA65BAAA2571435900207EC0 /* FirstScreenViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -280,7 +287,9 @@
 			isa = PBXGroup;
 			children = (
 				0BFA2C18256E0DA1000CFD22 /* UIViewControllerExtensions.swift */,
-				CA24C1EC2568223000849519 /* Borders.swift */,
+				CA65BAAD25714CC000207EC0 /* UIButtonBordersExtensions copy.swift */,
+				CA65BAB125714CD000207EC0 /* UILabelBordersExtensions copy.swift */,
+				CA24C1EC2568223000849519 /* UITextFieldBordersExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -435,6 +444,7 @@
 				CA953A9D25713C7400363E2E /* APIManager.swift in Sources */,
 				0B99B0DB256AFD430028EE6C /* ScreenSettings.swift in Sources */,
 				CA28AB5E256BD4E900ED2157 /* EvolutionsViewController.swift in Sources */,
+				CA65BAAB2571435900207EC0 /* FirstScreenViewModel.swift in Sources */,
 				0BEAFA912568973300110547 /* LoginScreenViewController.swift in Sources */,
 				0BDFEADD256C89670068BF14 /* InitialFavoritesRegistrationViewController.swift in Sources */,
 				CA28AB552568C9CF00ED2157 /* PokemonController.swift in Sources */,
@@ -445,10 +455,12 @@
 				0BDFEAEC256C90E00068BF14 /* FavoriteCollectionViewCell.swift in Sources */,
 				CA28AB61256BD5CD00ED2157 /* SearchProtocol.swift in Sources */,
 				CA28AB582568CB5700ED2157 /* PokemonTemp.swift in Sources */,
+				CA65BAB225714CD000207EC0 /* UILabelBordersExtensions copy.swift in Sources */,
 				0BCB83A9256E7C49003A7FB3 /* Pokemon.swift in Sources */,
+				CA65BAAE25714CC000207EC0 /* UIButtonBordersExtensions copy.swift in Sources */,
 				0BEAFA922568973300110547 /* SignUpScreenViewController.swift in Sources */,
 				0BDFEAF0256C9D440068BF14 /* PokemonTableViewCell.swift in Sources */,
-				CA24C1ED2568223000849519 /* Borders.swift in Sources */,
+				CA24C1ED2568223000849519 /* UITextFieldBordersExtensions.swift in Sources */,
 				CA1B26122559852F00EA0BAA /* HomeViewController.swift in Sources */,
 				CA24C1E025681D9600849519 /* FavoritesViewCell.swift in Sources */,
 				0B5138852568985500F1FC11 /* Colors.swift in Sources */,
