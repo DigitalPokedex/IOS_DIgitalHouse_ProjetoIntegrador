@@ -37,6 +37,7 @@
 		CA28AB5B256BD4CF00ED2157 /* Evolutions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA28AB5A256BD4CF00ED2157 /* Evolutions.storyboard */; };
 		CA28AB5E256BD4E900ED2157 /* EvolutionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA28AB5D256BD4E900ED2157 /* EvolutionsViewController.swift */; };
 		CA28AB61256BD5CD00ED2157 /* SearchProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA28AB60256BD5CD00ED2157 /* SearchProtocol.swift */; };
+		CA65BAAB2571435900207EC0 /* FirstScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA65BAAA2571435900207EC0 /* FirstScreenViewModel.swift */; };
 		CA953A9D25713C7400363E2E /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA953A9C25713C7400363E2E /* APIManager.swift */; };
 		CADFBCB92559887C009F02E1 /* PokemonDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CADFBCB82559887C009F02E1 /* PokemonDetail.storyboard */; };
 		CADFBCBD255989EA009F02E1 /* PokemonFavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADFBCBC255989EA009F02E1 /* PokemonFavoritesViewController.swift */; };
@@ -79,6 +80,7 @@
 		CA28AB5A256BD4CF00ED2157 /* Evolutions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Evolutions.storyboard; path = DigitlaPokedex/ViewController/PokemonEvolutions/Evolutions.storyboard; sourceTree = SOURCE_ROOT; };
 		CA28AB5D256BD4E900ED2157 /* EvolutionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EvolutionsViewController.swift; path = DigitlaPokedex/ViewController/PokemonEvolutions/EvolutionsViewController.swift; sourceTree = SOURCE_ROOT; };
 		CA28AB60256BD5CD00ED2157 /* SearchProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProtocol.swift; sourceTree = "<group>"; };
+		CA65BAAA2571435900207EC0 /* FirstScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenViewModel.swift; sourceTree = "<group>"; };
 		CA953A9C25713C7400363E2E /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		CADFBCB82559887C009F02E1 /* PokemonDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PokemonDetail.storyboard; sourceTree = "<group>"; };
 		CADFBCBC255989EA009F02E1 /* PokemonFavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonFavoritesViewController.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				CA28AB542568C9CF00ED2157 /* PokemonController.swift */,
+				CA65BAAA2571435900207EC0 /* FirstScreenViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 				CA953A9D25713C7400363E2E /* APIManager.swift in Sources */,
 				0B99B0DB256AFD430028EE6C /* ScreenSettings.swift in Sources */,
 				CA28AB5E256BD4E900ED2157 /* EvolutionsViewController.swift in Sources */,
+				CA65BAAB2571435900207EC0 /* FirstScreenViewModel.swift in Sources */,
 				0BEAFA912568973300110547 /* LoginScreenViewController.swift in Sources */,
 				0BDFEADD256C89670068BF14 /* InitialFavoritesRegistrationViewController.swift in Sources */,
 				CA28AB552568C9CF00ED2157 /* PokemonController.swift in Sources */,
