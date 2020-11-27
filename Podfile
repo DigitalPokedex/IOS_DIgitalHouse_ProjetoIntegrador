@@ -7,6 +7,7 @@ target 'DigitlaPokedex' do
 
   # Pods for DigitlaPokedex
   pod 'Alamofire'
+  pod 'Kingfisher'
 
 
 end

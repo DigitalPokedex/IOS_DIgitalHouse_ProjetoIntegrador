@@ -19,8 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         // Verificar se o cara ta logado
         // Seta a rootview, a primeira tela a ser exibida
-        let tabbar = TabBarController.shared
-        window?.rootViewController = tabbar
+        //let tabbar = TabBarController.shared
+        //window?.rootViewController = tabbar
         window?.makeKeyAndVisible()
         
     }
