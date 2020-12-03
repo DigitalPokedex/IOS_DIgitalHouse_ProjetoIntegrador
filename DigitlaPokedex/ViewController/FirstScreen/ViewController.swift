@@ -12,12 +12,28 @@ class ViewController: UIViewController {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signupButton: UIButton!
+    
+    let viewModel = FirstScreenViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationController?.isNavigationBarHidden = true
+        
+        setupUI()
 
+        
+    }
+    // Todo: Colocar em um método estático da SignupViewModel
+    @IBAction func loginAction(_ sender: Any) {
+        viewModel.toLoginScreen(navigationController: self.navigationController)
+    }
+    
+    @IBAction func signUpAction(_ sender: Any) {
+        viewModel.toSignUpScreen(navigationController: self.navigationController)
+    }
+    
+    func setupUI() {
         containerView.layer.cornerRadius = 35
         containerView.backgroundColor = Colors.grey
         containerView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
@@ -28,13 +44,5 @@ class ViewController: UIViewController {
         signupButton?.layer.borderWidth = 1.5
         signupButton?.layer.borderColor = Colors.primary.cgColor
         signupButton.backgroundColor = .white
-    }
-    @IBAction func loginAction(_ sender: Any) {
-        let loginViewController = UIStoryboard(name: "LoginScreen", bundle: nil).instantiateInitialViewController() as! LoginScreenViewController
-        navigationController?.pushViewController(loginViewController, animated: true)
-    }
-    @IBAction func signUpAction(_ sender: Any) {
-        let signUpViewController = UIStoryboard(name: "SignUpScreen", bundle: nil).instantiateInitialViewController() as! SignUpScreenViewController
-        navigationController?.pushViewController(signUpViewController, animated: true)
     }
 }

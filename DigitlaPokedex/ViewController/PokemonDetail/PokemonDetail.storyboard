@@ -13,7 +13,7 @@
             <objects>
                 <viewController id="VfO-0P-AUo" customClass="PokemonDetailViewController" customModule="DigitlaPokedex" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oaD-gv-Llg">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hhe-A8-1qo">
@@ -281,6 +281,7 @@
                             <constraint firstItem="xpX-9g-sJe" firstAttribute="leading" secondItem="14P-KM-SJk" secondAttribute="trailing" constant="37" id="zb5-eB-H11"/>
                         </constraints>
                     </view>
+                    <size key="freeformSize" width="414" height="1500"/>
                     <connections>
                         <outlet property="imageViewPokemon" destination="Hhe-A8-1qo" id="fj0-Uk-n3v"/>
                         <outlet property="labelAtk" destination="rWX-6T-WuM" id="wJq-2x-2m9"/>
