@@ -13,37 +13,19 @@ class SignUpScreenViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    var viewModel = SignUpScreenViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
-        view.addSubview(inputsContainer)
-        
-        configureTextInputs()
-    }
-    @IBAction func previousScreenAction(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-    }
-    
-    func configureTextInputs() {
-        let nameLeftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 15.0, height: 2.0))
-        nameTextField.leftView = nameLeftView
-        nameTextField.leftViewMode = .always
-        nameTextField.layer.cornerRadius = 15
-        
-        let passwordLeftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 15.0, height: 2.0))
-        passwordTextField.leftView = passwordLeftView
-        passwordTextField.leftViewMode = .always
-        passwordTextField.layer.cornerRadius = 15
-        
-        let emailLeftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 15.0, height: 2.0))
-        emailTextField.leftView = emailLeftView
-        emailTextField.leftViewMode = .always
-        emailTextField.layer.cornerRadius = 15
+        viewModel.setupNavigationController(navigationController: self.navigationController)
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        //inputsContainer.frame.size.height = CGFloat(300)
+        setupUI()
+    }
+    
+    func configureInputsContainer() {
         inputsContainer.layer.cornerRadius = 35
         inputsContainer.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         inputsContainer.layer.masksToBounds = true
@@ -59,12 +41,31 @@ class SignUpScreenViewController: UIViewController {
         }
         
         inputsContainer.frame = CGRect(x: 0, y: screenHeight - CGFloat(containerHeight), width: screenWidth, height: containerHeight)
-        
     }
-
+    
+    func configureTextField(textField: UITextField) {
+        let leftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 15.0, height: 2.0))
+        textField.leftView = leftView
+        textField.leftViewMode = .always
+        textField.layer.cornerRadius = 15
+    }
+    
+    func setupUI() {
+        view.addSubview(inputsContainer)
+        
+        configureInputsContainer()
+        
+        configureTextField(textField: nameTextField)
+        configureTextField(textField: passwordTextField)
+        configureTextField(textField: emailTextField)
+    }
+    
+    @IBAction func previousScreenAction(_ sender: Any) {
+        viewModel.toPreviousScreen()
+    }
+    
     @IBAction func saveButtonAction(_ sender: Any) {
-        let viewController = UIStoryboard(name: "InitialFavoritesRegistration", bundle: nil).instantiateInitialViewController() as! InitialFavoritesRegistrationViewController
-        navigationController?.pushViewController(viewController, animated: true)
+        viewModel.toInitialFavoritesRegistrationScreen()
     }
 }
 
