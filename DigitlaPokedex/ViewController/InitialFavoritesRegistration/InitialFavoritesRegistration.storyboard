@@ -192,73 +192,42 @@
                                     <action selector="saveButtonAction:" destination="b0j-p6-3fT" eventType="touchUpInside" id="e10-gr-od2"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8gG-WW-BjH">
-                                <rect key="frame" x="16" y="118" width="343" height="38"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search-icon" translatesAutoresizingMaskIntoConstraints="NO" id="NgT-UF-Tuy">
-                                        <rect key="frame" x="10" y="8.6666666666666714" width="21" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="7na-4l-85F"/>
-                                            <constraint firstAttribute="width" constant="21" id="nK1-1w-aMy"/>
-                                        </constraints>
-                                    </imageView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Pesquisar" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e7J-as-Ga5">
-                                        <rect key="frame" x="40" y="0.0" width="303" height="38"/>
-                                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="textColor" name="Primary"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="0.0"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="0.0"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
-                                                <color key="value" name="Primary"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                </subviews>
-                                <color key="backgroundColor" name="BackgroundPrimary"/>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="8Y1-Ji-Ik7">
+                                <rect key="frame" x="0.0" y="118" width="375" height="38"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="NgT-UF-Tuy" firstAttribute="leading" secondItem="8gG-WW-BjH" secondAttribute="leading" constant="10" id="SqT-Uh-Sdh"/>
-                                    <constraint firstAttribute="trailing" secondItem="e7J-as-Ga5" secondAttribute="trailing" id="aH5-y8-JaD"/>
-                                    <constraint firstItem="NgT-UF-Tuy" firstAttribute="centerY" secondItem="8gG-WW-BjH" secondAttribute="centerY" id="acw-7O-ch1"/>
-                                    <constraint firstAttribute="height" constant="38" id="cMz-DU-Lzm"/>
-                                    <constraint firstAttribute="bottom" secondItem="e7J-as-Ga5" secondAttribute="bottom" id="mtY-PQ-1lg"/>
-                                    <constraint firstItem="e7J-as-Ga5" firstAttribute="top" secondItem="8gG-WW-BjH" secondAttribute="top" id="sXf-Eb-fkd"/>
-                                    <constraint firstItem="e7J-as-Ga5" firstAttribute="leading" secondItem="NgT-UF-Tuy" secondAttribute="trailing" constant="9" id="yrp-xM-6cK"/>
+                                    <constraint firstAttribute="height" constant="38" id="NI3-VC-KYm"/>
                                 </constraints>
-                            </view>
+                                <color key="tintColor" name="Primary"/>
+                                <color key="barTintColor" name="Primary"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dUR-4i-S6h"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="3P6-DR-Mvm" firstAttribute="top" secondItem="QA8-ls-TlP" secondAttribute="bottom" id="0bP-UI-o5V"/>
                             <constraint firstItem="zLk-ab-rZD" firstAttribute="centerX" secondItem="uIa-NY-hec" secondAttribute="centerX" id="7CL-Vk-9xO"/>
+                            <constraint firstItem="8Y1-Ji-Ik7" firstAttribute="leading" secondItem="dUR-4i-S6h" secondAttribute="leading" id="Abn-aD-gJd"/>
                             <constraint firstItem="3P6-DR-Mvm" firstAttribute="leading" secondItem="dUR-4i-S6h" secondAttribute="leading" constant="16" id="BhX-j1-LiM"/>
+                            <constraint firstItem="8Y1-Ji-Ik7" firstAttribute="trailing" secondItem="dUR-4i-S6h" secondAttribute="trailing" id="CVj-bb-msq"/>
                             <constraint firstItem="QA8-ls-TlP" firstAttribute="top" secondItem="HgM-y6-r6b" secondAttribute="bottom" constant="18" id="H5A-nm-knh"/>
                             <constraint firstItem="dUR-4i-S6h" firstAttribute="trailing" secondItem="QA8-ls-TlP" secondAttribute="trailing" id="Hxv-RC-S8A"/>
                             <constraint firstItem="wWt-Xm-Sbs" firstAttribute="leading" secondItem="dUR-4i-S6h" secondAttribute="leading" constant="20" id="KAD-Z0-RUo"/>
                             <constraint firstItem="dUR-4i-S6h" firstAttribute="trailing" secondItem="3P6-DR-Mvm" secondAttribute="trailing" constant="16" id="KN4-TE-NZf"/>
                             <constraint firstItem="zLk-ab-rZD" firstAttribute="top" secondItem="dUR-4i-S6h" secondAttribute="top" constant="10" id="QX9-jZ-quc"/>
-                            <constraint firstItem="dUR-4i-S6h" firstAttribute="trailing" secondItem="8gG-WW-BjH" secondAttribute="trailing" constant="16" id="R8f-WF-JM6"/>
                             <constraint firstItem="dUR-4i-S6h" firstAttribute="trailing" secondItem="HgM-y6-r6b" secondAttribute="trailing" constant="16" id="Rce-SB-ouW"/>
-                            <constraint firstItem="8gG-WW-BjH" firstAttribute="top" secondItem="zLk-ab-rZD" secondAttribute="bottom" constant="16" id="RfL-jE-tzT"/>
-                            <constraint firstItem="HgM-y6-r6b" firstAttribute="top" secondItem="8gG-WW-BjH" secondAttribute="bottom" constant="33" id="VRF-wD-DXT"/>
                             <constraint firstItem="HgM-y6-r6b" firstAttribute="leading" secondItem="dUR-4i-S6h" secondAttribute="leading" constant="16" id="WIH-xW-nM2"/>
                             <constraint firstItem="dUR-4i-S6h" firstAttribute="bottom" secondItem="3P6-DR-Mvm" secondAttribute="bottom" constant="10" id="YS1-ff-2Jz"/>
-                            <constraint firstItem="8gG-WW-BjH" firstAttribute="leading" secondItem="dUR-4i-S6h" secondAttribute="leading" constant="16" id="fcX-iI-OEa"/>
+                            <constraint firstItem="HgM-y6-r6b" firstAttribute="top" secondItem="8Y1-Ji-Ik7" secondAttribute="bottom" constant="33" id="iUd-WS-gTM"/>
+                            <constraint firstItem="8Y1-Ji-Ik7" firstAttribute="top" secondItem="zLk-ab-rZD" secondAttribute="bottom" constant="16" id="kvF-9X-o95"/>
                             <constraint firstItem="wWt-Xm-Sbs" firstAttribute="top" secondItem="dUR-4i-S6h" secondAttribute="top" constant="20" id="sNC-c1-Xir"/>
                             <constraint firstItem="QA8-ls-TlP" firstAttribute="leading" secondItem="dUR-4i-S6h" secondAttribute="leading" id="ywR-2b-yU0"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="HgM-y6-r6b" id="8GV-em-dCe"/>
-                        <outlet property="searchTextField" destination="e7J-as-Ga5" id="oL3-BQ-CLv"/>
-                        <outlet property="searchWrapper" destination="8gG-WW-BjH" id="llC-w4-7qJ"/>
+                        <outlet property="searchBar" destination="8Y1-Ji-Ik7" id="F22-U3-zRy"/>
                         <outlet property="tableView" destination="QA8-ls-TlP" id="fJf-dI-fN5"/>
                     </connections>
                 </viewController>
@@ -271,10 +240,6 @@
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <image name="minus" width="15" height="15"/>
         <image name="plus" width="20" height="20"/>
-        <image name="search-icon" width="21" height="21"/>
-        <namedColor name="BackgroundPrimary">
-            <color red="0.53700000047683716" green="0.65100002288818359" blue="0.83899998664855957" alpha="0.15000000596046448" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="Primary">
             <color red="0.53700000047683716" green="0.65100002288818359" blue="0.83899998664855957" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

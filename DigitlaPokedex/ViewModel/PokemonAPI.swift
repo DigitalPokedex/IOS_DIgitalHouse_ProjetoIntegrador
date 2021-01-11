@@ -85,6 +85,7 @@ class PokemonAPI: NSObject {
     func getListWithCompleteData(completion: @escaping ([Pokemon]?, Bool) -> Void) {
         var array = [Pokemon]()
         updateIndexLimit()
+        print(indexLimit)
         for index in pokemonIndex...self.indexLimit {
             if(self.shouldLoadMore()) {
                 addTask()
