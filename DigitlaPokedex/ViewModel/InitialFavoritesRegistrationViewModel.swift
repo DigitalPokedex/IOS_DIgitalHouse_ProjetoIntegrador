@@ -26,8 +26,8 @@ class InitialFavoritesRegistrationViewModel {
         pokemonAPI.getAllPokemonSimpleData { (allSimplePokemonData, success) in
             self.allSimplePokemonData = allSimplePokemonData
             self.loadListWithCompleteData(onComplete: { (listWithCompleteData, success) in
+                onComplete(success)
             })
-            onComplete(success)
         }
     }
     func loadListWithCompleteData(onComplete: @escaping ([Pokemon]?, Bool) -> Void) {

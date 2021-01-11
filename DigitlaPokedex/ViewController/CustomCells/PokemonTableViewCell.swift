@@ -12,8 +12,8 @@ class PokemonTableViewCell: UITableViewCell {
     @IBOutlet weak var pokemonImage: UIImageView!
     @IBOutlet weak var pokemonName: UILabel!
     @IBOutlet weak var pokemonNumber: UILabel!
-    private var pokemon: PokemonTemp2! = nil
-    var onAdd: ((_ pokemon: PokemonTemp2) -> Void)?
+    private var pokemon: Pokemon! = nil
+    var onAdd: ((_ pokemon: Pokemon) -> Void)?
     @IBAction func plusButtonAction(_ sender: Any) {
         onAdd?(pokemon!)
     }
@@ -37,14 +37,14 @@ class PokemonTableViewCell: UITableViewCell {
         return "#\(id)"
     }
     
-    func setup(pokemon: PokemonTemp2) {
-        let url = URL(string: pokemon.image)
+    func setup(pokemon: Pokemon) {
+        let url = URL(string: pokemon.sprites.other.officialartwork.frontDefault)
         self.pokemon = pokemon
         pokemonImage.kf.setImage(with: url)
         pokemonName.text = pokemon.name
         pokemonNumber.text = setId(id: pokemon.id)
     }
-    func add(onAdd: @escaping (_ pokemon: PokemonTemp2) -> Void) {
+    func add(onAdd: @escaping (_ pokemon: Pokemon) -> Void) {
         self.onAdd = onAdd
     }
 }
