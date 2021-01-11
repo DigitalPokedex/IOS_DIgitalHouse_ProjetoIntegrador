@@ -13,13 +13,13 @@ class FavoriteCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var pokemonImage: UIImageView!
     @IBOutlet weak var imageContainer: UIView!
     @IBOutlet weak var minusButton: UIButton!
-    private var pokemon: Pokemon! = nil
-    var onRemove: ((_ pokemon: Pokemon) -> Void)?
+    private var pokemon: PokemonTemp2! = nil
+    var onRemove: ((_ pokemon: PokemonTemp2) -> Void)?
     @IBAction func minusButtonAction(_ sender: Any) {
         onRemove?(pokemon)
     }
     
-    func setup(pokemon: Pokemon) {
+    func setup(pokemon: PokemonTemp2) {
         let url = URL(string: pokemon.image)
         self.pokemon = pokemon
         imageContainer.layer.cornerRadius = 45
@@ -32,7 +32,7 @@ class FavoriteCollectionViewCell: UICollectionViewCell {
 
     }
     
-    func remove(onRemove: @escaping (_ pokemon: Pokemon) -> Void) {
+    func remove(onRemove: @escaping (_ pokemon: PokemonTemp2) -> Void) {
         self.onRemove = onRemove
     }
 }
