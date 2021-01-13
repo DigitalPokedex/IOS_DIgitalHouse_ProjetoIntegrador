@@ -12,6 +12,7 @@
 		0B3AA0FC25AC1B0800E1E149 /* InitialRegistrationSearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3AA0FB25AC1B0800E1E149 /* InitialRegistrationSearchBarDelegate.swift */; };
 		0B5138852568985500F1FC11 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5138842568985500F1FC11 /* Colors.swift */; };
 		0B99B0DB256AFD430028EE6C /* ScreenSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B99B0DA256AFD430028EE6C /* ScreenSettings.swift */; };
+		0BC1E85925AF3FA4008AFBB0 /* ArrayExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1E85825AF3FA3008AFBB0 /* ArrayExtentions.swift */; };
 		0BCB83A9256E7C49003A7FB3 /* PokemonTemp2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCB83A8256E7C49003A7FB3 /* PokemonTemp2.swift */; };
 		0BDFEADD256C89670068BF14 /* InitialFavoritesRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDFEADC256C89670068BF14 /* InitialFavoritesRegistrationViewController.swift */; };
 		0BDFEAE1256C89740068BF14 /* InitialFavoritesRegistration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BDFEAE0256C89740068BF14 /* InitialFavoritesRegistration.storyboard */; };
@@ -73,6 +74,7 @@
 		0B3AA0FB25AC1B0800E1E149 /* InitialRegistrationSearchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialRegistrationSearchBarDelegate.swift; sourceTree = "<group>"; };
 		0B5138842568985500F1FC11 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		0B99B0DA256AFD430028EE6C /* ScreenSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSettings.swift; sourceTree = "<group>"; };
+		0BC1E85825AF3FA3008AFBB0 /* ArrayExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtentions.swift; sourceTree = "<group>"; };
 		0BCB83A8256E7C49003A7FB3 /* PokemonTemp2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonTemp2.swift; sourceTree = "<group>"; };
 		0BDFEADC256C89670068BF14 /* InitialFavoritesRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialFavoritesRegistrationViewController.swift; sourceTree = "<group>"; };
 		0BDFEAE0256C89740068BF14 /* InitialFavoritesRegistration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InitialFavoritesRegistration.storyboard; sourceTree = "<group>"; };
@@ -152,6 +154,21 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		0BB5570825AD0B01000F1612 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				0BB5570925AD0B08000F1612 /* FirstScreen */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		0BB5570925AD0B08000F1612 /* FirstScreen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FirstScreen;
+			sourceTree = "<group>";
+		};
 		0BDFEADB256C89400068BF14 /* InitialFavoritesRegistration */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,6 +246,7 @@
 		CA1B260C2559852F00EA0BAA /* DigitlaPokedex */ = {
 			isa = PBXGroup;
 			children = (
+				0BB5570825AD0B01000F1612 /* Scenes */,
 				CA953AA025713EA000363E2E /* Extensions */,
 				CA953A9F25713E7700363E2E /* Enum */,
 				CA953A922571397800363E2E /* API Manager */,
@@ -350,6 +368,7 @@
 				CA65BAAD25714CC000207EC0 /* UIButtonBordersExtensions copy.swift */,
 				CA65BAB125714CD000207EC0 /* UILabelBordersExtensions copy.swift */,
 				CA24C1EC2568223000849519 /* UITextFieldBordersExtensions.swift */,
+				0BC1E85825AF3FA3008AFBB0 /* ArrayExtentions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -509,6 +528,7 @@
 				0BEAFA912568973300110547 /* LoginScreenViewController.swift in Sources */,
 				0BDFEADD256C89670068BF14 /* InitialFavoritesRegistrationViewController.swift in Sources */,
 				0B3AA0F425AC157400E1E149 /* InitialFavoritesTableViewDelegateDataSource.swift in Sources */,
+				0BC1E85925AF3FA4008AFBB0 /* ArrayExtentions.swift in Sources */,
 				CA28AB552568C9CF00ED2157 /* PokemonController.swift in Sources */,
 				0BEAFA8E2568973300110547 /* FirstScreenViewController.swift in Sources */,
 				CADFBCBD255989EA009F02E1 /* PokemonFavoritesViewController.swift in Sources */,

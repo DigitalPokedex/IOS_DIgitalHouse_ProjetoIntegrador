@@ -20,7 +20,7 @@ class InitialRegistrationSearchBarDelegate: NSObject, UISearchBarDelegate {
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        viewModel.filterArray(searchQuery: searchText)
+        viewModel.filterByName(searchQuery: searchText)
         tableView?.reloadData()
         collectionView?.reloadData()
     }

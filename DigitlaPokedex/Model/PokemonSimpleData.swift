@@ -17,6 +17,10 @@ class PokemonSimpleData : NSObject, NSCoding{
         url = dictionary["url"] as? String
     }
     
+    func getName() -> String {
+        return "\(String(describing: name))".lowercased()
+    }
+    
     func toDictionary() -> [String:Any]
     {
         var dictionary = [String:Any]()

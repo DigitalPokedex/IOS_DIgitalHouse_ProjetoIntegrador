@@ -102,7 +102,7 @@ class InitialFavoritesRegistrationViewController: UIViewController {
     }
     
     func configureCollectionView() {
-        self.collectionViewDelegateDataSource = InitialFavoritesCollectionViewDelegateDataSource(viewModel: self.viewModel, tableView: self.tableView!)
+        self.collectionViewDelegateDataSource = InitialFavoritesCollectionViewDelegateDataSource(viewModel: self.viewModel, tableView: self.tableView)
         self.collectionView.delegate = collectionViewDelegateDataSource
         self.collectionView.dataSource = collectionViewDelegateDataSource
         

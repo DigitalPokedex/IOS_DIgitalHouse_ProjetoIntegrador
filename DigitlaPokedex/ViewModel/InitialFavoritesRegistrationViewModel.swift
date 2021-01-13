@@ -41,21 +41,29 @@ class InitialFavoritesRegistrationViewModel {
         return results.count > 0
     }
     
-    func sortElementsById(_ list: [Pokemon]) -> [Pokemon] {
-        let sortedElements = list.sorted {
-            $0.id < $1.id
-        }
-        return sortedElements
-    }
+//    func sortElementsById(_ list: [Pokemon]) -> [Pokemon] {
+//        let sortedElements = list.sorted {
+//            $0.id < $1.id
+//        }
+//        return sortedElements
+//    }
     
-    func filterArray(searchQuery: String) {
-        filterArray = [Pokemon]()
-        if !searchQuery.isEmpty {
-            filterArray = listWithCompleteData.filter { (element) -> Bool in
-                element.getName().contains(searchQuery.lowercased())
-            }
-        } else {
-            filterArray.append(contentsOf: listWithCompleteData)
+//    func filterArray(searchQuery: String) {
+//        filterArray = [Pokemon]()
+//        if !searchQuery.isEmpty {
+//            filterArray = listWithCompleteData.filter { (element) -> Bool in
+//                element.getName().contains(searchQuery.lowercased())
+//            }
+//        } else {
+//            filterArray.append(contentsOf: listWithCompleteData)
+//        }
+//    }
+    
+    func filterByName(searchQuery: String) {
+        let filterArray = allSimplePokemonData!.filterByName(searchQuery)
+        print("  ")
+        for index in 0...(filterArray.count - 1) {
+            print("\(index) - \(filterArray[index].name!)")
         }
     }
     
@@ -70,11 +78,11 @@ class InitialFavoritesRegistrationViewModel {
     func loadListWithCompleteData(onComplete: @escaping ([Pokemon]?, Bool) -> Void) {
         pokemonAPI.getListWithCompleteData { (listWithCompleteData, success) in
             if(listWithCompleteData != nil) {
-                self.listWithCompleteData.append(contentsOf: self.sortElementsById(listWithCompleteData!))
+                self.listWithCompleteData.append(contentsOf: listWithCompleteData!.sortElementsById())
                 self.filterArray = self.listWithCompleteData
-                self.loadListWithCompleteData(onComplete: { (listWithCompleteData, success)  in
-                    self.tableView.reloadData()
-                })
+//                self.loadListWithCompleteData(onComplete: { (listWithCompleteData, success)  in
+//                    self.tableView.reloadData()
+//                })
                 onComplete(listWithCompleteData, success)
             }
         }
