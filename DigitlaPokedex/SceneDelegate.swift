@@ -16,7 +16,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         // Instancia a Window da application
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        
+        if #available(iOS 13.0, *) {
+            window?.overrideUserInterfaceStyle = .light
+        }
         // Verificar se o cara ta logado
         // Seta a rootview, a primeira tela a ser exibida
         //let tabbar = TabBarController.shared
