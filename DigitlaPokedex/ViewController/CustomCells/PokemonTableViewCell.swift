@@ -38,7 +38,7 @@ class PokemonTableViewCell: UITableViewCell {
     }
     
     func setup(pokemon: Pokemon) {
-        let url = URL(string: pokemon.image)
+        let url = URL(string: pokemon.sprites.other.officialartwork.frontDefault)
         self.pokemon = pokemon
         pokemonImage.kf.setImage(with: url)
         pokemonName.text = pokemon.name
