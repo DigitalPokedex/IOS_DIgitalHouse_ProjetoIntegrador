@@ -120,6 +120,14 @@
                                 <rect key="frame" x="121" y="44" width="172" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HA2-TN-iyU">
+                                <rect key="frame" x="374" y="60" width="20" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="trash" catalog="system"/>
+                                <connections>
+                                    <action selector="logoutButtonAction:" destination="Yoe-HI-vyi" eventType="touchUpInside" id="fVF-9C-DiF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JxW-VV-Taa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -135,6 +143,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="trash" catalog="system" width="121" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

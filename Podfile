@@ -8,6 +8,7 @@ target 'DigitlaPokedex' do
   # Pods for DigitlaPokedex
   pod 'Alamofire'
   pod 'Kingfisher'
-
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
 
 end

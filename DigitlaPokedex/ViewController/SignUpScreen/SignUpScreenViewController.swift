@@ -65,11 +65,11 @@ class SignUpScreenViewController: UIViewController {
     }
     
     @IBAction func saveButtonAction(_ sender: Any) {
-        viewModel.toInitialFavoritesRegistrationScreen()
+        viewModel.saveButtonAction(email: emailTextField.text!, password: passwordTextField.text!)
     }
 }
 
-extension ViewController: UITextFieldDelegate {
+extension FirstScreenViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 //        if (textField == textFieldName) {
 //            if(itemList.exists(textFieldName.text!)) {
