@@ -7,6 +7,8 @@
 
 import Foundation
 import UIKit
+import UIScrollView_InfiniteScroll
+
 
 class InitialFavoritesRegistrationViewModel {
     private var navigationController: UINavigationController!
@@ -20,8 +22,14 @@ class InitialFavoritesRegistrationViewModel {
     var filterArray = [Pokemon]()
     
     func configureViewModel(tableView: UITableView!, navigationController: UINavigationController!) {
-        self.tableView = tableView
         self.navigationController = navigationController
+        
+        self.tableView = tableView
+        tableView.addInfiniteScroll { (tableView) -> Void in
+            self.loadListWithCompleteData(onComplete: { (listWithCompleteData, success) in
+                tableView.finishInfiniteScroll()
+            })
+        }
     }
     
     func sortNumbers(_ list: [Int]) -> [Int] {
@@ -80,9 +88,7 @@ class InitialFavoritesRegistrationViewModel {
             if(listWithCompleteData != nil) {
                 self.listWithCompleteData.append(contentsOf: listWithCompleteData!.sortElementsById())
                 self.filterArray = self.listWithCompleteData
-//                self.loadListWithCompleteData(onComplete: { (listWithCompleteData, success)  in
-//                    self.tableView.reloadData()
-//                })
+                self.tableView.reloadData()
                 onComplete(listWithCompleteData, success)
             }
         }

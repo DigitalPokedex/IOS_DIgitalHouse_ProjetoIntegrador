@@ -13,6 +13,8 @@ class InitialFavoritesRegistrationViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    var searchScreen: UIView!
+    
     var viewModel = InitialFavoritesRegistrationViewModel()
     var tableViewDelegateDataSource: InitialFavoritesTableViewDelegateDataSource?
     var collectionViewDelegateDataSource: InitialFavoritesCollectionViewDelegateDataSource?
@@ -25,6 +27,12 @@ class InitialFavoritesRegistrationViewController: UIViewController {
         self.hideKeyboardWhenTappedAround()
         viewModel.configureViewModel(tableView: tableView, navigationController: self.navigationController)
         loadInitialData()
+        
+    }
+    
+    func configureSearchScreen() {
+        searchScreen = SearchScreen(frame: CGRect(x: 00.0, y: 0.0, width: ScreenSettings.screenWidth, height: ScreenSettings.screenHeight))
+        self.view.addSubview(searchScreen)
     }
     
     func setupSearchBarColors() {
@@ -65,6 +73,7 @@ class InitialFavoritesRegistrationViewController: UIViewController {
         viewModel.loadSimplePokemonList(onComplete: { (success) in
             if(success) {
                 self.reloadAllData()
+                //self.configureSearchScreen()
             }
         })
     }
