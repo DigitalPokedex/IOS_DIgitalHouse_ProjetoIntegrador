@@ -20,8 +20,10 @@ class FavoriteCollectionViewCell: UICollectionViewCell {
     }
     
     func setup(pokemon: Pokemon) {
-        let url = URL(string: pokemon.image)
+        let url = URL(string: pokemon.sprites.other.officialartwork.frontDefault)
         self.pokemon = pokemon
+        
+        
         imageContainer.layer.cornerRadius = 45
         imageContainer.layer.borderWidth = 2
         imageContainer.frame.size.height = 80

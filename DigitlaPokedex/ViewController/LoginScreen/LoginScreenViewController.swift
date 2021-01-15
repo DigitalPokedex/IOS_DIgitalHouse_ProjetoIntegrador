@@ -9,27 +9,33 @@ import UIKit
 
 class LoginScreenViewController: UIViewController {
 
-    @IBOutlet weak var lugiaImage: UIImageView!
+    let viewModel = LoginScreenViewModel()
     
+    @IBOutlet weak var lugiaImage: UIImageView!
     @IBOutlet weak var loginContainer: UIView!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var passwordInput: UITextField!
     @IBOutlet weak var emailInput: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(lugiaImage)
-        loginContainer.layer.cornerRadius = 35
-        loginContainer.backgroundColor = Colors.grey
-        loginContainer.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        loginContainer.layer.masksToBounds = true
-        loginButton.layer.cornerRadius = 15
-        passwordInput.layer.cornerRadius = 35
-        configureTextInputs()
         self.hideKeyboardWhenTappedAround()
-        
+        viewModel.setupNavigationController(navigationController: self.navigationController)
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        
+        setupUI()
+    }
+    
+    func configureTextField(textField: UITextField) {
+        let leftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 15.0, height: 2.0))
+        textField.leftView = leftView
+        textField.leftViewMode = .always
+        textField.layer.cornerRadius = 15
+    }
+    
+    func configureImage() {
+        view.addSubview(lugiaImage)
         let screenHeight = ScreenSettings.screenHeight
         let screenWidth = ScreenSettings.screenWidth
         let imageSize = screenHeight * 0.2586 <= 210 ? screenHeight * 0.2586 : CGFloat(210)
@@ -38,40 +44,31 @@ class LoginScreenViewController: UIViewController {
             lugiaImage.frame = CGRect(x: (screenWidth - imageSize)  / 2, y: screenHeight - 20 - loginContainerHeight - imageSize, width: imageSize, height: imageSize)
         }
     }
-
-    func configureTextInputs() {
-        let emailLeftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 15.0, height: 2.0))
-        emailInput.leftView = emailLeftView
-        emailInput.leftViewMode = .always
-        emailInput.layer.cornerRadius = 15
+    
+    func configureContainer() {
+        loginContainer.layer.cornerRadius = 35
+        loginContainer.backgroundColor = Colors.grey
+        loginContainer.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        loginContainer.layer.masksToBounds = true
+    }
+    
+    func setupUI() {
+        configureTextField(textField: self.emailInput)
+        configureTextField(textField: self.passwordInput)
         
-        let passwordLeftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 15.0, height: 2.0))
-        passwordInput.leftView = passwordLeftView
-        passwordInput.leftViewMode = .always
-        passwordInput.layer.cornerRadius = 15
+        configureImage()
+        configureContainer()
+        
+        loginButton.layer.cornerRadius = 15
     }
     
     @IBAction func previousScreenAction(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+        viewModel.toPreviousScreen()
     }
     @IBAction func loginButtonAction(_ sender: Any) {
-        let tabbar = TabBarController.shared
-        navigationController?.pushViewController(tabbar, animated: true)
+        viewModel.toLoginScreen()
     }
     @IBAction func signUpButtonAction(_ sender: Any) {
-        let signUpViewController = UIStoryboard(name: "SignUpScreen", bundle: nil).instantiateInitialViewController() as! SignUpScreenViewController
-        navigationController?.pushViewController(signUpViewController, animated: true)
+        viewModel.toSignUpScreen()
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -8,159 +8,111 @@
 import UIKit
 
 class InitialFavoritesRegistrationViewController: UIViewController {
-
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var searchWrapper: UIView!
-    @IBOutlet weak var searchTextField: UITextField!
-    @IBAction func saveButtonAction(_ sender: Any) {
-        let tabbar = TabBarController.shared
-        navigationController?.pushViewController(tabbar, animated: true)
-    }
-    var favoritesList = [Pokemon]()
-    var allPokemonList = [Pokemon]()
-    var filteredPokemonList = [Pokemon]()
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    var viewModel = InitialFavoritesRegistrationViewModel()
+    var tableViewDelegateDataSource: InitialFavoritesTableViewDelegateDataSource?
+    var collectionViewDelegateDataSource: InitialFavoritesCollectionViewDelegateDataSource?
+    var searchBarDelegate: InitialRegistrationSearchBarDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        tableView.delegate = self
-        tableView.dataSource = self
-        searchTextField.delegate = self
+        configureTableView()
+        configureCollectionView()
+        configureSearchBar()
         self.hideKeyboardWhenTappedAround()
-        searchWrapper.layer.cornerRadius = 10
-        loadDataPokemon()
-        loadDataFavorites()
-        collectionView.reloadData()
+        viewModel.configureViewModel(tableView: tableView, navigationController: self.navigationController)
+        loadInitialData()
+    }
+    
+    func setupSearchBarColors() {
+        searchBar.backgroundImage = UIImage()
+        searchBar.searchTextField.backgroundColor = UIColor(named: "PrimaryLight")
+        searchBar.searchTextField.textColor = UIColor(named: "Primary")
+    }
+    
+    func reloadAllData() {
+        self.tableView.reloadData()
+        self.collectionView.reloadData()
+    }
+    
+    func setupSearchBarIcons() {
+        if let searchTextField = searchBar.value(forKey: "searchField") as? UITextField, let clearButton = searchTextField.value(forKey:"_clearButton") as? UIButton {
+            let templateImage =  clearButton.imageView?.image?.withRenderingMode(.alwaysTemplate)
+            clearButton.setImage(templateImage, for: .normal)
+            clearButton.tintColor = UIColor(named: "Primary")
+        }
+        if let textField = self.searchBar.value(forKey: "searchField") as? UITextField,
+           let iconView = textField.leftView as? UIImageView {
+            
+            iconView.image = iconView.image?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
+            iconView.tintColor = UIColor(named: "Primary")
+        }
+    }
+    
+    func setupSearchBarTextField(){
+        if #available(iOS 13.0, *) {
+            searchBar.searchTextField.attributedPlaceholder = NSAttributedString(string: "Search", attributes: [NSAttributedString.Key.foregroundColor : UIColor(named: "Primary")!])
+        } else {
+            let searchField = searchBar.value(forKey: "searchField") as! UITextField
+            searchField.attributedPlaceholder = NSAttributedString(string: "Search", attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "Primary")!])
+        }
+    }
+    
+    func loadInitialData() {
+        viewModel.loadSimplePokemonList(onComplete: { (success) in
+            if(success) {
+                self.reloadAllData()
+            }
+        })
+    }
+    
+    @IBAction func saveButtonAction(_ sender: Any) {
+        viewModel.toHomeScreen()
     }
     
     @IBAction func previousScreenAction(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+        viewModel.toPreviousScreen()
     }
     
-    func filterElementsById(list: [Pokemon], element: Pokemon) -> [Pokemon] {
-        return list.filter(){$0.id != element.id}
-    }
-    
-    func sortElementsById(_ list: [Pokemon]) -> [Pokemon] {
-        let sortedElements = list.sorted {
-            $0.id < $1.id
-        }
-        return sortedElements
-    }
-    
-    func removeFavorites() -> [Pokemon] {
-        var pokemonListWithoutFavorites = [Pokemon]()
-        for favorite in favoritesList {
-            pokemonListWithoutFavorites = filterElementsById(list: allPokemonList, element: favorite)
-        }
-        return pokemonListWithoutFavorites
-    }
-    
-    func loadDataFavorites() {
-        favoritesList.append(Pokemon(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png", name: "Bulbasaur", id: 1, types: ["Grass", "Poison"]))
-        favoritesList.append(Pokemon(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png", name: "Charizard", id: 6, types: ["Fire", "Flying"]))
-        favoritesList.append(Pokemon(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png", name: "Mewtwo", id: 150, types: ["Psychic"]))
-        favoritesList.append(Pokemon(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/249.png", name: "Lugia", id: 249, types: ["Psychic", "Flying"]))
-
-        for favorite in favoritesList {
-            allPokemonList = filterElementsById(list: allPokemonList, element: favorite)
-            filteredPokemonList = allPokemonList
+    func configureTableView() {
+        self.tableViewDelegateDataSource = InitialFavoritesTableViewDelegateDataSource(viewModel: self.viewModel, collectionView: self.collectionView!)
+        self.tableView.delegate = tableViewDelegateDataSource
+        self.tableView.dataSource = tableViewDelegateDataSource
+        //self.searchBar.delegate = searchBarDelegate
+        
+        DispatchQueue.main.async {
+            self.reloadAllData()
         }
     }
     
-    func loadDataPokemon() {
-        allPokemonList.append(Pokemon(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png", name: "Bulbasaur", id: 1, types: ["Grass", "Poison"]))
-        allPokemonList.append(Pokemon(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png", name: "Ivysaur", id: 2, types: ["Grass", "Poison"]))
-        allPokemonList.append(Pokemon(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png", name: "Venusaur", id: 3, types: ["Grass", "Poison"]))
-        allPokemonList.append(Pokemon(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png", name: "Charmander", id: 4, types: ["Fire"]))
-        allPokemonList.append(Pokemon(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png", name: "Charmeleon", id: 5, types: ["Fire"]))
-        allPokemonList.append(Pokemon(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png", name: "Charizard", id: 6, types: ["Fire", "Flying"]))
-        allPokemonList.append(Pokemon(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png", name: "Squirtle", id: 7, types: ["Water"]))
-        allPokemonList.append(Pokemon(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/8.png", name: "Wartotle", id: 8, types: ["Water"]))
-        allPokemonList.append(Pokemon(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png", name: "Mewtwo", id: 150, types: ["Psychic"]))
-        allPokemonList.append(Pokemon(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/249.png", name: "Lugia", id: 249, types: ["Psychic", "Flying"]))
-        filteredPokemonList = allPokemonList
-    }
-    
-    func contains(element: Pokemon, list: [Pokemon]) -> Bool {
-        let results = list.filter { arrayElement in arrayElement.id == element.id }
-        return results.count > 0
-    }
-}
-
-extension InitialFavoritesRegistrationViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(favoritesList[indexPath.row].name)
-    }
-}
-
-extension InitialFavoritesRegistrationViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return favoritesList.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FavoriteCollectionViewCell", for: indexPath) as! FavoriteCollectionViewCell
-        cell.setup(pokemon: favoritesList[indexPath.row])
-        cell.remove{ (pokemon) in
-            self.favoritesList = self.filterElementsById(list: self.favoritesList, element: pokemon)
-            self.collectionView.reloadData()
-            self.filteredPokemonList.append(pokemon)
-            //self.searchTextField.text! = ""
-            self.filteredPokemonList = self.sortElementsById(self.filteredPokemonList)
-            self.tableView.reloadData()
+    func configureSearchBar() {
+        setupSearchBarColors()
+        setupSearchBarTextField()
+        setupSearchBarIcons()
+        
+        self.searchBarDelegate = InitialRegistrationSearchBarDelegate(viewModel: self.viewModel, tableView: self.tableView!, collectionView: self.collectionView)
+        self.searchBar.delegate = searchBarDelegate
+        
+        DispatchQueue.main.async {
+            self.reloadAllData()
         }
-        return cell
     }
     
-    
-}
-
-extension InitialFavoritesRegistrationViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-}
-
-extension InitialFavoritesRegistrationViewController: UITextFieldDelegate {
-    func textFieldDidChangeSelection(_ textField: UITextField) {
-        print(searchTextField.text!)
-        filteredPokemonList = [Pokemon]()
-        let filterQuery = searchTextField.text!
-        if !searchTextField.text!.isEmpty {
-            filteredPokemonList = removeFavorites().filter { (pokemon) -> Bool in
-                print("aqui")
-                return pokemon.name.lowercased().contains(filterQuery.lowercased())
-            }
-        } else {
-            filteredPokemonList.append(contentsOf: removeFavorites())
+    func configureCollectionView() {
+        self.collectionViewDelegateDataSource = InitialFavoritesCollectionViewDelegateDataSource(viewModel: self.viewModel, tableView: self.tableView)
+        self.collectionView.delegate = collectionViewDelegateDataSource
+        self.collectionView.dataSource = collectionViewDelegateDataSource
+        
+        DispatchQueue.main.async {
+            self.reloadAllData()
         }
-        collectionView.reloadData()
-        tableView.reloadData()
-    }
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        view.endEditing(true)
-        return true
+
     }
 }
 
-extension InitialFavoritesRegistrationViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredPokemonList.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PokemonTableViewCell") as! PokemonTableViewCell
-        cell.setup(pokemon: filteredPokemonList[indexPath.row])
-        cell.add{ (pokemon) in
-            self.filteredPokemonList = self.filterElementsById(list: self.filteredPokemonList, element: pokemon)
-            self.tableView.reloadData()
-            //self.searchTextField.text! = ""
-            self.favoritesList.append(pokemon)
-            self.favoritesList = self.sortElementsById(self.favoritesList)
-            self.collectionView.reloadData()
-        }
-        return cell
-    }
-}
+
+
+
