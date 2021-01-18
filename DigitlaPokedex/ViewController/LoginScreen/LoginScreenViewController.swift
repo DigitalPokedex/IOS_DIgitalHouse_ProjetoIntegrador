@@ -66,7 +66,7 @@ class LoginScreenViewController: UIViewController {
         viewModel.toPreviousScreen()
     }
     @IBAction func loginButtonAction(_ sender: Any) {
-        viewModel.toLoginScreen()
+        viewModel.loginButtonAction(email: emailInput.text!, password: passwordInput.text!)
     }
     @IBAction func signUpButtonAction(_ sender: Any) {
         viewModel.toSignUpScreen()
