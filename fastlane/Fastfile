@@ -21,7 +21,6 @@ platform :ios do
     capture_screenshots(workspace: "DigitlaPokedex.xcworkspace", scheme: "DigitlaPokedex")
   end
   lane :tests do
-	cocoapods
 	run_tests(workspace: "DigitlaPokedex.xcworkspace", devices: ["iPhone 11"], scheme: "DigitlaPokedex")
   end
   
