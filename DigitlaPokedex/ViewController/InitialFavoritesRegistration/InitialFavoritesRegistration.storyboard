@@ -202,17 +202,31 @@
                                 <color key="barTintColor" name="Primary"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnE-rq-W6R">
+                                <rect key="frame" x="334" y="64" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="ist-ei-5Pv"/>
+                                    <constraint firstAttribute="width" constant="25" id="uIt-gS-sdq"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="magnifyingglass" catalog="system"/>
+                                <connections>
+                                    <action selector="searchButtonAction:" destination="b0j-p6-3fT" eventType="touchUpInside" id="FvU-f9-RlK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dUR-4i-S6h"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="3P6-DR-Mvm" firstAttribute="top" secondItem="QA8-ls-TlP" secondAttribute="bottom" id="0bP-UI-o5V"/>
                             <constraint firstItem="zLk-ab-rZD" firstAttribute="centerX" secondItem="uIa-NY-hec" secondAttribute="centerX" id="7CL-Vk-9xO"/>
+                            <constraint firstItem="dUR-4i-S6h" firstAttribute="trailing" secondItem="bnE-rq-W6R" secondAttribute="trailing" constant="16" id="9Ps-hN-UEd"/>
                             <constraint firstItem="8Y1-Ji-Ik7" firstAttribute="leading" secondItem="dUR-4i-S6h" secondAttribute="leading" id="Abn-aD-gJd"/>
                             <constraint firstItem="3P6-DR-Mvm" firstAttribute="leading" secondItem="dUR-4i-S6h" secondAttribute="leading" constant="16" id="BhX-j1-LiM"/>
                             <constraint firstItem="8Y1-Ji-Ik7" firstAttribute="trailing" secondItem="dUR-4i-S6h" secondAttribute="trailing" id="CVj-bb-msq"/>
                             <constraint firstItem="QA8-ls-TlP" firstAttribute="top" secondItem="HgM-y6-r6b" secondAttribute="bottom" constant="18" id="H5A-nm-knh"/>
                             <constraint firstItem="dUR-4i-S6h" firstAttribute="trailing" secondItem="QA8-ls-TlP" secondAttribute="trailing" id="Hxv-RC-S8A"/>
+                            <constraint firstItem="bnE-rq-W6R" firstAttribute="top" secondItem="dUR-4i-S6h" secondAttribute="top" constant="20" id="JSS-Pw-dSh"/>
                             <constraint firstItem="wWt-Xm-Sbs" firstAttribute="leading" secondItem="dUR-4i-S6h" secondAttribute="leading" constant="20" id="KAD-Z0-RUo"/>
                             <constraint firstItem="dUR-4i-S6h" firstAttribute="trailing" secondItem="3P6-DR-Mvm" secondAttribute="trailing" constant="16" id="KN4-TE-NZf"/>
                             <constraint firstItem="zLk-ab-rZD" firstAttribute="top" secondItem="dUR-4i-S6h" secondAttribute="top" constant="10" id="QX9-jZ-quc"/>
@@ -238,6 +252,7 @@
     </scenes>
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="minus" width="15" height="15"/>
         <image name="plus" width="20" height="20"/>
         <namedColor name="Primary">
