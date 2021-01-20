@@ -10,5 +10,7 @@ target 'DigitlaPokedex' do
   pod 'Kingfisher'
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
+  pod 'FBSDKLoginKit'
 
 end

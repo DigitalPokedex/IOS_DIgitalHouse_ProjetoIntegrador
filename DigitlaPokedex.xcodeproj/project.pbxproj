@@ -414,6 +414,7 @@
 				CA1B26072559852F00EA0BAA /* Frameworks */,
 				CA1B26082559852F00EA0BAA /* Resources */,
 				62383B46A33116D009B47CE9 /* [CP] Embed Pods Frameworks */,
+				1648FFE60A81E4FB9321F1F7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -478,6 +479,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1648FFE60A81E4FB9321F1F7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DigitlaPokedex/Pods-DigitlaPokedex-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DigitlaPokedex/Pods-DigitlaPokedex-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DigitlaPokedex/Pods-DigitlaPokedex-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		62383B46A33116D009B47CE9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
