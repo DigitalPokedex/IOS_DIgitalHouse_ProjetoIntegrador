@@ -21,7 +21,7 @@ platform :ios do
     capture_screenshots(workspace: "DigitlaPokedex.xcworkspace", scheme: "DigitlaPokedex")
   end
   lane :tests do
-	run_tests(workspace: "DigitlaPokedex.xcworkspace", devices: ["iPhone 12"], scheme: "DigitlaPokedex")
+	run_tests(workspace: "DigitlaPokedex.xcworkspace", devices: ["iPhone 8"], scheme: "DigitlaPokedex")
   end
   
 end
