@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='DigitalPokedexTests.xctest' tests='3' failures='0'>
+  <testsuite name='DigitalPokedexTests.DigitalPokedexTests' tests='3' failures='0'>
+    <testcase classname='DigitalPokedexTests.DigitalPokedexTests' name='testExample' time='0.002'/>
+    <testcase classname='DigitalPokedexTests.DigitalPokedexTests' name='testIsListOfNumbersSorted' time='0.004'/>
+    <testcase classname='DigitalPokedexTests.DigitalPokedexTests' name='testPerformanceExample' time='0.306'/>
+  </testsuite>
+</testsuites>

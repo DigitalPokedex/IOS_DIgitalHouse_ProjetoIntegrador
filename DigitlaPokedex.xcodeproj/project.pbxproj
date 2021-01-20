@@ -10,6 +10,7 @@
 		0B3AA0F425AC157400E1E149 /* InitialFavoritesTableViewDelegateDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3AA0F325AC157400E1E149 /* InitialFavoritesTableViewDelegateDataSource.swift */; };
 		0B3AA0F925AC191D00E1E149 /* InitialFavoritesCollectionViewDelegateDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3AA0F825AC191D00E1E149 /* InitialFavoritesCollectionViewDelegateDataSource.swift */; };
 		0B3AA0FC25AC1B0800E1E149 /* InitialRegistrationSearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3AA0FB25AC1B0800E1E149 /* InitialRegistrationSearchBarDelegate.swift */; };
+		0B5020BF25B86897005A02B1 /* DigitalPokedexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5020BE25B86897005A02B1 /* DigitalPokedexTests.swift */; };
 		0B5138852568985500F1FC11 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5138842568985500F1FC11 /* Colors.swift */; };
 		0B99B0DB256AFD430028EE6C /* ScreenSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B99B0DA256AFD430028EE6C /* ScreenSettings.swift */; };
 		0BC1E85925AF3FA4008AFBB0 /* ArrayExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1E85825AF3FA3008AFBB0 /* ArrayExtentions.swift */; };
@@ -68,10 +69,23 @@
 		CADFBCC5255A2A88009F02E1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADFBCC4255A2A88009F02E1 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0B5020C125B86897005A02B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA1B26022559852F00EA0BAA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CA1B26092559852F00EA0BAA;
+			remoteInfo = DigitlaPokedex;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		0B3AA0F325AC157400E1E149 /* InitialFavoritesTableViewDelegateDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialFavoritesTableViewDelegateDataSource.swift; sourceTree = "<group>"; };
 		0B3AA0F825AC191D00E1E149 /* InitialFavoritesCollectionViewDelegateDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialFavoritesCollectionViewDelegateDataSource.swift; sourceTree = "<group>"; };
 		0B3AA0FB25AC1B0800E1E149 /* InitialRegistrationSearchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialRegistrationSearchBarDelegate.swift; sourceTree = "<group>"; };
+		0B5020BC25B86897005A02B1 /* DigitalPokedexTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DigitalPokedexTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B5020BE25B86897005A02B1 /* DigitalPokedexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalPokedexTests.swift; sourceTree = "<group>"; };
+		0B5020C025B86897005A02B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B5138842568985500F1FC11 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		0B99B0DA256AFD430028EE6C /* ScreenSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSettings.swift; sourceTree = "<group>"; };
 		0BC1E85825AF3FA3008AFBB0 /* ArrayExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtentions.swift; sourceTree = "<group>"; };
@@ -135,6 +149,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0B5020B925B86897005A02B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CA1B26072559852F00EA0BAA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -146,6 +167,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B5020BD25B86897005A02B1 /* DigitalPokedexTests */ = {
+			isa = PBXGroup;
+			children = (
+				0B5020BE25B86897005A02B1 /* DigitalPokedexTests.swift */,
+				0B5020C025B86897005A02B1 /* Info.plist */,
+			);
+			path = DigitalPokedexTests;
+			sourceTree = "<group>";
+		};
 		0B99B0D9256AFD030028EE6C /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				CA1B260C2559852F00EA0BAA /* DigitlaPokedex */,
+				0B5020BD25B86897005A02B1 /* DigitalPokedexTests */,
 				CA1B260B2559852F00EA0BAA /* Products */,
 				F0F557FE33F3F436BB80AF80 /* Pods */,
 				1205C6D6B8E24CD748A67F9D /* Frameworks */,
@@ -239,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				CA1B260A2559852F00EA0BAA /* DigitlaPokedex.app */,
+				0B5020BC25B86897005A02B1 /* DigitalPokedexTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -402,6 +434,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0B5020BB25B86897005A02B1 /* DigitalPokedexTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0B5020C525B86897005A02B1 /* Build configuration list for PBXNativeTarget "DigitalPokedexTests" */;
+			buildPhases = (
+				0B5020B825B86897005A02B1 /* Sources */,
+				0B5020B925B86897005A02B1 /* Frameworks */,
+				0B5020BA25B86897005A02B1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0B5020C225B86897005A02B1 /* PBXTargetDependency */,
+			);
+			name = DigitalPokedexTests;
+			productName = DigitalPokedexTests;
+			productReference = 0B5020BC25B86897005A02B1 /* DigitalPokedexTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		CA1B26092559852F00EA0BAA /* DigitlaPokedex */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CA1B261E2559853300EA0BAA /* Build configuration list for PBXNativeTarget "DigitlaPokedex" */;
@@ -427,9 +477,13 @@
 		CA1B26022559852F00EA0BAA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1210;
+				LastSwiftUpdateCheck = 1220;
 				LastUpgradeCheck = 1210;
 				TargetAttributes = {
+					0B5020BB25B86897005A02B1 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = CA1B26092559852F00EA0BAA;
+					};
 					CA1B26092559852F00EA0BAA = {
 						CreatedOnToolsVersion = 12.1;
 					};
@@ -449,11 +503,19 @@
 			projectRoot = "";
 			targets = (
 				CA1B26092559852F00EA0BAA /* DigitlaPokedex */,
+				0B5020BB25B86897005A02B1 /* DigitalPokedexTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0B5020BA25B86897005A02B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CA1B26082559852F00EA0BAA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -516,6 +578,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0B5020B825B86897005A02B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B5020BF25B86897005A02B1 /* DigitalPokedexTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CA1B26062559852F00EA0BAA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -573,6 +643,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		0B5020C225B86897005A02B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CA1B26092559852F00EA0BAA /* DigitlaPokedex */;
+			targetProxy = 0B5020C125B86897005A02B1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		0BEAFA862568973300110547 /* FirstScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -601,6 +679,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0B5020C325B86897005A02B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U2BKJ22455;
+				INFOPLIST_FILE = DigitalPokedexTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.joorgeroberto.DigitalPokedexTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DigitlaPokedex.app/DigitlaPokedex";
+			};
+			name = Debug;
+		};
+		0B5020C425B86897005A02B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U2BKJ22455;
+				INFOPLIST_FILE = DigitalPokedexTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.joorgeroberto.DigitalPokedexTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DigitlaPokedex.app/DigitlaPokedex";
+			};
+			name = Release;
+		};
 		CA1B261C2559853300EA0BAA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -760,6 +880,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0B5020C525B86897005A02B1 /* Build configuration list for PBXNativeTarget "DigitalPokedexTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B5020C325B86897005A02B1 /* Debug */,
+				0B5020C425B86897005A02B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CA1B26052559852F00EA0BAA /* Build configuration list for PBXProject "DigitlaPokedex" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
