@@ -9,6 +9,7 @@ target 'DigitlaPokedex' do
   pod 'Alamofire'
   pod 'Kingfisher'
   pod 'UIScrollView-InfiniteScroll', '~> 1.0.0'
+  pod 'RealmSwift'
 
 
 end
