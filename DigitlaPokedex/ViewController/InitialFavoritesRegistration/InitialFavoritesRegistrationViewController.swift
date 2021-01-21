@@ -31,6 +31,7 @@ class InitialFavoritesRegistrationViewController: UIViewController {
     
     func configureSearchScreen() {
         searchScreen = SearchScreen(frame: CGRect(x: 00.0, y: 0.0, width: ScreenSettings.screenWidth, height: ScreenSettings.screenHeight))
+        //searchScreen.configureSearchData()// = self.viewModel.allSimplePokemonData
         self.view.addSubview(searchScreen)
     }
     

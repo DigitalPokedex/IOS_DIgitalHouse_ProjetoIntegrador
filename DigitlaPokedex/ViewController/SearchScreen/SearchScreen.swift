@@ -9,10 +9,13 @@ import Foundation
 import UIKit
 
 class SearchScreen: UIView {
-
+    
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var gestureIndicator: UIView!
     @IBOutlet weak var searchBar: UISearchBar!
+    
+    var viewModel = SearchScreenViewModel()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.configureView()
@@ -23,6 +26,29 @@ class SearchScreen: UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.configureView()
+    }
+    
+    private func closeScreen() {
+        self.isHidden = true
+    }
+    
+    func configureSearchData() {
+        
+    }
+    
+    func animateContainer(isInitial: Bool) {
+        print(self.center.y)
+        UIView.animate(withDuration: 0.5,
+                       delay: 0,
+                       options: .curveEaseOut,
+                       animations: {
+                        isInitial ? self.containerView.center.y = 0 : nil
+                       },
+                       completion: {_ in
+                        
+                        print(self.containerView.center.y)
+                        !isInitial ? self.closeScreen() : nil
+                       })
     }
     
     func setupSearchBarIcons() {
@@ -60,17 +86,18 @@ class SearchScreen: UIView {
         setupSearchBarIcons()
         
         /*self.searchBarDelegate = InitialRegistrationSearchBarDelegate(viewModel: self.viewModel, tableView: self.tableView!, collectionView: self.collectionView)
-        self.searchBar.delegate = searchBarDelegate
-        
-        DispatchQueue.main.async {
-            self.reloadAllData()
-        }*/
+         self.searchBar.delegate = searchBarDelegate
+         
+         DispatchQueue.main.async {
+         self.reloadAllData()
+         }*/
     }
     
     private func configureView() {
         guard let view = self.loadViewFromNib(nibName: "SearchScreen") else { return }
         view.frame = self.bounds
         self.addSubview(view)
+        self.animateContainer(isInitial: true)
     }
     
     private func setupUI() {
@@ -85,7 +112,7 @@ class SearchScreen: UIView {
     }
     @IBAction func closeButton(_ sender: Any) {
         print("Fechou")
-        self.isHidden = true
+        self.closeScreen()
     }
 }
 
