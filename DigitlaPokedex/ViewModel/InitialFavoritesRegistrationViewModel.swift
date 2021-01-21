@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 import UIScrollView_InfiniteScroll
+import Realm
+import RealmSwift
 
 
 class InitialFavoritesRegistrationViewModel {
@@ -75,13 +77,33 @@ class InitialFavoritesRegistrationViewModel {
         }
     }
     
-    func loadSimplePokemonList(onComplete: @escaping (Bool) -> Void) {
-        pokemonAPI.getAllPokemonSimpleData { (allSimplePokemonData, success) in
-            self.allSimplePokemonData = allSimplePokemonData
-            self.loadListWithCompleteData(onComplete: { (listWithCompleteData, success) in
-                onComplete(success)
-            })
+    func saveDataOnRealm() {
+        let realm = try! Realm()
+        try! realm.write {
+            for index in 0...(self.allSimplePokemonData!.count - 1) {
+                let realmPokemon = PokemonRealm()
+                let simpleDataPokemon = self.allSimplePokemonData![index]
+                realmPokemon.name = simpleDataPokemon.name
+                realmPokemon.url = simpleDataPokemon.url
+                realm.add(realmPokemon)
+            }
         }
+    }
+    
+    func loadSimplePokemonList(onComplete: @escaping (Bool) -> Void) {
+        let realm = try! Realm()
+        let savedData = realm.objects(PokemonRealm.self)
+        let emptyData = savedData.count == 0
+        
+        if(emptyData) {
+            pokemonAPI.getAllPokemonSimpleData { (allSimplePokemonData, success) in
+                self.allSimplePokemonData = allSimplePokemonData
+                self.saveDataOnRealm()
+            }
+        }
+        self.loadListWithCompleteData(onComplete: { (listWithCompleteData, success) in
+            onComplete(success)
+        })
     }
     func loadListWithCompleteData(onComplete: @escaping ([Pokemon]?, Bool) -> Void) {
         pokemonAPI.getListWithCompleteData { (listWithCompleteData, success) in

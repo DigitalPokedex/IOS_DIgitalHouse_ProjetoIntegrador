@@ -13,6 +13,9 @@ class SearchScreen: UIView {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var gestureIndicator: UIView!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var tableView: UITableView!
+    
+    var tableViewDelegateDataSource: SearchScreenTableViewDelegateDataSource?
     
     var viewModel = SearchScreenViewModel()
 
@@ -37,7 +40,7 @@ class SearchScreen: UIView {
     }
     
     func animateContainer(isInitial: Bool) {
-        print(self.center.y)
+        //print(self.center.y)
         UIView.animate(withDuration: 0.5,
                        delay: 0,
                        options: .curveEaseOut,
@@ -96,7 +99,9 @@ class SearchScreen: UIView {
     private func configureView() {
         guard let view = self.loadViewFromNib(nibName: "SearchScreen") else { return }
         view.frame = self.bounds
+        self.viewModel.loadData()
         self.addSubview(view)
+        self.configureTableView()
         self.animateContainer(isInitial: true)
     }
     
@@ -110,8 +115,20 @@ class SearchScreen: UIView {
         
         configureSearchBar()
     }
+    
+    func configureTableView() {
+        
+        self.tableViewDelegateDataSource = SearchScreenTableViewDelegateDataSource(viewModel: self.viewModel)
+        self.tableView.delegate = tableViewDelegateDataSource
+        self.tableView.dataSource = tableViewDelegateDataSource
+        // self.searchBar.delegate = searchBarDelegate
+        
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
     @IBAction func closeButton(_ sender: Any) {
-        print("Fechou")
         self.closeScreen()
     }
 }

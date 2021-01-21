@@ -7,7 +7,7 @@
 
 import Foundation
 
-class PokemonSimpleData : NSObject, NSCoding{
+class PokemonSimpleData: NSObject, NSCoding {
 
     var name : String!
     var url : String!

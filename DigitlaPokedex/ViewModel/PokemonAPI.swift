@@ -11,7 +11,7 @@ class PokemonAPI: NSObject {
     var apiManager = APIManager()
     private var pokemonIndex = 0
     private var indexLimit = 0
-    private var maxIndex = 151
+    private var maxIndex = 1118
     private var numberOfTasks = 0
     let dispatchQueue = DispatchQueue(label: "any-label-name")
     let dispatchGroup = DispatchGroup()
