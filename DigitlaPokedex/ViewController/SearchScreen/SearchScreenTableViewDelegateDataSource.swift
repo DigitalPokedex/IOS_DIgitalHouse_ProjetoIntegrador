@@ -13,8 +13,6 @@ class SearchScreenTableViewDelegateDataSource: NSObject, UITableViewDelegate, UI
     
     init(viewModel: SearchScreenViewModel) {
         self.viewModel = viewModel
-        print(viewModel.getNumberOfTableViewCells())
-        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -23,7 +21,6 @@ class SearchScreenTableViewDelegateDataSource: NSObject, UITableViewDelegate, UI
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let info = viewModel.getNumberOfTableViewCells()
-        //print(info)
         return info
     }
     

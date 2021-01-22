@@ -17,6 +17,11 @@ class InitialFavoritesTableViewDelegateDataSource: NSObject, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.viewModel.favoritesList.append(self.viewModel.filterArray[indexPath.row].id)
+        self.viewModel.favoritesList = self.viewModel.sortNumbers(self.viewModel.favoritesList)
+        collectionView.reloadData()
+        tableView.reloadData()
+        
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

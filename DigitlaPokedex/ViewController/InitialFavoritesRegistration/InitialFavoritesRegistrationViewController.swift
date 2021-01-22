@@ -18,7 +18,7 @@ class InitialFavoritesRegistrationViewController: UIViewController {
     var viewModel = InitialFavoritesRegistrationViewModel()
     var tableViewDelegateDataSource: InitialFavoritesTableViewDelegateDataSource?
     var collectionViewDelegateDataSource: InitialFavoritesCollectionViewDelegateDataSource?
-    var searchBarDelegate: InitialRegistrationSearchBarDelegate?
+    //var searchBarDelegate: InitialRegistrationSearchBarDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()

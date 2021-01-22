@@ -83,8 +83,8 @@ class InitialFavoritesRegistrationViewModel {
             for index in 0...(self.allSimplePokemonData!.count - 1) {
                 let realmPokemon = PokemonRealm()
                 let simpleDataPokemon = self.allSimplePokemonData![index]
-                realmPokemon.name = simpleDataPokemon.name
-                realmPokemon.url = simpleDataPokemon.url
+                realmPokemon.name = simpleDataPokemon.name.capitalizingFirstLetter()
+                realmPokemon.url = simpleDataPokemon.url.capitalizingFirstLetter()
                 realm.add(realmPokemon)
             }
         }
@@ -119,12 +119,12 @@ class InitialFavoritesRegistrationViewModel {
     func getTableCustomCell(tableView: UITableView, collectionView: UICollectionView, indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PokemonTableViewCell") as! PokemonTableViewCell
         cell.setup(pokemon: filterArray[indexPath.row])
-        cell.add{ (pokemon) in
-            tableView.reloadData()
-            self.favoritesList.append(pokemon.id)
-            self.favoritesList = self.sortNumbers(self.favoritesList)
-            collectionView.reloadData()
-        }
+//        cell.add{ (pokemon) in
+//            tableView.reloadData()
+//            self.favoritesList.append(pokemon.id)
+//            self.favoritesList = self.sortNumbers(self.favoritesList)
+//            collectionView.reloadData()
+//        }
         return cell
     }
     

@@ -17,6 +17,9 @@ class SearchScreenViewModel {
     //var allSimplePokemonData = BindableResults(results: try! Realm().objects(PokemonRealm.self))
     //var filterArray = BindableResults(results: try! Realm().objects(PokemonRealm.self))
 
+    func filterByName(searchQuery: String) {
+        filterArray = allSimplePokemonData.filterByName(searchQuery)
+    }
     
     func loadData() {
         let realm = try! Realm()
@@ -33,17 +36,12 @@ class SearchScreenViewModel {
     }
     
     func getNumberOfTableViewCells() -> Int {
-        print(self.filterArray.count)
-        
         return self.filterArray.count
     }
     
     func getTableCustomCell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        print(filterArray[indexPath.row])
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchScreenTableViewCell", for: indexPath) as! SearchScreenTableViewCell
-
-        print(indexPath.row)
         
         cell.setup(pokemon: filterArray[indexPath.row])
         cell.add{ (pokemon) in

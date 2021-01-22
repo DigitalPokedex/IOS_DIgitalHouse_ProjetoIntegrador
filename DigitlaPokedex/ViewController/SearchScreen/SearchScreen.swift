@@ -14,8 +14,11 @@ class SearchScreen: UIView {
     @IBOutlet weak var gestureIndicator: UIView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+    private var initialModalCenter: CGFloat!
+    private var finalModalCenter: CGFloat!
     
     var tableViewDelegateDataSource: SearchScreenTableViewDelegateDataSource?
+    var searchBarDelegate: SearchBarDelegate?
     
     var viewModel = SearchScreenViewModel()
 
@@ -40,16 +43,13 @@ class SearchScreen: UIView {
     }
     
     func animateContainer(isInitial: Bool) {
-        //print(self.center.y)
         UIView.animate(withDuration: 0.5,
                        delay: 0,
                        options: .curveEaseOut,
                        animations: {
-                        isInitial ? self.containerView.center.y = 0 : nil
+                        self.containerView.center.y = isInitial ? CGFloat(0.0) : self.finalModalCenter
                        },
                        completion: {_ in
-                        
-                        print(self.containerView.center.y)
                         !isInitial ? self.closeScreen() : nil
                        })
     }
@@ -88,17 +88,21 @@ class SearchScreen: UIView {
         setupSearchBarTextField()
         setupSearchBarIcons()
         
-        /*self.searchBarDelegate = InitialRegistrationSearchBarDelegate(viewModel: self.viewModel, tableView: self.tableView!, collectionView: self.collectionView)
+        self.searchBarDelegate = SearchBarDelegate(viewModel: self.viewModel, tableView: self.tableView!)
          self.searchBar.delegate = searchBarDelegate
          
          DispatchQueue.main.async {
-         self.reloadAllData()
-         }*/
+            self.tableView.reloadData()
+         }
     }
     
     private func configureView() {
         guard let view = self.loadViewFromNib(nibName: "SearchScreen") else { return }
         view.frame = self.bounds
+        
+        initialModalCenter = self.containerView.center.y
+        finalModalCenter = (initialModalCenter * 2)
+        
         self.viewModel.loadData()
         self.addSubview(view)
         self.configureTableView()
@@ -121,8 +125,8 @@ class SearchScreen: UIView {
         self.tableViewDelegateDataSource = SearchScreenTableViewDelegateDataSource(viewModel: self.viewModel)
         self.tableView.delegate = tableViewDelegateDataSource
         self.tableView.dataSource = tableViewDelegateDataSource
-        let nibName = UINib(nibName: "SearchScreenTableViewCell", bundle: nil)
-        self.tableView.register(nibName, forCellReuseIdentifier: "SearchScreenTableViewCell")
+        let nib = UINib(nibName: "SearchScreenTableViewCell", bundle: nil)
+        self.tableView.register(nib, forCellReuseIdentifier: "SearchScreenTableViewCell")
         // self.searchBar.delegate = searchBarDelegate
         
         DispatchQueue.main.async {
@@ -131,7 +135,7 @@ class SearchScreen: UIView {
     }
     
     @IBAction func closeButton(_ sender: Any) {
-        self.closeScreen()
+        self.animateContainer(isInitial: false)
     }
 }
 

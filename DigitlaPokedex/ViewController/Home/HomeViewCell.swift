@@ -48,7 +48,7 @@ class HomeViewCell: UICollectionViewCell {
     
     func setup(pokemon: PokemonTemp) {
         imageViewPokemon.image = UIImage(named: pokemon.image)
-        labelName.text = pokemon.name
+        labelName.text = pokemon.name.capitalizingFirstLetter()
         labelId.text = "#00\(String(pokemon.id))"
         labelType.text = pokemon.description
     }

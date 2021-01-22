@@ -12,4 +12,9 @@ import RealmSwift
 class PokemonRealm: Object {
     @objc dynamic var name: String!
     @objc dynamic var url: String!
+    
+    
+    func getName() -> String {
+        return "\(String(describing: name))".lowercased()
+    }
 }
