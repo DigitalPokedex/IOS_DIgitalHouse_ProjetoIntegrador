@@ -121,6 +121,8 @@ class SearchScreen: UIView {
         self.tableViewDelegateDataSource = SearchScreenTableViewDelegateDataSource(viewModel: self.viewModel)
         self.tableView.delegate = tableViewDelegateDataSource
         self.tableView.dataSource = tableViewDelegateDataSource
+        let nibName = UINib(nibName: "SearchScreenTableViewCell", bundle: nil)
+        self.tableView.register(nibName, forCellReuseIdentifier: "SearchScreenTableViewCell")
         // self.searchBar.delegate = searchBarDelegate
         
         DispatchQueue.main.async {

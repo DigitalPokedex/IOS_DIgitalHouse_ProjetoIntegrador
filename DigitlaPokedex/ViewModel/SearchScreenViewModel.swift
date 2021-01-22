@@ -11,13 +11,23 @@ import Realm
 import RealmSwift
 
 class SearchScreenViewModel {
-    private var allSimplePokemonData = List<PokemonRealm>()
-    private var filterArray = List<PokemonRealm>()
+    private var allSimplePokemonData = [PokemonRealm]()
+    private var filterArray = [PokemonRealm]()
+    
+    //var allSimplePokemonData = BindableResults(results: try! Realm().objects(PokemonRealm.self))
+    //var filterArray = BindableResults(results: try! Realm().objects(PokemonRealm.self))
+
     
     func loadData() {
         let realm = try! Realm()
         let allSimplePokemonData = realm.objects(PokemonRealm.self)
-        print(allSimplePokemonData.count)
+        for index in 0...(allSimplePokemonData.count - 1) {
+            let pokemon = PokemonRealm()
+            pokemon.name = allSimplePokemonData[index].name
+            pokemon.url = allSimplePokemonData[index].url
+            self.allSimplePokemonData.append(pokemon)
+        }
+        //self.allSimplePokemonData = allSimplePokemonData
         self.filterArray = self.allSimplePokemonData
         
     }
@@ -29,7 +39,12 @@ class SearchScreenViewModel {
     }
     
     func getTableCustomCell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchScreenTableViewCell") as! SearchScreenTableViewCell
+        print(filterArray[indexPath.row])
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchScreenTableViewCell", for: indexPath) as! SearchScreenTableViewCell
+
+        print(indexPath.row)
+        
         cell.setup(pokemon: filterArray[indexPath.row])
         cell.add{ (pokemon) in
             tableView.reloadData()
