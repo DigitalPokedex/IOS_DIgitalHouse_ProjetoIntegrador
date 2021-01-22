@@ -11,7 +11,6 @@ class InitialFavoritesRegistrationViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
     
     var searchScreen: UIView!
     
@@ -30,7 +29,7 @@ class InitialFavoritesRegistrationViewController: UIViewController {
     }
     
     func configureSearchScreen() {
-        searchScreen = SearchScreen(frame: CGRect(x: 00.0, y: 0.0, width: ScreenSettings.screenWidth, height: ScreenSettings.screenHeight), parentViewModel: self.viewModel)
+        searchScreen = SearchScreen(frame: CGRect(x: 00.0, y: 0.0, width: ScreenSettings.screenWidth, height: ScreenSettings.screenHeight), parentViewModel: self.viewModel, isInitialFavorites: true)
         //searchScreen.configureSearchData()// = self.viewModel.allSimplePokemonData
         self.view.addSubview(searchScreen)
     }

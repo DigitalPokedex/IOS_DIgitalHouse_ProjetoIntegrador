@@ -18,6 +18,8 @@ class SearchScreenViewModel {
     var finalModalCenter: CGFloat!
     var mainView: SearchScreen!
     var containerView: UIView!
+    
+    var isInitialFavorites = false
 
     func filterByName(searchQuery: String) {
         filterArray = allSimplePokemonData.filterByName(searchQuery)
@@ -67,7 +69,7 @@ class SearchScreenViewModel {
     }
     
     func getCellHeight(tableView: UITableView, indexPath: IndexPath) -> CGFloat {
-        if(isFavorite(element: self.filterArray[indexPath.row])) {
+        if(isFavorite(element: self.filterArray[indexPath.row]) && isInitialFavorites) {
             return 0
         }
         

@@ -46,10 +46,24 @@ class HomeViewCell: UICollectionViewCell {
     @IBOutlet weak var imageViewPokemon: UIImageView!
     @IBOutlet weak var labelType: UILabel!
     
-    func setup(pokemon: PokemonTemp) {
-        imageViewPokemon.image = UIImage(named: pokemon.image)
+    private var pokemon: Pokemon! = nil
+    
+    func setId(id: Int) -> String {
+        if id < 10 {
+            return "#00\(id)"
+        }
+        if id < 100 {
+            return "#0\(id)"
+        }
+        return "#\(id)"
+    }
+    
+    func setup(pokemon: Pokemon) {
+        let url = URL(string: pokemon.sprites.other.officialartwork.frontDefault)
+        self.pokemon = pokemon
+        imageViewPokemon.kf.setImage(with: url)
         labelName.text = pokemon.name.capitalizingFirstLetter()
-        labelId.text = "#00\(String(pokemon.id))"
+        labelId.text = setId(id: pokemon.id)
         labelType.text = pokemon.description
     }
     

@@ -22,9 +22,10 @@ class SearchScreen: UIView {
     var viewModel = SearchScreenViewModel()
     var parentViewModel: DefaultViewModelProtocol!
 
-    init(frame: CGRect, parentViewModel: DefaultViewModelProtocol) {
+    init(frame: CGRect, parentViewModel: DefaultViewModelProtocol, isInitialFavorites: Bool) {
         super.init(frame: frame)
         self.parentViewModel = parentViewModel
+        viewModel.isInitialFavorites = isInitialFavorites
         self.configureView()
         
         

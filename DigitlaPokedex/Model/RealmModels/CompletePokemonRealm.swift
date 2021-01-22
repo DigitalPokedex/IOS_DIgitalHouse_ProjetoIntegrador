@@ -23,7 +23,7 @@ class CompletePokemonRealm: Object {
     var moves: [Form]? = []
     var order = RealmOptional<Int>()
     var species : Form? = nil
-    var sprites : Sprite? = nil
+    @objc dynamic var sprites : String? = nil
     var stats: [Form]? = []
     var types: [Form]? = []
     var weight = RealmOptional<Int>()
@@ -44,7 +44,7 @@ class CompletePokemonRealm: Object {
         converted.moves = original.moves
         converted.order = RealmOptional(original.order)
         converted.species = original.species
-        converted.sprites = original.sprites
+        converted.sprites = original.sprites.other.officialartwork.frontDefault!
         converted.stats = original.stats
         converted.types = original.types
         converted.weight = RealmOptional(original.weight)
