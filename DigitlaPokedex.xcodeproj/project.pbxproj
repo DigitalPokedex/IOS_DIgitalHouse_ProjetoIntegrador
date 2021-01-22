@@ -22,6 +22,8 @@
 		0BB2A27E25BAACF300F12114 /* HomeScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB2A27D25BAACF300F12114 /* HomeScreenViewModel.swift */; };
 		0BB2A28125BAB93600F12114 /* PokemonFavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB2A28025BAB93600F12114 /* PokemonFavoritesViewModel.swift */; };
 		0BC1E85925AF3FA4008AFBB0 /* ArrayExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1E85825AF3FA3008AFBB0 /* ArrayExtentions.swift */; };
+		0BCB83A9256E7C49003A7FB3 /* PokemonTemp2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCB83A8256E7C49003A7FB3 /* PokemonTemp2.swift */; };
+		0BDDD3FC25B1BFDF0071615A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0BDDD3FB25B1BFDF0071615A /* GoogleService-Info.plist */; };
 		0BDFEADD256C89670068BF14 /* InitialFavoritesRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDFEADC256C89670068BF14 /* InitialFavoritesRegistrationViewController.swift */; };
 		0BDFEAE1256C89740068BF14 /* InitialFavoritesRegistration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BDFEAE0256C89740068BF14 /* InitialFavoritesRegistration.storyboard */; };
 		0BDFEAEC256C90E00068BF14 /* FavoriteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDFEAEB256C90E00068BF14 /* FavoriteCollectionViewCell.swift */; };
@@ -96,6 +98,8 @@
 		0BB2A27D25BAACF300F12114 /* HomeScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewModel.swift; sourceTree = "<group>"; };
 		0BB2A28025BAB93600F12114 /* PokemonFavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonFavoritesViewModel.swift; sourceTree = "<group>"; };
 		0BC1E85825AF3FA3008AFBB0 /* ArrayExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtentions.swift; sourceTree = "<group>"; };
+		0BCB83A8256E7C49003A7FB3 /* PokemonTemp2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonTemp2.swift; sourceTree = "<group>"; };
+		0BDDD3FB25B1BFDF0071615A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0BDFEADC256C89670068BF14 /* InitialFavoritesRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialFavoritesRegistrationViewController.swift; sourceTree = "<group>"; };
 		0BDFEAE0256C89740068BF14 /* InitialFavoritesRegistration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InitialFavoritesRegistration.storyboard; sourceTree = "<group>"; };
 		0BDFEAEB256C90E00068BF14 /* FavoriteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -313,6 +317,7 @@
 				CA1B260F2559852F00EA0BAA /* SceneDelegate.swift */,
 				CA1B26162559853300EA0BAA /* Assets.xcassets */,
 				CA1B261B2559853300EA0BAA /* Info.plist */,
+				0BDDD3FB25B1BFDF0071615A /* GoogleService-Info.plist */,
 			);
 			path = DigitlaPokedex;
 			sourceTree = "<group>";
@@ -471,6 +476,7 @@
 				CA1B26072559852F00EA0BAA /* Frameworks */,
 				CA1B26082559852F00EA0BAA /* Resources */,
 				62383B46A33116D009B47CE9 /* [CP] Embed Pods Frameworks */,
+				1648FFE60A81E4FB9321F1F7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -527,6 +533,7 @@
 				0BEAFA8F2568973300110547 /* FirstScreen.storyboard in Resources */,
 				0BE83ADB25AF7DB1002C6428 /* SearchScreen.xib in Resources */,
 				CA1B26152559852F00EA0BAA /* Home.storyboard in Resources */,
+				0BDDD3FC25B1BFDF0071615A /* GoogleService-Info.plist in Resources */,
 				CADFBCB92559887C009F02E1 /* PokemonDetail.storyboard in Resources */,
 				CA28AB5B256BD4CF00ED2157 /* Evolutions.storyboard in Resources */,
 				0B7DD4BE25B9D007000C51DC /* SearchScreenTableViewCell.xib in Resources */,
@@ -536,6 +543,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1648FFE60A81E4FB9321F1F7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DigitlaPokedex/Pods-DigitlaPokedex-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DigitlaPokedex/Pods-DigitlaPokedex-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DigitlaPokedex/Pods-DigitlaPokedex-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		62383B46A33116D009B47CE9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -802,7 +826,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cetava.DigitlaPokedex;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cetava.DigitalPokedex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -822,7 +846,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cetava.DigitlaPokedex;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cetava.DigitalPokedex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

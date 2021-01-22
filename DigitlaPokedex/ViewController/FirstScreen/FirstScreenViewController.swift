@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class FirstScreenViewController: UIViewController {
 
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var loginButton: UIButton!

@@ -7,6 +7,9 @@
 
 import Foundation
 import UIKit
+import Firebase
+import GoogleSignIn
+
 
 class LoginScreenViewModel {
     private var navigationController: UINavigationController!
@@ -24,8 +27,28 @@ class LoginScreenViewModel {
         navigationController?.pushViewController(signUpViewController, animated: true)
     }
     
-    func toLoginScreen() {
+    func toHomeScreen() {
         let tabbar = TabBarController.shared
         navigationController?.pushViewController(tabbar, animated: true)
     }
+    
+    func loginButtonAction(email: String, password: String) {
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+          guard let strongSelf = self else { return }
+          if((authResult != nil) && error == nil) {
+              strongSelf.toHomeScreen()
+          }
+        }
+    }
+    
+    func googleLogin() {
+        if GIDSignIn.sharedInstance()?.currentUser != nil {
+            toHomeScreen()
+        } else {
+            
+        }
+        
+    }
+    
+   
 }

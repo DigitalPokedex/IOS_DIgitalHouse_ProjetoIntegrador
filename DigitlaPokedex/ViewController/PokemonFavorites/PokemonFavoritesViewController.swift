@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import Firebase
 
 class PokemonFavoritesViewController: UIViewController {
-
+    
     @IBOutlet weak var imageViewLogo: UIImageView!
     @IBOutlet weak var collectionViewPokemon: UICollectionView!
     
@@ -24,8 +25,17 @@ class PokemonFavoritesViewController: UIViewController {
         collectionViewPokemon.dataSource = self
         
     }
-
-
+    @IBAction func logoutButtonAction(_ sender: Any) {
+        //viewModel.toPreviousScreen()
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            navigationController?.popToRootViewController(animated: true)
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+    }
+    
 }
 
 extension PokemonFavoritesViewController: UICollectionViewDelegate {
