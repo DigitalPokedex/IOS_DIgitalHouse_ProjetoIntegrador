@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TAx-JP-Ehc">
-                                <rect key="frame" x="5" y="170" width="404" height="692"/>
+                                <rect key="frame" x="16" y="114" width="382" height="748"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="G0r-9a-NzF">
                                     <size key="itemSize" width="185" height="90"/>
@@ -110,24 +110,33 @@
                                     <constraint firstAttribute="height" constant="54" id="kRS-Ve-un2"/>
                                 </constraints>
                             </imageView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="CJj-Nq-ECN">
-                                <rect key="frame" x="0.0" y="114" width="414" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="60x-HZ-kUA">
+                                <rect key="frame" x="364" y="58" width="20" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="Wel-pm-tFv"/>
+                                    <constraint firstAttribute="height" constant="22" id="nyI-Qg-Cix"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="magnifyingglass" catalog="system"/>
+                                <connections>
+                                    <action selector="searchButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r0k-rp-9rS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TAx-JP-Ehc" secondAttribute="trailing" constant="5" id="6jd-BD-kY6"/>
+                            <constraint firstItem="TAx-JP-Ehc" firstAttribute="top" secondItem="4vV-kD-7Xa" secondAttribute="bottom" constant="16" id="3aI-xn-5D4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TAx-JP-Ehc" secondAttribute="trailing" constant="16" id="6jd-BD-kY6"/>
                             <constraint firstItem="4vV-kD-7Xa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="121" id="Bj2-c2-O8g"/>
-                            <constraint firstItem="CJj-Nq-ECN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Ffc-NY-r9A"/>
                             <constraint firstItem="TAx-JP-Ehc" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="GEq-dM-RUx"/>
+                            <constraint firstItem="60x-HZ-kUA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="14" id="Gbb-U6-KuF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="60x-HZ-kUA" secondAttribute="trailing" constant="30" id="Mjk-FT-wqe"/>
+                            <constraint firstItem="TAx-JP-Ehc" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Vot-6D-dVp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4vV-kD-7Xa" secondAttribute="trailing" constant="121" id="Wn2-Li-bAX"/>
-                            <constraint firstItem="CJj-Nq-ECN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Wvq-ih-eyl"/>
                             <constraint firstItem="4vV-kD-7Xa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="all-zS-TCv"/>
-                            <constraint firstItem="CJj-Nq-ECN" firstAttribute="top" secondItem="4vV-kD-7Xa" secondAttribute="bottom" constant="16" id="euw-bu-fC4"/>
-                            <constraint firstItem="TAx-JP-Ehc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="hU8-Ir-yIf"/>
-                            <constraint firstItem="TAx-JP-Ehc" firstAttribute="top" secondItem="CJj-Nq-ECN" secondAttribute="bottom" id="vNF-rN-dyf"/>
+                            <constraint firstItem="TAx-JP-Ehc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="hU8-Ir-yIf"/>
                         </constraints>
                     </view>
                     <connections>
@@ -141,6 +150,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

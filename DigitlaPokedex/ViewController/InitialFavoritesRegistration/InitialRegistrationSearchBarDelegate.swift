@@ -8,21 +8,18 @@
 import Foundation
 import UIKit
 
-class InitialRegistrationSearchBarDelegate: NSObject, UISearchBarDelegate {
-    let viewModel: InitialFavoritesRegistrationViewModel!
+class SearchBarDelegate: NSObject, UISearchBarDelegate {
+    let viewModel: SearchScreenViewModel!
     let tableView: UITableView?
-    let collectionView: UICollectionView?
     
-    init(viewModel: InitialFavoritesRegistrationViewModel, tableView: UITableView, collectionView: UICollectionView) {
+    init(viewModel: SearchScreenViewModel, tableView: UITableView) {
         self.viewModel = viewModel
         self.tableView = tableView
-        self.collectionView = collectionView
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel.filterByName(searchQuery: searchText)
         tableView?.reloadData()
-        collectionView?.reloadData()
     }
     
     
