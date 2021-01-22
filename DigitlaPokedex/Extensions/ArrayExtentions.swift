@@ -40,9 +40,9 @@ extension Array where Element == PokemonSimpleData {
     }
 }
 
-extension Array where Element == PokemonRealm {
-    func filterByName(_ searchQuery: String) -> [PokemonRealm] {
-        var filterArray = [PokemonRealm]()
+extension Array where Element == SimplePokemonRealm {
+    func filterByName(_ searchQuery: String) -> [SimplePokemonRealm] {
+        var filterArray = [SimplePokemonRealm]()
         if !searchQuery.isEmpty {
             filterArray = self.filter { (element) -> Bool in
                 element.getName().contains(searchQuery.lowercased())

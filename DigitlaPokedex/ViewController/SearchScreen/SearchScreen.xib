@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="containerView" destination="6Bh-qe-Ha2" id="KpG-4Z-1Dv"/>
                 <outlet property="gestureIndicator" destination="HSf-Ep-FgG" id="XfG-zJ-gPU"/>
+                <outlet property="mainView" destination="Ng2-U8-xH2" id="LIl-pO-vB3"/>
                 <outlet property="searchBar" destination="pq1-xR-qU9" id="M4w-RY-Ebl"/>
                 <outlet property="tableView" destination="i65-Gx-dnZ" id="jjm-gL-VkP"/>
             </connections>

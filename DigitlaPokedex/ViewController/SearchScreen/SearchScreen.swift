@@ -10,21 +10,23 @@ import UIKit
 
 class SearchScreen: UIView {
     
+    @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var gestureIndicator: UIView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
-    private var initialModalCenter: CGFloat!
-    private var finalModalCenter: CGFloat!
     
     var tableViewDelegateDataSource: SearchScreenTableViewDelegateDataSource?
     var searchBarDelegate: SearchBarDelegate?
     
     var viewModel = SearchScreenViewModel()
+    var parentViewModel: DefaultViewModelProtocol!
 
-    override init(frame: CGRect) {
+    init(frame: CGRect, parentViewModel: DefaultViewModelProtocol) {
         super.init(frame: frame)
+        self.parentViewModel = parentViewModel
         self.configureView()
+        
         
         setupUI()
     }
@@ -32,26 +34,6 @@ class SearchScreen: UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.configureView()
-    }
-    
-    private func closeScreen() {
-        self.isHidden = true
-    }
-    
-    func configureSearchData() {
-        
-    }
-    
-    func animateContainer(isInitial: Bool) {
-        UIView.animate(withDuration: 0.5,
-                       delay: 0,
-                       options: .curveEaseOut,
-                       animations: {
-                        self.containerView.center.y = isInitial ? CGFloat(0.0) : self.finalModalCenter
-                       },
-                       completion: {_ in
-                        !isInitial ? self.closeScreen() : nil
-                       })
     }
     
     func setupSearchBarIcons() {
@@ -100,13 +82,15 @@ class SearchScreen: UIView {
         guard let view = self.loadViewFromNib(nibName: "SearchScreen") else { return }
         view.frame = self.bounds
         
-        initialModalCenter = self.containerView.center.y
-        finalModalCenter = (initialModalCenter * 2)
+        viewModel.initialModalCenter = self.containerView.center.y
+        viewModel.finalModalCenter = (viewModel.initialModalCenter * 2)
+        viewModel.mainView = self
+        viewModel.containerView = containerView
         
         self.viewModel.loadData()
         self.addSubview(view)
         self.configureTableView()
-        self.animateContainer(isInitial: true)
+        self.viewModel.animateContainer(isInitial: true)
     }
     
     private func setupUI() {
@@ -122,7 +106,7 @@ class SearchScreen: UIView {
     
     func configureTableView() {
         
-        self.tableViewDelegateDataSource = SearchScreenTableViewDelegateDataSource(viewModel: self.viewModel)
+        self.tableViewDelegateDataSource = SearchScreenTableViewDelegateDataSource(viewModel: self.viewModel, parentViewModel: self.parentViewModel)
         self.tableView.delegate = tableViewDelegateDataSource
         self.tableView.dataSource = tableViewDelegateDataSource
         let nib = UINib(nibName: "SearchScreenTableViewCell", bundle: nil)
@@ -135,7 +119,7 @@ class SearchScreen: UIView {
     }
     
     @IBAction func closeButton(_ sender: Any) {
-        self.animateContainer(isInitial: false)
+        self.viewModel.animateContainer(isInitial: false)
     }
 }
 

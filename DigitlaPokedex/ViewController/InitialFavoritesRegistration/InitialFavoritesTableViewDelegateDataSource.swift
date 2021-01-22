@@ -6,6 +6,8 @@
 //
 import Foundation
 import UIKit
+import Realm
+import RealmSwift
 
 class InitialFavoritesTableViewDelegateDataSource: NSObject, UITableViewDelegate, UITableViewDataSource  {
     let viewModel: InitialFavoritesRegistrationViewModel!
@@ -17,8 +19,12 @@ class InitialFavoritesTableViewDelegateDataSource: NSObject, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.viewModel.favoritesList.append(self.viewModel.filterArray[indexPath.row].id)
-        self.viewModel.favoritesList = self.viewModel.sortNumbers(self.viewModel.favoritesList)
+        let realm = try! Realm()
+        try! realm.write {
+            let dataRealm = realm.objects(DataRealm.self)
+            let convertedPokemon = CompletePokemonRealm.convertPokemonToRealm(original: self.viewModel.filterArray[indexPath.row])
+            dataRealm[0].favorites.append(convertedPokemon)
+        }
         collectionView.reloadData()
         tableView.reloadData()
         

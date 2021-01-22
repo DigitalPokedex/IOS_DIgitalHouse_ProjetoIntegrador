@@ -24,13 +24,13 @@ class InitialFavoritesRegistrationViewController: UIViewController {
         configureTableView()
         configureCollectionView()
         self.hideKeyboardWhenTappedAround()
-        viewModel.configureViewModel(tableView: tableView, navigationController: self.navigationController)
+        viewModel.configureViewModel(tableView: tableView, navigationController: self.navigationController, collectionView: self.collectionView)
         loadInitialData()
         
     }
     
     func configureSearchScreen() {
-        searchScreen = SearchScreen(frame: CGRect(x: 00.0, y: 0.0, width: ScreenSettings.screenWidth, height: ScreenSettings.screenHeight))
+        searchScreen = SearchScreen(frame: CGRect(x: 00.0, y: 0.0, width: ScreenSettings.screenWidth, height: ScreenSettings.screenHeight), parentViewModel: self.viewModel)
         //searchScreen.configureSearchData()// = self.viewModel.allSimplePokemonData
         self.view.addSubview(searchScreen)
     }

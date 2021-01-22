@@ -11,8 +11,8 @@ class SearchScreenTableViewCell: UITableViewCell {
 
     
     @IBOutlet weak var pokemonName: UILabel!
-    private var pokemon: PokemonRealm! = nil
-    var onAdd: ((_ pokemon: PokemonRealm) -> Void)?
+    private var pokemon: SimplePokemonRealm! = nil
+    var onAdd: ((_ pokemon: SimplePokemonRealm) -> Void)?
     @IBAction func plusButtonAction(_ sender: Any) {
         onAdd?(pokemon!)
     }
@@ -27,11 +27,11 @@ class SearchScreenTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setup(pokemon: PokemonRealm) {
+    func setup(pokemon: SimplePokemonRealm) {
         pokemonName.text = pokemon.name!
     }
     
-    func add(onAdd: @escaping (_ pokemon: PokemonRealm) -> Void) {
+    func add(onAdd: @escaping (_ pokemon: SimplePokemonRealm) -> Void) {
         self.onAdd = onAdd
     }
     

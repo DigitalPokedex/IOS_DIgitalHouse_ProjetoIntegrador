@@ -12,21 +12,33 @@ import Realm
 import RealmSwift
 
 
-class InitialFavoritesRegistrationViewModel {
+class InitialFavoritesRegistrationViewModel: DefaultViewModelProtocol {
     private var navigationController: UINavigationController!
     private var tableView: UITableView!
+    private var collectionView: UICollectionView!
     var pokemonAPI = PokemonAPI()
     var pokemonNumber = 1
     var allSimplePokemonData: [PokemonSimpleData]?
-    var favoritesList = [3, 6, 9]
+    //var favoritesList = [Pokemon]()
     var listWithCompleteData = [Pokemon]()
     
     var filterArray = [Pokemon]()
     
-    func configureViewModel(tableView: UITableView!, navigationController: UINavigationController!) {
+    func returnListWithCompleteData() -> [Pokemon] {
+        return listWithCompleteData
+    }
+    
+    func reloadData() {
+        self.tableView.reloadData()
+        
+        self.collectionView.reloadData()
+    }
+    
+    func configureViewModel(tableView: UITableView!, navigationController: UINavigationController!, collectionView: UICollectionView!) {
         self.navigationController = navigationController
         
         self.tableView = tableView
+        self.collectionView = collectionView
         tableView.addInfiniteScroll { (tableView) -> Void in
             self.loadListWithCompleteData(onComplete: { (listWithCompleteData, success) in
                 tableView.finishInfiniteScroll()
@@ -41,59 +53,59 @@ class InitialFavoritesRegistrationViewModel {
         return sortedElements
     }
     
-    func removeFavorite(id: Int) {
-        let filteredList = favoritesList.filter { favorite in favorite != id }
-        self.favoritesList = filteredList
+    func removeFavorite(withId: Int) {
+        let realm = try! Realm()
+        try! realm.write {
+            let dataRealm = realm.objects(DataRealm.self)
+            let objectsToDelete = realm.objects(CompletePokemonRealm.self).filter("id == \(withId)")
+            realm.delete(objectsToDelete)
+        }
+    }
+    
+    func returnFavorites() -> List<CompletePokemonRealm> {
+        let realm = try! Realm()
+        let dataRealm = realm.objects(DataRealm.self)
+        return dataRealm.count > 0 ? dataRealm[0].favorites : List<CompletePokemonRealm>()
     }
     
     func isFavorite(element: Pokemon) -> Bool {
-        let results = favoritesList.filter { arrayElement in arrayElement == element.id }
+        let results = returnFavorites().filter("id == \(element.id!)")
         return results.count > 0
     }
     
-//    func sortElementsById(_ list: [Pokemon]) -> [Pokemon] {
-//        let sortedElements = list.sorted {
-//            $0.id < $1.id
-//        }
-//        return sortedElements
-//    }
-    
-//    func filterArray(searchQuery: String) {
-//        filterArray = [Pokemon]()
-//        if !searchQuery.isEmpty {
-//            filterArray = listWithCompleteData.filter { (element) -> Bool in
-//                element.getName().contains(searchQuery.lowercased())
-//            }
-//        } else {
-//            filterArray.append(contentsOf: listWithCompleteData)
-//        }
-//    }
+    func sortElementsById(_ list: [AnyObject]) -> [AnyObject] {
+        let sortedElements = list.sorted {
+            $0.id < $1.id
+        }
+        return sortedElements
+    }
     
     func filterByName(searchQuery: String) {
         let filterArray = allSimplePokemonData!.filterByName(searchQuery)
-        print("  ")
-        for index in 0...(filterArray.count - 1) {
-            print("\(index) - \(filterArray[index].name!)")
-        }
     }
     
     func saveDataOnRealm() {
         let realm = try! Realm()
         try! realm.write {
+            let dataRealm = DataRealm()
+            dataRealm.savedData = "savedData"
+            let allSimplePokemonData = List<SimplePokemonRealm>()
             for index in 0...(self.allSimplePokemonData!.count - 1) {
-                let realmPokemon = PokemonRealm()
                 let simpleDataPokemon = self.allSimplePokemonData![index]
+                let realmPokemon = SimplePokemonRealm()
                 realmPokemon.name = simpleDataPokemon.name.capitalizingFirstLetter()
                 realmPokemon.url = simpleDataPokemon.url.capitalizingFirstLetter()
-                realm.add(realmPokemon)
+                allSimplePokemonData.append(realmPokemon)
             }
+            dataRealm.allSimplePokemonData = allSimplePokemonData
+            realm.add(dataRealm)
         }
     }
     
     func loadSimplePokemonList(onComplete: @escaping (Bool) -> Void) {
         let realm = try! Realm()
-        let savedData = realm.objects(PokemonRealm.self)
-        let emptyData = savedData.count == 0
+        let dataRealm = realm.objects(DataRealm.self)
+        let emptyData = dataRealm.count == 0
         
         if(emptyData) {
             pokemonAPI.getAllPokemonSimpleData { (allSimplePokemonData, success) in
@@ -119,12 +131,6 @@ class InitialFavoritesRegistrationViewModel {
     func getTableCustomCell(tableView: UITableView, collectionView: UICollectionView, indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PokemonTableViewCell") as! PokemonTableViewCell
         cell.setup(pokemon: filterArray[indexPath.row])
-//        cell.add{ (pokemon) in
-//            tableView.reloadData()
-//            self.favoritesList.append(pokemon.id)
-//            self.favoritesList = self.sortNumbers(self.favoritesList)
-//            collectionView.reloadData()
-//        }
         return cell
     }
     
@@ -142,16 +148,18 @@ class InitialFavoritesRegistrationViewModel {
     
     
     func getNumberOfCollectionViewCells(collectionView: UICollectionView) -> Int {
-        return self.favoritesList.count
+        
+        return returnFavorites().count
     }
     
     func getCollectionCustomCell(tableView: UITableView, collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FavoriteCollectionViewCell", for: indexPath) as! FavoriteCollectionViewCell
         if(self.listWithCompleteData.count > 0) {
-            cell.setup(pokemon: self.listWithCompleteData[self.favoritesList[indexPath.row] - 1])
+            let index = returnFavorites()[indexPath.row].id.value!
+            cell.setup(pokemon: self.listWithCompleteData[index - 1])
         }
         cell.remove{ (pokemon) in
-            self.removeFavorite(id: pokemon.id!)
+            self.removeFavorite(withId: pokemon.id!)
             collectionView.reloadData()
             tableView.reloadData()
         }

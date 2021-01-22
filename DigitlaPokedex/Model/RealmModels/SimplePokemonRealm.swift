@@ -9,7 +9,7 @@ import Foundation
 import Realm
 import RealmSwift
 
-class PokemonRealm: Object {
+class SimplePokemonRealm: Object {
     @objc dynamic var name: String!
     @objc dynamic var url: String!
     

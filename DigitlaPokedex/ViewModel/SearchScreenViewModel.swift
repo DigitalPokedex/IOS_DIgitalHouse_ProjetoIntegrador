@@ -11,11 +11,13 @@ import Realm
 import RealmSwift
 
 class SearchScreenViewModel {
-    private var allSimplePokemonData = [PokemonRealm]()
-    private var filterArray = [PokemonRealm]()
+    private var allSimplePokemonData = [SimplePokemonRealm]()
+    private var filterArray = [SimplePokemonRealm]()
     
-    //var allSimplePokemonData = BindableResults(results: try! Realm().objects(PokemonRealm.self))
-    //var filterArray = BindableResults(results: try! Realm().objects(PokemonRealm.self))
+    var initialModalCenter: CGFloat!
+    var finalModalCenter: CGFloat!
+    var mainView: SearchScreen!
+    var containerView: UIView!
 
     func filterByName(searchQuery: String) {
         filterArray = allSimplePokemonData.filterByName(searchQuery)
@@ -23,16 +25,57 @@ class SearchScreenViewModel {
     
     func loadData() {
         let realm = try! Realm()
-        let allSimplePokemonData = realm.objects(PokemonRealm.self)
-        for index in 0...(allSimplePokemonData.count - 1) {
-            let pokemon = PokemonRealm()
-            pokemon.name = allSimplePokemonData[index].name
-            pokemon.url = allSimplePokemonData[index].url
+        let dataRealm = realm.objects(DataRealm.self)
+        let savedData = dataRealm[0].allSimplePokemonData
+        
+        for index in 0...(savedData.count - 1) {
+            let pokemon = SimplePokemonRealm()
+            pokemon.name = savedData[index].name
+            pokemon.url = savedData[index].url
             self.allSimplePokemonData.append(pokemon)
         }
-        //self.allSimplePokemonData = allSimplePokemonData
         self.filterArray = self.allSimplePokemonData
         
+    }
+    
+    
+    private func closeScreen() {
+        self.mainView.isHidden = true
+    }
+    
+    func animateContainer(isInitial: Bool) {
+        UIView.animate(withDuration: 0.5,
+                       delay: 0,
+                       options: .curveEaseOut,
+                       animations: {
+                        self.containerView.center.y = isInitial ? CGFloat(0.0) : self.finalModalCenter
+                       },
+                       completion: {_ in
+                        !isInitial ? self.closeScreen() : nil
+                       })
+    }
+    
+    func returnFavorites() -> List<CompletePokemonRealm> {
+        let realm = try! Realm()
+        let dataRealm = realm.objects(DataRealm.self)
+        return dataRealm.count > 0 ? dataRealm[0].favorites : List<CompletePokemonRealm>()
+    }
+    
+    func isFavorite(element: SimplePokemonRealm) -> Bool {
+        let results = returnFavorites().filter{ arrayElement in arrayElement.getName() == element.getName() }
+        return results.count > 0
+    }
+    
+    func getCellHeight(tableView: UITableView, indexPath: IndexPath) -> CGFloat {
+        if(isFavorite(element: self.filterArray[indexPath.row])) {
+            return 0
+        }
+        
+        return tableView.rowHeight
+    }
+    
+    func getFilteredArray() -> [SimplePokemonRealm] {
+        return filterArray
     }
     
     func getNumberOfTableViewCells() -> Int {
@@ -46,7 +89,7 @@ class SearchScreenViewModel {
         cell.setup(pokemon: filterArray[indexPath.row])
         cell.add{ (pokemon) in
             tableView.reloadData()
-            //self.favoritesList.append(pokemon.id)
+            //self.favoritesList.append(pokemon)
             //self.favoritesList = self.sortNumbers(self.favoritesList)
         }
         return cell
