@@ -41,7 +41,7 @@ class PokemonTableViewCell: UITableViewCell {
         let url = URL(string: pokemon.sprites.other.officialartwork.frontDefault)
         self.pokemon = pokemon
         pokemonImage.kf.setImage(with: url)
-        pokemonName.text = pokemon.name
+        pokemonName.text = pokemon.name.capitalizingFirstLetter()
         pokemonNumber.text = setId(id: pokemon.id)
     }
     func add(onAdd: @escaping (_ pokemon: Pokemon) -> Void) {

@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 import Firebase
+import GoogleSignIn
+
 
 class LoginScreenViewModel {
     private var navigationController: UINavigationController!
@@ -38,4 +40,15 @@ class LoginScreenViewModel {
           }
         }
     }
+    
+    func googleLogin() {
+        if GIDSignIn.sharedInstance()?.currentUser != nil {
+            toHomeScreen()
+        } else {
+            
+        }
+        
+    }
+    
+   
 }
