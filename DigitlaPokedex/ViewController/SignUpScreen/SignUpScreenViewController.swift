@@ -13,6 +13,13 @@ class SignUpScreenViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
+    @IBOutlet weak var logoImage: UIImageView!
+    
+    let screenHeight = ScreenSettings.screenHeight
+    let screenWidth = ScreenSettings.screenWidth
+    var containerHeight = CGFloat(380)
+    
     var viewModel = SignUpScreenViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,13 +32,7 @@ class SignUpScreenViewController: UIViewController {
         setupUI()
     }
     
-    func configureInputsContainer() {
-        inputsContainer.layer.cornerRadius = 35
-        inputsContainer.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        inputsContainer.layer.masksToBounds = true
-        let screenHeight = ScreenSettings.screenHeight
-        let screenWidth = ScreenSettings.screenWidth
-        var containerHeight = CGFloat(380)
+    func calculateContainerHeight() {
         if screenHeight * 0.7278 >= containerHeight {
             if screenHeight * 0.7278 > 591 {
                 containerHeight = CGFloat(591)
@@ -39,8 +40,22 @@ class SignUpScreenViewController: UIViewController {
                 containerHeight = screenHeight * 0.7278
             }
         }
+    }
+    
+    func configureInputsContainer() {
+        inputsContainer.layer.cornerRadius = 35
+        inputsContainer.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        inputsContainer.layer.masksToBounds = true
         
-        inputsContainer.frame = CGRect(x: 0, y: screenHeight - CGFloat(containerHeight), width: screenWidth, height: containerHeight)
+        inputsContainer.frame = CGRect(x: 0, y: self.screenHeight - CGFloat(self.containerHeight), width: self.screenWidth, height: self.containerHeight)
+    }
+    
+    func configureLogo() {
+        let x = logoImage.frame.origin.x
+        let y = self.screenHeight - CGFloat(self.containerHeight) - 30.0
+        logoImage.frame = CGRect(x: x, y: y, width: 193, height: 61)
+        
+        self.view.bringSubviewToFront(logoImage)
     }
     
     func configureTextField(textField: UITextField) {
@@ -53,7 +68,9 @@ class SignUpScreenViewController: UIViewController {
     func setupUI() {
         view.addSubview(inputsContainer)
         
+        calculateContainerHeight()
         configureInputsContainer()
+        configureLogo()
         
         configureTextField(textField: nameTextField)
         configureTextField(textField: passwordTextField)
@@ -65,11 +82,11 @@ class SignUpScreenViewController: UIViewController {
     }
     
     @IBAction func saveButtonAction(_ sender: Any) {
-        viewModel.toInitialFavoritesRegistrationScreen()
+        viewModel.saveButtonAction(email: emailTextField.text!, password: passwordTextField.text!)
     }
 }
 
-extension ViewController: UITextFieldDelegate {
+extension FirstScreenViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 //        if (textField == textFieldName) {
 //            if(itemList.exists(textFieldName.text!)) {

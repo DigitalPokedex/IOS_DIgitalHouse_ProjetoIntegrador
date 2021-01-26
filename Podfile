@@ -10,6 +10,9 @@ target 'DigitlaPokedex' do
   pod 'Kingfisher'
   pod 'UIScrollView-InfiniteScroll', '~> 1.0.0'
   pod 'RealmSwift'
-
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
+  pod 'FBSDKLoginKit'
 
 end

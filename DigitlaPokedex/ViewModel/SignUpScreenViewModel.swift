@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 class SignUpScreenViewModel {
     private var navigationController: UINavigationController!
@@ -23,4 +24,16 @@ class SignUpScreenViewModel {
     func toPreviousScreen() {
         navigationController?.popViewController(animated: true)
     }
+    
+    func saveButtonAction(email: String, password: String) {
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+            if((authResult != nil) && error == nil) {
+                self.toInitialFavoritesRegistrationScreen()
+            }
+            else {
+                print(authResult, error)
+            }
+        }
+    }
+    
 }

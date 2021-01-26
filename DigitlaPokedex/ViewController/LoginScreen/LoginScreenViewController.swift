@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import GoogleSignIn
 
 class LoginScreenViewController: UIViewController {
 
@@ -16,11 +17,19 @@ class LoginScreenViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var passwordInput: UITextField!
     @IBOutlet weak var emailInput: UITextField!
+    @IBOutlet weak var googleSignInButton: GIDSignInButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         viewModel.setupNavigationController(navigationController: self.navigationController)
+        
+        
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        viewModel.googleLogin()
+        
     }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -66,9 +75,11 @@ class LoginScreenViewController: UIViewController {
         viewModel.toPreviousScreen()
     }
     @IBAction func loginButtonAction(_ sender: Any) {
-        viewModel.toLoginScreen()
+        viewModel.loginButtonAction(email: emailInput.text!, password: passwordInput.text!)
     }
     @IBAction func signUpButtonAction(_ sender: Any) {
         viewModel.toSignUpScreen()
     }
+    
+
 }
