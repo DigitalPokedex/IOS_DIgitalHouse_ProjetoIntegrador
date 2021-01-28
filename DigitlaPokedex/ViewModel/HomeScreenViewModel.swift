@@ -87,8 +87,8 @@ class HomeScreenViewModel: DefaultViewModelProtocol {
     }
     
     func getCustomCollectionCell(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeViewCell", for: indexPath) as! HomeViewCell
-        cell.setup(pokemon: filterArray[indexPath.row])
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeAndFavoriteCollectionViewCell", for: indexPath) as! HomeAndFavoriteCollectionViewCell
+        cell.setupFromWeb(pokemon: filterArray[indexPath.row])
         return cell
     }
 

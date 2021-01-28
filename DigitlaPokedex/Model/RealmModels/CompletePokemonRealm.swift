@@ -25,7 +25,7 @@ class CompletePokemonRealm: Object {
     var species : Form? = nil
     @objc dynamic var sprites : String? = nil
     var stats: [Form]? = []
-    var types: [Form]? = []
+    var types: [Type]? = []
     var weight = RealmOptional<Int>()
     
     static func convertPokemonToRealm(original: Pokemon) -> CompletePokemonRealm {
@@ -46,6 +46,8 @@ class CompletePokemonRealm: Object {
         converted.species = original.species
         converted.sprites = original.sprites.other.officialartwork.frontDefault!
         converted.stats = original.stats
+        print(original.types)
+        
         converted.types = original.types
         converted.weight = RealmOptional(original.weight)
         
