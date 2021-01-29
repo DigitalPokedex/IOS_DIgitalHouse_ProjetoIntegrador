@@ -58,7 +58,7 @@ class PokemonFavoritesViewModel {
     
     func getCustomCollectionCell(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeAndFavoriteCollectionViewCell", for: indexPath) as! HomeAndFavoriteCollectionViewCell
-        cell.setupFromDB(pokemon: returnFavorites()[indexPath.row])
+        cell.setup(pokemon: returnFavorites()[indexPath.row])
         return cell
     }
     

@@ -33,36 +33,56 @@ class HomeAndFavoriteCollectionViewCell: UICollectionViewCell {
         return "#\(id)"
     }
     
+    func getBackgroundColor(primaryType: String) -> UIColor? {
+        if let backgroundColor = UIColor(named: "\(primaryType)Background") {
+            return backgroundColor
+        }
+        return UIColor(named: "GrassBackground")
+    }
+    
+    func getTypeColor(primaryType: String) -> UIColor? {
+        if let backgroundColor = UIColor(named: "\(primaryType)Type") {
+            return backgroundColor
+        }
+        return UIColor(named: "GrassType")
+    }
+    
     func setupTypes(_ types: [Type]) {
-        firstTypeLabel.text = types[0].type.name.capitalizingFirstLetter()
+        let primaryType = types[0].type.name.capitalizingFirstLetter()
+        firstTypeLabel.text = primaryType
         firstTypeContainer.layer.cornerRadius = 7
-        firstTypeContainer.backgroundColor = UIColor(named: "GrassType")
+        firstTypeContainer.backgroundColor = getTypeColor(primaryType: primaryType)
         if(types.count > 1) {
             secondTypeLabel.text = types[1].type.name.capitalizingFirstLetter()
             secondTypeContainer.layer.cornerRadius = 7
-            secondTypeContainer.backgroundColor = UIColor(named: "GrassType")
+            secondTypeContainer.backgroundColor = getTypeColor(primaryType: primaryType)
         } else {
             secondTypeContainer.backgroundColor = UIColor(named: "Transparent")
         }
     }
     
-    func setupFromWeb(pokemon: Pokemon) {
+    func setupFromWeb(_ pokemon: Pokemon) {
+        let primaryType = pokemon.types[0].type.name.capitalizingFirstLetter()
         let url = URL(string: pokemon.sprites.other.officialartwork.frontDefault)
         
         pokemonImage.kf.setImage(with: url)
         pokemonName.text = pokemon.name.capitalizingFirstLetter()
         pokemonNumber.text = setId(id: pokemon.id)
         
-        container.backgroundColor = UIColor(named: "GrassBackground")
+        container.backgroundColor = getBackgroundColor(primaryType: primaryType)
+        
         container.layer.cornerRadius = 15
         
         setupTypes(pokemon.types)
     }
 
-    func setupFromDB(pokemon: CompletePokemonRealm) {
+    func setupFromDB(_ pokemon: CompletePokemonRealm) {
+        
         let url = URL(string: pokemon.sprites!)
         
-        container.backgroundColor = UIColor(named: "GrassBackground")
+        let primaryType = pokemon.types![0].type.name.capitalizingFirstLetter()
+        container.backgroundColor = getBackgroundColor(primaryType: primaryType)
+        
         container.layer.cornerRadius = 15
         
         
@@ -72,5 +92,13 @@ class HomeAndFavoriteCollectionViewCell: UICollectionViewCell {
         print(pokemon)
         
         setupTypes(pokemon.types!)
+    }
+    
+    func setup(pokemon: AnyObject?) {
+        if let setupData = pokemon as? CompletePokemonRealm  {
+            setupFromDB(setupData)
+        } else if let setupData = pokemon as? Pokemon {
+            setupFromWeb(setupData)
+        }
     }
 }

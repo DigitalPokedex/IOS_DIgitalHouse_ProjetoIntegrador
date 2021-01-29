@@ -33,7 +33,7 @@ class LoginScreenViewModel {
     }
     
     func loginButtonAction(email: String, password: String) {
-        Auth.auth().signIn(withEmail: "j@j.com", password: "123456") { [weak self] authResult, error in
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
           guard let strongSelf = self else { return }
           if((authResult != nil) && error == nil) {
               strongSelf.toHomeScreen()
