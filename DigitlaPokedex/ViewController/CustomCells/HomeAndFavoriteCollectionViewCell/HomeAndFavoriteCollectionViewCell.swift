@@ -37,14 +37,14 @@ class HomeAndFavoriteCollectionViewCell: UICollectionViewCell {
         if let backgroundColor = UIColor(named: "\(primaryType)Background") {
             return backgroundColor
         }
-        return UIColor(named: "GrassBackground")
+        return UIColor(named: "NormalBackground")
     }
     
     func getTypeColor(primaryType: String) -> UIColor? {
         if let backgroundColor = UIColor(named: "\(primaryType)Type") {
             return backgroundColor
         }
-        return UIColor(named: "GrassType")
+        return UIColor(named: "NormalType")
     }
     
     func setupTypes(_ types: [Type]) {
@@ -57,6 +57,7 @@ class HomeAndFavoriteCollectionViewCell: UICollectionViewCell {
             secondTypeContainer.layer.cornerRadius = 7
             secondTypeContainer.backgroundColor = getTypeColor(primaryType: primaryType)
         } else {
+            secondTypeLabel.text = ""
             secondTypeContainer.backgroundColor = UIColor(named: "Transparent")
         }
     }
