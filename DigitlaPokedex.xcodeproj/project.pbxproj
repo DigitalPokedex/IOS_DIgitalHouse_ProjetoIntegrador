@@ -38,6 +38,8 @@
 		0BFA2C19256E0DA1000CFD22 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA2C18256E0DA1000CFD22 /* UIViewControllerExtensions.swift */; };
 		0BFC375525C06C0C00141F13 /* HomeAndFavoriteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFC375325C06C0C00141F13 /* HomeAndFavoriteCollectionViewCell.swift */; };
 		0BFC375625C06C0C00141F13 /* HomeAndFavoriteCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC375425C06C0C00141F13 /* HomeAndFavoriteCollectionViewCell.xib */; };
+		1917EC3B25C794270055DBB1 /* TypeRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1917EC3A25C794270055DBB1 /* TypeRealm.swift */; };
+		1917EC3E25C794320055DBB1 /* FormRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1917EC3D25C794320055DBB1 /* FormRealm.swift */; };
 		192A1EE325B8FF6600EB31C6 /* SearchScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192A1EE225B8FF6600EB31C6 /* SearchScreenViewModel.swift */; };
 		193EF9D725ABAFD100932ECB /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193EF9D625ABAFD100932ECB /* Pokemon.swift */; };
 		193EF9DA25ABAFFB00932ECB /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193EF9D925ABAFFB00932ECB /* Type.swift */; };
@@ -115,6 +117,8 @@
 		0BFA2C18256E0DA1000CFD22 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		0BFC375325C06C0C00141F13 /* HomeAndFavoriteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAndFavoriteCollectionViewCell.swift; sourceTree = "<group>"; };
 		0BFC375425C06C0C00141F13 /* HomeAndFavoriteCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeAndFavoriteCollectionViewCell.xib; sourceTree = "<group>"; };
+		1917EC3A25C794270055DBB1 /* TypeRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeRealm.swift; sourceTree = "<group>"; };
+		1917EC3D25C794320055DBB1 /* FormRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormRealm.swift; sourceTree = "<group>"; };
 		192A1EE225B8FF6600EB31C6 /* SearchScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenViewModel.swift; sourceTree = "<group>"; };
 		193EF9D625ABAFD100932ECB /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		193EF9D925ABAFFB00932ECB /* Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
@@ -199,6 +203,8 @@
 				0B7DD4B325B9CD82000C51DC /* SimplePokemonRealm.swift */,
 				0BB2A27225BA6ACA00F12114 /* DataRealm.swift */,
 				0BB2A27625BA755F00F12114 /* CompletePokemonRealm.swift */,
+				1917EC3A25C794270055DBB1 /* TypeRealm.swift */,
+				1917EC3D25C794320055DBB1 /* FormRealm.swift */,
 			);
 			path = RealmModels;
 			sourceTree = "<group>";
@@ -624,6 +630,7 @@
 				192A1EE325B8FF6600EB31C6 /* SearchScreenViewModel.swift in Sources */,
 				CA28AB5E256BD4E900ED2157 /* EvolutionsViewController.swift in Sources */,
 				193EF9DA25ABAFFB00932ECB /* Type.swift in Sources */,
+				1917EC3E25C794320055DBB1 /* FormRealm.swift in Sources */,
 				CA65BAAB2571435900207EC0 /* FirstScreenViewModel.swift in Sources */,
 				0BEAFA912568973300110547 /* LoginScreenViewController.swift in Sources */,
 				0BDFEADD256C89670068BF14 /* InitialFavoritesRegistrationViewController.swift in Sources */,
@@ -668,6 +675,7 @@
 				19C03BA625BA60F300E1DF9B /* StringExtensions.swift in Sources */,
 				0B3AA0F925AC191D00E1E149 /* InitialFavoritesCollectionViewDelegateDataSource.swift in Sources */,
 				CA1B26122559852F00EA0BAA /* HomeViewController.swift in Sources */,
+				1917EC3B25C794270055DBB1 /* TypeRealm.swift in Sources */,
 				CA24C1E025681D9600849519 /* FavoritesViewCell.swift in Sources */,
 				0B5138852568985500F1FC11 /* Colors.swift in Sources */,
 				0BB2A27A25BA8F0E00F12114 /* DefaultViewModelProtocol.swift in Sources */,

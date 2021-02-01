@@ -22,9 +22,11 @@ class InitialFavoritesTableViewDelegateDataSource: NSObject, UITableViewDelegate
         let realm = try! Realm()
         try! realm.write {
             let dataRealm = realm.objects(DataRealm.self)
+            
             let convertedPokemon = CompletePokemonRealm.convertPokemonToRealm(original: self.viewModel.filterArray[indexPath.row])
             dataRealm[0].favorites.append(convertedPokemon)
         }
+        
         collectionView.reloadData()
         tableView.reloadData()
         

@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import Realm
+import RealmSwift
 
 class HomeAndFavoriteCollectionViewCell: UICollectionViewCell {
-
+    
     @IBOutlet weak var container: UIView!
     @IBOutlet weak var pokemonImage: UIImageView!
     @IBOutlet weak var pokemonName: UILabel!
@@ -47,18 +49,52 @@ class HomeAndFavoriteCollectionViewCell: UICollectionViewCell {
         return UIColor(named: "NormalType")
     }
     
-    func setupTypes(_ types: [Type]) {
-        let primaryType = types[0].type.name.capitalizingFirstLetter()
-        firstTypeLabel.text = primaryType
-        firstTypeContainer.layer.cornerRadius = 7
-        firstTypeContainer.backgroundColor = getTypeColor(primaryType: primaryType)
-        if(types.count > 1) {
-            secondTypeLabel.text = types[1].type.name.capitalizingFirstLetter()
-            secondTypeContainer.layer.cornerRadius = 7
+    func setupTypesFromWeb(_ types: [Type]) {
+        if(types.count > 0) {
+            let primaryType = types[0].type.name.capitalizingFirstLetter()
+            firstTypeLabel.text = primaryType
+            firstTypeContainer.layer.cornerRadius = 7
+            firstTypeContainer.backgroundColor = getTypeColor(primaryType: primaryType)
             secondTypeContainer.backgroundColor = getTypeColor(primaryType: primaryType)
+            if(types.count > 1) {
+                if let secondType = types[1].type.name?.capitalizingFirstLetter() {
+                    secondTypeLabel.text = secondType
+                    secondTypeContainer.layer.cornerRadius = 7
+                }
+            } else {
+                secondTypeLabel.text = ""
+                secondTypeContainer.backgroundColor = UIColor(named: "Transparent")
+            }
         } else {
-            secondTypeLabel.text = ""
-            secondTypeContainer.backgroundColor = UIColor(named: "Transparent")
+            self.firstTypeLabel.text = ""
+            self.firstTypeContainer.backgroundColor = UIColor(named: "Transparent")
+            self.secondTypeLabel.text = ""
+            self.secondTypeContainer.backgroundColor = UIColor(named: "Transparent")
+        }
+    }
+    
+    func setupTypesFromDB(_ types: List<TypeRealm>) {
+        if(types.count > 0) {
+            if let primaryType = types[0].type.name?.capitalizingFirstLetter() {
+                firstTypeLabel.text = primaryType
+                firstTypeContainer.layer.cornerRadius = 7
+                firstTypeContainer.backgroundColor = getTypeColor(primaryType: primaryType)
+                secondTypeContainer.backgroundColor = getTypeColor(primaryType: primaryType)
+            }
+            if(types.count > 1) {
+                if let secondType = types[1].type.name?.capitalizingFirstLetter() {
+                    secondTypeLabel.text = secondType
+                    secondTypeContainer.layer.cornerRadius = 7
+                }
+            } else {
+                secondTypeLabel.text = ""
+                secondTypeContainer.backgroundColor = UIColor(named: "Transparent")
+            }
+        } else {
+            self.firstTypeLabel.text = ""
+            self.firstTypeContainer.backgroundColor = UIColor(named: "Transparent")
+            self.secondTypeLabel.text = ""
+            self.secondTypeContainer.backgroundColor = UIColor(named: "Transparent")
         }
     }
     
@@ -75,32 +111,29 @@ class HomeAndFavoriteCollectionViewCell: UICollectionViewCell {
         
         pokemonImage.kf.setImage(with: url)
         pokemonName.text = pokemon.name.capitalizingFirstLetter()
-        pokemonName.text = "auhashuasuhusauhashuahuuasuhuhsauasuhasuhsuasauhshu"
         pokemonNumber.text = setId(id: pokemon.id)
         
         container.backgroundColor = getBackgroundColor(primaryType: primaryType)
         
         container.layer.cornerRadius = 15
         
-        setupTypes(pokemon.types)
+        setupTypesFromWeb(pokemon.types)
     }
-
+    
     func setupFromDB(_ pokemon: CompletePokemonRealm) {
-        
-        let url = URL(string: pokemon.sprites!)
-        
-        let primaryType = pokemon.types![0].type.name.capitalizingFirstLetter()
-        //container.backgroundColor = getBackgroundColor(primaryType: primaryType)
+        if let sprites = pokemon.sprites {
+            let url = URL(string: sprites)
+            pokemonImage.kf.setImage(with: url)
+        }
+        if let primaryType = pokemon.types[0].type.name?.capitalizingFirstLetter() {
+            container.backgroundColor = getBackgroundColor(primaryType: primaryType)
+        }
         
         container.layer.cornerRadius = 15
-        
-        
-        pokemonImage.kf.setImage(with: url)
         pokemonName.text = pokemon.name!.capitalizingFirstLetter()
         pokemonNumber.text = setId(id: pokemon.id.value!)
-        print(pokemon)
         
-        setupTypes(pokemon.types!)
+        setupTypesFromDB(pokemon.types)
     }
     
     func setup(pokemon: AnyObject?) {
