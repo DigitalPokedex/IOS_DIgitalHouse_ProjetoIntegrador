@@ -21,7 +21,7 @@ class SearchScreen: UIView {
     
     var viewModel = SearchScreenViewModel()
     var parentViewModel: DefaultViewModelProtocol!
-
+    
     init(frame: CGRect, parentViewModel: DefaultViewModelProtocol, isInitialFavorites: Bool) {
         super.init(frame: frame)
         self.parentViewModel = parentViewModel
@@ -72,11 +72,11 @@ class SearchScreen: UIView {
         setupSearchBarIcons()
         
         self.searchBarDelegate = SearchBarDelegate(viewModel: self.viewModel, tableView: self.tableView!)
-         self.searchBar.delegate = searchBarDelegate
-         
-         DispatchQueue.main.async {
+        self.searchBar.delegate = searchBarDelegate
+        
+        DispatchQueue.main.async {
             self.tableView.reloadData()
-         }
+        }
     }
     
     private func configureView() {
