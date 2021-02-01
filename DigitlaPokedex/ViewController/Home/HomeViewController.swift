@@ -20,7 +20,6 @@ class HomeViewController: UIViewController {
         
         imageViewLogo.image = UIImage(named: "Logo")
         self.hideKeyboardWhenTappedAround()
-        loadInitialData()
         collectionViewPokemon.delegate = self
         collectionViewPokemon.dataSource = self
         
@@ -28,6 +27,21 @@ class HomeViewController: UIViewController {
         
         let nib = UINib(nibName: "HomeAndFavoriteCollectionViewCell", bundle: nil)
         self.collectionViewPokemon.register(nib, forCellWithReuseIdentifier: "HomeAndFavoriteCollectionViewCell")
+        
+        self.checkConnection()
+    }
+    
+    func checkConnection() {
+        if Reachability.isConnectedToNetwork() {
+            loadInitialData()
+        } else{
+            let screenHeight = ScreenSettings.screenHeight
+            let screenWidth = ScreenSettings.screenWidth
+            let horizontalPosition = (screenWidth - 350) / 2
+            let verticalPosition = (screenHeight / 2) - 205
+            let emptyState = EmptyState(frame: CGRect(x: CGFloat(horizontalPosition), y: CGFloat(verticalPosition), width: 350.0, height: 410.0))
+            self.view.addSubview(emptyState)
+        }
     }
     
     

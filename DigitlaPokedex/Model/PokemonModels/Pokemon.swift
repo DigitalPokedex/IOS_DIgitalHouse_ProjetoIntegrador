@@ -79,7 +79,7 @@ class Pokemon: NSObject, NSCoding{
         if let typesArray = dictionary["types"] as? [[String:Any]]{
             for dic in typesArray{
                 let value = Type(fromDictionary: dic)
-                print(value)
+                //print(value)
                 
                 types.append(value)
             }
