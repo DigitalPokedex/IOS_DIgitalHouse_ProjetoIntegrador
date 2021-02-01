@@ -67,6 +67,7 @@
 		CADFBCBD255989EA009F02E1 /* PokemonFavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADFBCBC255989EA009F02E1 /* PokemonFavoritesViewController.swift */; };
 		CADFBCC1255989F2009F02E1 /* PokemonFavorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CADFBCC0255989F2009F02E1 /* PokemonFavorites.storyboard */; };
 		CADFBCC5255A2A88009F02E1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADFBCC4255A2A88009F02E1 /* TabBarController.swift */; };
+		CAF515EA25C43A8C00EACA31 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF515E925C43A8C00EACA31 /* FavoritesViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -134,6 +135,7 @@
 		CADFBCBC255989EA009F02E1 /* PokemonFavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonFavoritesViewController.swift; sourceTree = "<group>"; };
 		CADFBCC0255989F2009F02E1 /* PokemonFavorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PokemonFavorites.storyboard; sourceTree = "<group>"; };
 		CADFBCC4255A2A88009F02E1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		CAF515E925C43A8C00EACA31 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -312,6 +314,7 @@
 				19D3D8E925A533E400B6C9D8 /* SignUpScreenViewModel.swift */,
 				19D3D8EC25A5451400B6C9D8 /* InitialFavoritesRegistrationViewModel.swift */,
 				19D3D8EF25A54A5400B6C9D8 /* PokemonAPI.swift */,
+				CAF515E925C43A8C00EACA31 /* FavoritesViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				0BEAFA912568973300110547 /* LoginScreenViewController.swift in Sources */,
 				0BDFEADD256C89670068BF14 /* InitialFavoritesRegistrationViewController.swift in Sources */,
 				0B3AA0F425AC157400E1E149 /* InitialFavoritesTableViewDelegateDataSource.swift in Sources */,
+				CAF515EA25C43A8C00EACA31 /* FavoritesViewModel.swift in Sources */,
 				0BC1E85925AF3FA4008AFBB0 /* ArrayExtentions.swift in Sources */,
 				CA28AB552568C9CF00ED2157 /* PokemonController.swift in Sources */,
 				0BEAFA8E2568973300110547 /* FirstScreenViewController.swift in Sources */,
