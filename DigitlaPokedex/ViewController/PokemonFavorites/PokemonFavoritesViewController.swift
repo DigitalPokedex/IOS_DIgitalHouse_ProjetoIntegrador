@@ -7,8 +7,13 @@
 
 import UIKit
 import Firebase
+import FBSDKLoginKit
+import FBSDKCoreKit
+import GoogleSignIn
 
 class PokemonFavoritesViewController: UIViewController {
+    
+    let viewModel = FavoritesViewModel()
     
     @IBOutlet weak var imageViewLogo: UIImageView!
     @IBOutlet weak var collectionViewPokemon: UICollectionView!
@@ -25,15 +30,10 @@ class PokemonFavoritesViewController: UIViewController {
         collectionViewPokemon.dataSource = self
         
     }
+    
     @IBAction func logoutButtonAction(_ sender: Any) {
-        //viewModel.toPreviousScreen()
-        let firebaseAuth = Auth.auth()
-        do {
-            try firebaseAuth.signOut()
-            navigationController?.popToRootViewController(animated: true)
-        } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
-        }
+        viewModel.logOutConnections()
+        navigationController?.popToRootViewController(animated: true)
     }
     
 }

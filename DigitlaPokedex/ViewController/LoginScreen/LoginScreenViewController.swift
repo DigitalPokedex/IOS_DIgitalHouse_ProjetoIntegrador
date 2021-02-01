@@ -7,6 +7,8 @@
 
 import UIKit
 import GoogleSignIn
+import FBSDKLoginKit
+
 
 class LoginScreenViewController: UIViewController {
 
@@ -17,17 +19,25 @@ class LoginScreenViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var passwordInput: UITextField!
     @IBOutlet weak var emailInput: UITextField!
-    @IBOutlet weak var googleSignInButton: GIDSignInButton!
+    @IBOutlet weak var facebookLoginButton: FBLoginButton!
+    @IBOutlet weak var googleLoginButton: GIDSignInButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.hideKeyboardWhenTappedAround()
         viewModel.setupNavigationController(navigationController: self.navigationController)
         
-        
+        //Google settings
         GIDSignIn.sharedInstance()?.presentingViewController = self
+        NotificationCenter.default.addObserver(self, selector: #selector(didSignIn), name: NSNotification.Name("SuccessfulSignInNotification"), object: nil)
         viewModel.googleLogin()
         
+        //Facebook settings
+        facebookLoginButton.permissions = ["public_profile", "email"]
+        facebookLoginButton.delegate = self
+        viewModel.facebookLogin()
+ 
     }
     
     override func viewDidLayoutSubviews() {
@@ -35,6 +45,7 @@ class LoginScreenViewController: UIViewController {
         
         setupUI()
     }
+    
     
     func configureTextField(textField: UITextField) {
         let leftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 15.0, height: 2.0))
@@ -81,5 +92,20 @@ class LoginScreenViewController: UIViewController {
         viewModel.toSignUpScreen()
     }
     
+    @objc func didSignIn()  {
+        viewModel.googleLogin()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 
+}
+extension LoginScreenViewController: LoginButtonDelegate {
+    func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
+    }
+    
+    func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
+        viewModel.facebookLogin()
+    }
 }
