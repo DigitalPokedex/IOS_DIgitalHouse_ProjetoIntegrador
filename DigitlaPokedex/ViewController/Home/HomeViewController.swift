@@ -39,8 +39,8 @@ class HomeViewController: UIViewController {
             let screenWidth = ScreenSettings.screenWidth
             let horizontalPosition = (screenWidth - 350) / 2
             let verticalPosition = (screenHeight / 2) - 205
-            let emptyState = EmptyState(frame: CGRect(x: CGFloat(horizontalPosition), y: CGFloat(verticalPosition), width: 350.0, height: 410.0))
-            self.view.addSubview(emptyState)
+//            let emptyState = EmptyState(frame: CGRect(x: CGFloat(horizontalPosition), y: CGFloat(verticalPosition), width: 350.0, height: 410.0))
+//            self.view.addSubview(emptyState)
         }
     }
     

@@ -18,7 +18,7 @@ class PokemonFavoritesViewController: UIViewController {
     @IBOutlet weak var imageViewLogo: UIImageView!
     @IBOutlet weak var collectionViewPokemon: UICollectionView!
     
-    var viewModel = PokemonFavoritesViewModel()
+    var viewModel2 = PokemonFavoritesViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,11 +59,11 @@ extension PokemonFavoritesViewController: UICollectionViewDelegate {
 
 extension PokemonFavoritesViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.viewModel.getNumberOfCells(collectionView: collectionView)
+        return self.viewModel2.getNumberOfCells(collectionView: collectionView)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = viewModel.getCustomCollectionCell(collectionView: collectionView, indexPath: indexPath)
+        let cell = viewModel2.getCustomCollectionCell(collectionView: collectionView, indexPath: indexPath)
         
         return cell
     }
