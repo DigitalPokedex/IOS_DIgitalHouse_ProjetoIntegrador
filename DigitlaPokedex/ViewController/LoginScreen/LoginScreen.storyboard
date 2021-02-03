@@ -216,7 +216,7 @@
     </scenes>
     <designables>
         <designable name="ac5-no-nqI">
-            <size key="intrinsicContentSize" width="202" height="28"/>
+            <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
     </designables>
     <resources>

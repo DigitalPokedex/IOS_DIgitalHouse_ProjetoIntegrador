@@ -26,7 +26,7 @@ class LoginScreenViewController: UIViewController {
         super.viewDidLoad()
         
         self.hideKeyboardWhenTappedAround()
-        viewModel.setupNavigationController(navigationController: self.navigationController)
+        viewModel.setupNavigationController(navigationController: self.navigationController, loginScreen: self)
         
         //Google settings
         GIDSignIn.sharedInstance()?.presentingViewController = self

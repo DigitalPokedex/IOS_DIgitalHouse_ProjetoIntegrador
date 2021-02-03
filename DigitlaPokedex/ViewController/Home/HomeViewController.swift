@@ -68,15 +68,6 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let detailView = PokemonDetailViewController.getPokemonDetails() {
-            /*detailView.image = controller.arrayPokemons[indexPath.row].image
-            detailView.name = controller.arrayPokemons[indexPath.row].name
-            detailView.pokemonDescription = controller.arrayPokemons[indexPath.row].type
-            detailView.hp = String(controller.arrayPokemons[indexPath.row].hp)
-            detailView.atk = String(controller.arrayPokemons[indexPath.row].atk)
-            detailView.def = String(controller.arrayPokemons[indexPath.row].def)
-            detailView.stak = String(controller.arrayPokemons[indexPath.row].stak)
-            detailView.sdef = String(controller.arrayPokemons[indexPath.row].sdef)
-            detailView.spd = String(controller.arrayPokemons[indexPath.row].spd)*/
             present(detailView, animated: true, completion: nil)
         }
     }

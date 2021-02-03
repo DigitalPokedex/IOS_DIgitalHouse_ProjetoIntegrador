@@ -13,8 +13,6 @@ import GoogleSignIn
 
 class PokemonFavoritesViewController: UIViewController {
     
-    let viewModel = FavoritesViewModel()
-    
     @IBOutlet weak var imageViewLogo: UIImageView!
     @IBOutlet weak var collectionViewPokemon: UICollectionView!
     
