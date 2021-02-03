@@ -20,11 +20,28 @@ class HomeViewController: UIViewController {
         
         imageViewLogo.image = UIImage(named: "Logo")
         self.hideKeyboardWhenTappedAround()
-        loadInitialData()
         collectionViewPokemon.delegate = self
         collectionViewPokemon.dataSource = self
         
         self.viewModel.configureViewModel(navigationController: self.navigationController, collectionView: self.collectionViewPokemon)
+        
+        let nib = UINib(nibName: "HomeAndFavoriteCollectionViewCell", bundle: nil)
+        self.collectionViewPokemon.register(nib, forCellWithReuseIdentifier: "HomeAndFavoriteCollectionViewCell")
+        
+        self.checkConnection()
+    }
+    
+    func checkConnection() {
+        if Reachability.isConnectedToNetwork() {
+            loadInitialData()
+        } else{
+            let screenHeight = ScreenSettings.screenHeight
+            let screenWidth = ScreenSettings.screenWidth
+            let horizontalPosition = (screenWidth - 350) / 2
+            let verticalPosition = (screenHeight / 2) - 205
+            let emptyState = EmptyState(frame: CGRect(x: CGFloat(horizontalPosition), y: CGFloat(verticalPosition), width: 350.0, height: 410.0))
+            self.view.addSubview(emptyState)
+        }
     }
     
     
@@ -74,5 +91,14 @@ extension HomeViewController: UICollectionViewDataSource {
         let cell = viewModel.getCustomCollectionCell(collectionView: collectionView, indexPath: indexPath)
         
         return cell
+    }
+    
+}
+
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let screenWidth = ScreenSettings.screenWidth
+        let cellWidth = ((screenWidth - 35) / 2)
+        return CGSize(width: cellWidth, height: 80)
     }
 }

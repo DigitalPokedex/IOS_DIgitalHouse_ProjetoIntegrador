@@ -7,8 +7,13 @@
 
 import UIKit
 import Firebase
+import FBSDKLoginKit
+import FBSDKCoreKit
+import GoogleSignIn
 
 class PokemonFavoritesViewController: UIViewController {
+    
+    let viewModel = FavoritesViewModel()
     
     @IBOutlet weak var imageViewLogo: UIImageView!
     @IBOutlet weak var collectionViewPokemon: UICollectionView!
@@ -24,16 +29,13 @@ class PokemonFavoritesViewController: UIViewController {
         collectionViewPokemon.delegate = self
         collectionViewPokemon.dataSource = self
         
+        let nib = UINib(nibName: "HomeAndFavoriteCollectionViewCell", bundle: nil)
+        self.collectionViewPokemon.register(nib, forCellWithReuseIdentifier: "HomeAndFavoriteCollectionViewCell")
     }
+    
     @IBAction func logoutButtonAction(_ sender: Any) {
-        //viewModel.toPreviousScreen()
-        let firebaseAuth = Auth.auth()
-        do {
-            try firebaseAuth.signOut()
-            navigationController?.popToRootViewController(animated: true)
-        } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
-        }
+        viewModel.logOutConnections()
+        navigationController?.popToRootViewController(animated: true)
     }
     
 }
@@ -64,5 +66,13 @@ extension PokemonFavoritesViewController: UICollectionViewDataSource {
         let cell = viewModel.getCustomCollectionCell(collectionView: collectionView, indexPath: indexPath)
         
         return cell
+    }
+}
+
+extension PokemonFavoritesViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let screenWidth = ScreenSettings.screenWidth
+        let cellWidth = ((screenWidth - 35) / 2)
+        return CGSize(width: cellWidth, height: 80)
     }
 }

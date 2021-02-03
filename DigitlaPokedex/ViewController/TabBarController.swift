@@ -44,7 +44,6 @@ class TabBarController: UITabBarController {
 }
 
 
-
 extension UIViewController {
     class func replaceRootViewController(viewController: UIViewController) {
         guard let window = UIApplication.shared.windows.filter({ $0.isKeyWindow }).first

@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import Firebase
 import GoogleSignIn
+import FBSDKLoginKit
 
 
 class LoginScreenViewModel {
@@ -44,11 +45,13 @@ class LoginScreenViewModel {
     func googleLogin() {
         if GIDSignIn.sharedInstance()?.currentUser != nil {
             toHomeScreen()
-        } else {
-            
         }
-        
     }
     
+    func facebookLogin(){
+        if let token = AccessToken.current, !token.isExpired {
+            toHomeScreen()
+        }
+    }
    
 }

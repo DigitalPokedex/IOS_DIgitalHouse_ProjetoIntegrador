@@ -36,6 +36,13 @@
 		0BEAFA922568973300110547 /* SignUpScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEAFA8C2568973300110547 /* SignUpScreenViewController.swift */; };
 		0BEAFA932568973300110547 /* SignUpScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BEAFA8D2568973300110547 /* SignUpScreen.storyboard */; };
 		0BFA2C19256E0DA1000CFD22 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA2C18256E0DA1000CFD22 /* UIViewControllerExtensions.swift */; };
+		0BFC375525C06C0C00141F13 /* HomeAndFavoriteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFC375325C06C0C00141F13 /* HomeAndFavoriteCollectionViewCell.swift */; };
+		0BFC375625C06C0C00141F13 /* HomeAndFavoriteCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC375425C06C0C00141F13 /* HomeAndFavoriteCollectionViewCell.xib */; };
+		1917EC3B25C794270055DBB1 /* TypeRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1917EC3A25C794270055DBB1 /* TypeRealm.swift */; };
+		1917EC3E25C794320055DBB1 /* FormRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1917EC3D25C794320055DBB1 /* FormRealm.swift */; };
+		1917EC4525C7A8100055DBB1 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1917EC4425C7A8100055DBB1 /* Reachability.swift */; };
+		1917EC4C25C7AE4A0055DBB1 /* EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1917EC4B25C7AE4A0055DBB1 /* EmptyState.swift */; };
+		1917EC4F25C7AE780055DBB1 /* EmptyState.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1917EC4E25C7AE780055DBB1 /* EmptyState.xib */; };
 		192A1EE325B8FF6600EB31C6 /* SearchScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192A1EE225B8FF6600EB31C6 /* SearchScreenViewModel.swift */; };
 		193EF9D725ABAFD100932ECB /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193EF9D625ABAFD100932ECB /* Pokemon.swift */; };
 		193EF9DA25ABAFFB00932ECB /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193EF9D925ABAFFB00932ECB /* Type.swift */; };
@@ -82,6 +89,7 @@
 		CADFBCC5255A2A88009F02E1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADFBCC4255A2A88009F02E1 /* TabBarController.swift */; };
 		CAE5B3D9257E726800901863 /* UIProgressViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE5B3D8257E726800901863 /* UIProgressViewExtension.swift */; };
 		CAF57F1225BB3BDE00147BF1 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF57F1125BB3BDE00147BF1 /* DetailViewModel.swift */; };
+		CAF515EA25C43A8C00EACA31 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF515E925C43A8C00EACA31 /* FavoritesViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,6 +122,13 @@
 		0BEAFA8C2568973300110547 /* SignUpScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpScreenViewController.swift; sourceTree = "<group>"; };
 		0BEAFA8D2568973300110547 /* SignUpScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUpScreen.storyboard; sourceTree = "<group>"; };
 		0BFA2C18256E0DA1000CFD22 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		0BFC375325C06C0C00141F13 /* HomeAndFavoriteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAndFavoriteCollectionViewCell.swift; sourceTree = "<group>"; };
+		0BFC375425C06C0C00141F13 /* HomeAndFavoriteCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeAndFavoriteCollectionViewCell.xib; sourceTree = "<group>"; };
+		1917EC3A25C794270055DBB1 /* TypeRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeRealm.swift; sourceTree = "<group>"; };
+		1917EC3D25C794320055DBB1 /* FormRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormRealm.swift; sourceTree = "<group>"; };
+		1917EC4425C7A8100055DBB1 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		1917EC4B25C7AE4A0055DBB1 /* EmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyState.swift; sourceTree = "<group>"; };
+		1917EC4E25C7AE780055DBB1 /* EmptyState.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyState.xib; sourceTree = "<group>"; };
 		192A1EE225B8FF6600EB31C6 /* SearchScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenViewModel.swift; sourceTree = "<group>"; };
 		193EF9D625ABAFD100932ECB /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		193EF9D925ABAFFB00932ECB /* Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
@@ -164,6 +179,7 @@
 		CADFBCC4255A2A88009F02E1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		CAE5B3D8257E726800901863 /* UIProgressViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIProgressViewExtension.swift; sourceTree = "<group>"; };
 		CAF57F1125BB3BDE00147BF1 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		CAF515E925C43A8C00EACA31 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +217,8 @@
 				0B7DD4B325B9CD82000C51DC /* SimplePokemonRealm.swift */,
 				0BB2A27225BA6ACA00F12114 /* DataRealm.swift */,
 				0BB2A27625BA755F00F12114 /* CompletePokemonRealm.swift */,
+				1917EC3A25C794270055DBB1 /* TypeRealm.swift */,
+				1917EC3D25C794320055DBB1 /* FormRealm.swift */,
 			);
 			path = RealmModels;
 			sourceTree = "<group>";
@@ -237,6 +255,7 @@
 			children = (
 				CA24C1E225681DAE00849519 /* HomeViewCell.swift */,
 				CA24C1DF25681D9600849519 /* FavoritesViewCell.swift */,
+				0BFC375225C06BC300141F13 /* HomeAndFavoriteCollectionViewCell */,
 				0BDFEAEB256C90E00068BF14 /* FavoriteCollectionViewCell.swift */,
 				0BDFEAEF256C9D440068BF14 /* PokemonTableViewCell.swift */,
 			);
@@ -279,6 +298,15 @@
 				0BEAFA8D2568973300110547 /* SignUpScreen.storyboard */,
 			);
 			path = SignUpScreen;
+			sourceTree = "<group>";
+		};
+		0BFC375225C06BC300141F13 /* HomeAndFavoriteCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				0BFC375325C06C0C00141F13 /* HomeAndFavoriteCollectionViewCell.swift */,
+				0BFC375425C06C0C00141F13 /* HomeAndFavoriteCollectionViewCell.xib */,
+			);
+			path = HomeAndFavoriteCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		1205C6D6B8E24CD748A67F9D /* Frameworks */ = {
@@ -357,6 +385,7 @@
 		CA953A8D2571393900363E2E /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				1917EC4A25C7AE2D0055DBB1 /* EmptyState */,
 				0BE83AD425AF7D6F002C6428 /* SearchScreen */,
 				CA1B26182559853300EA0BAA /* LaunchScreen.storyboard */,
 				CADFBCC4255A2A88009F02E1 /* TabBarController.swift */,
@@ -383,6 +412,7 @@
 				19D3D8E925A533E400B6C9D8 /* SignUpScreenViewModel.swift */,
 				19D3D8EC25A5451400B6C9D8 /* InitialFavoritesRegistrationViewModel.swift */,
 				19D3D8EF25A54A5400B6C9D8 /* PokemonAPI.swift */,
+				CAF515E925C43A8C00EACA31 /* FavoritesViewModel.swift */,
 				192A1EE225B8FF6600EB31C6 /* SearchScreenViewModel.swift */,
 				0BB2A27925BA8F0E00F12114 /* DefaultViewModelProtocol.swift */,
 				0BB2A27D25BAACF300F12114 /* HomeScreenViewModel.swift */,
@@ -395,6 +425,8 @@
 		CA953A912571395400363E2E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1917EC4325C7A7FF0055DBB1 /* HelpersModels */,
+				1917EC4125C7A7C20055DBB1 /* PokemonModels */,
 				0BB2A27125BA6AA600F12114 /* RealmModels */,
 				19D3D8F225A550D900B6C9D8 /* PokemonSimpleData.swift */,
 				193EF9D625ABAFD100932ECB /* Pokemon.swift */,
@@ -409,6 +441,7 @@
 				193EF9F125ABB25D00932ECB /* VersionGroupDetail.swift */,
 				193EF9F425ABB28600932ECB /* Move.swift */,
 				197DA9A325ABE53E002198DE /* SimultaneousOperationsQueue.swift */,
+				CA28AB572568CB5700ED2157 /* PokemonTemp.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -532,6 +565,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA1B261A2559853300EA0BAA /* LaunchScreen.storyboard in Resources */,
+				1917EC4F25C7AE780055DBB1 /* EmptyState.xib in Resources */,
 				0BEAFA902568973300110547 /* LoginScreen.storyboard in Resources */,
 				0BDFEAE1256C89740068BF14 /* InitialFavoritesRegistration.storyboard in Resources */,
 				CADFBCC1255989F2009F02E1 /* PokemonFavorites.storyboard in Resources */,
@@ -541,6 +575,7 @@
 				0BEAFA8F2568973300110547 /* FirstScreen.storyboard in Resources */,
 				0BE83ADB25AF7DB1002C6428 /* SearchScreen.xib in Resources */,
 				CA1B26152559852F00EA0BAA /* Home.storyboard in Resources */,
+				0BFC375625C06C0C00141F13 /* HomeAndFavoriteCollectionViewCell.xib in Resources */,
 				0BDDD3FC25B1BFDF0071615A /* GoogleService-Info.plist in Resources */,
 				CADFBCB92559887C009F02E1 /* PokemonDetail.storyboard in Resources */,
 				CA28AB5B256BD4CF00ED2157 /* Evolutions.storyboard in Resources */,
@@ -619,18 +654,22 @@
 				192A1EE325B8FF6600EB31C6 /* SearchScreenViewModel.swift in Sources */,
 				CA28AB5E256BD4E900ED2157 /* EvolutionsViewController.swift in Sources */,
 				193EF9DA25ABAFFB00932ECB /* Type.swift in Sources */,
+				1917EC3E25C794320055DBB1 /* FormRealm.swift in Sources */,
 				CA65BAAB2571435900207EC0 /* FirstScreenViewModel.swift in Sources */,
 				0BEAFA912568973300110547 /* LoginScreenViewController.swift in Sources */,
 				CA149D932571514200DBDE79 /* HomeFavoritesViewController.swift in Sources */,
 				0BDFEADD256C89670068BF14 /* InitialFavoritesRegistrationViewController.swift in Sources */,
 				0B3AA0F425AC157400E1E149 /* InitialFavoritesTableViewDelegateDataSource.swift in Sources */,
+				CAF515EA25C43A8C00EACA31 /* FavoritesViewModel.swift in Sources */,
 				0BC1E85925AF3FA4008AFBB0 /* ArrayExtentions.swift in Sources */,
 				CA28AB552568C9CF00ED2157 /* PokemonController.swift in Sources */,
 				0BB2A27725BA756000F12114 /* CompletePokemonRealm.swift in Sources */,
 				0BEAFA8E2568973300110547 /* FirstScreenViewController.swift in Sources */,
 				CADFBCBD255989EA009F02E1 /* PokemonFavoritesViewController.swift in Sources */,
 				CAF57F1225BB3BDE00147BF1 /* DetailViewModel.swift in Sources */,
+				1917EC4C25C7AE4A0055DBB1 /* EmptyState.swift in Sources */,
 				0BB2A27325BA6ACA00F12114 /* DataRealm.swift in Sources */,
+				0BFC375525C06C0C00141F13 /* HomeAndFavoriteCollectionViewCell.swift in Sources */,
 				193EF9E025ABB03100932ECB /* Sprite.swift in Sources */,
 				193EF9EF25ABB18B00932ECB /* Ability.swift in Sources */,
 				0B7DD4BD25B9D007000C51DC /* SearchScreenTableViewCell.swift in Sources */,
@@ -638,6 +677,7 @@
 				CA24C1E325681DAE00849519 /* HomeViewCell.swift in Sources */,
 				19D3D8ED25A5451400B6C9D8 /* InitialFavoritesRegistrationViewModel.swift in Sources */,
 				CAE5B3D9257E726800901863 /* UIProgressViewExtension.swift in Sources */,
+				1917EC4525C7A8100055DBB1 /* Reachability.swift in Sources */,
 				0BFA2C19256E0DA1000CFD22 /* UIViewControllerExtensions.swift in Sources */,
 				193EF9E625ABB07000932ECB /* Other.swift in Sources */,
 				0BDFEAEC256C90E00068BF14 /* FavoriteCollectionViewCell.swift in Sources */,
@@ -666,6 +706,7 @@
 				19C03BA625BA60F300E1DF9B /* StringExtensions.swift in Sources */,
 				0B3AA0F925AC191D00E1E149 /* InitialFavoritesCollectionViewDelegateDataSource.swift in Sources */,
 				CA1B26122559852F00EA0BAA /* HomeViewController.swift in Sources */,
+				1917EC3B25C794270055DBB1 /* TypeRealm.swift in Sources */,
 				CA24C1E025681D9600849519 /* FavoritesViewCell.swift in Sources */,
 				0B5138852568985500F1FC11 /* Colors.swift in Sources */,
 				0BB2A27A25BA8F0E00F12114 /* DefaultViewModelProtocol.swift in Sources */,
