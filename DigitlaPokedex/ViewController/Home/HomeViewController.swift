@@ -11,24 +11,23 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var imageViewLogo: UIImageView!
     @IBOutlet weak var collectionViewPokemon: UICollectionView!
+    var collectionViewDelegateDataSource: HomeScreenCollectionViewDelegateDataSource?
     var searchScreen: UIView!
     var viewModel = HomeScreenViewModel()
-    //var controller = PokemonController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.viewModel.configureViewModel(navigationController: self.navigationController, collectionView: self.collectionViewPokemon)
+        self.setupUI()
+        self.checkConnection()
+    }
+    
+    func setupUI() {
+        configureCollectionView()
         imageViewLogo.image = UIImage(named: "Logo")
         self.hideKeyboardWhenTappedAround()
-        collectionViewPokemon.delegate = self
-        collectionViewPokemon.dataSource = self
-        
-        self.viewModel.configureViewModel(navigationController: self.navigationController, collectionView: self.collectionViewPokemon)
-        
         let nib = UINib(nibName: "HomeAndFavoriteCollectionViewCell", bundle: nil)
         self.collectionViewPokemon.register(nib, forCellWithReuseIdentifier: "HomeAndFavoriteCollectionViewCell")
-        
-        self.checkConnection()
     }
     
     func checkConnection() {
@@ -58,38 +57,18 @@ class HomeViewController: UIViewController {
         self.view.addSubview(searchScreen)
     }
     
+    func configureCollectionView() {
+        self.collectionViewDelegateDataSource = HomeScreenCollectionViewDelegateDataSource(viewModel: self.viewModel, screen: self)
+        self.collectionViewPokemon.delegate = collectionViewDelegateDataSource
+        self.collectionViewPokemon.dataSource = collectionViewDelegateDataSource
+        
+        DispatchQueue.main.async {
+            self.collectionViewPokemon.reloadData()
+        }
+
+    }
+    
     @IBAction func searchButtonAction(_ sender: Any) {
         self.configureSearchScreen()
-    }
-
-
-}
-
-extension HomeViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let detailView = PokemonDetailViewController.getPokemonDetails() {
-            present(detailView, animated: true, completion: nil)
-        }
-    }
-}
-
-extension HomeViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.viewModel.getNumberOfCells(collectionView: collectionView)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = viewModel.getCustomCollectionCell(collectionView: collectionView, indexPath: indexPath)
-        
-        return cell
-    }
-    
-}
-
-extension HomeViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let screenWidth = ScreenSettings.screenWidth
-        let cellWidth = ((screenWidth - 35) / 2)
-        return CGSize(width: cellWidth, height: 80)
     }
 }

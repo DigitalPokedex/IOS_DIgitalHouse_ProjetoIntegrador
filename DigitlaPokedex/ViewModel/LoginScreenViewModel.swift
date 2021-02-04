@@ -59,7 +59,7 @@ class LoginScreenViewModel {
         let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         
         let isInvalidEmail = email == "" || !emailPred.evaluate(with: email)
-        let isInvalidPassword = password == "" || password.count < 7
+        let isInvalidPassword = password == "" || password.count < 6
         
         if(isInvalidEmail || isInvalidPassword) {
             showAlert(isConnectionAlert: false)

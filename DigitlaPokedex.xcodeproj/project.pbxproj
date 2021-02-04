@@ -35,6 +35,7 @@
 		0BEAFA912568973300110547 /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEAFA8A2568973300110547 /* LoginScreenViewController.swift */; };
 		0BEAFA922568973300110547 /* SignUpScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEAFA8C2568973300110547 /* SignUpScreenViewController.swift */; };
 		0BEAFA932568973300110547 /* SignUpScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BEAFA8D2568973300110547 /* SignUpScreen.storyboard */; };
+		0BF134DA25CB903800BD1E5A /* HomeScreenCollectionViewDelegateDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF134D925CB903800BD1E5A /* HomeScreenCollectionViewDelegateDataSource.swift */; };
 		0BFA2C19256E0DA1000CFD22 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA2C18256E0DA1000CFD22 /* UIViewControllerExtensions.swift */; };
 		0BFC375525C06C0C00141F13 /* HomeAndFavoriteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFC375325C06C0C00141F13 /* HomeAndFavoriteCollectionViewCell.swift */; };
 		0BFC375625C06C0C00141F13 /* HomeAndFavoriteCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC375425C06C0C00141F13 /* HomeAndFavoriteCollectionViewCell.xib */; };
@@ -118,6 +119,7 @@
 		0BEAFA8A2568973300110547 /* LoginScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
 		0BEAFA8C2568973300110547 /* SignUpScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpScreenViewController.swift; sourceTree = "<group>"; };
 		0BEAFA8D2568973300110547 /* SignUpScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUpScreen.storyboard; sourceTree = "<group>"; };
+		0BF134D925CB903800BD1E5A /* HomeScreenCollectionViewDelegateDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenCollectionViewDelegateDataSource.swift; sourceTree = "<group>"; };
 		0BFA2C18256E0DA1000CFD22 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		0BFC375325C06C0C00141F13 /* HomeAndFavoriteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAndFavoriteCollectionViewCell.swift; sourceTree = "<group>"; };
 		0BFC375425C06C0C00141F13 /* HomeAndFavoriteCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeAndFavoriteCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -400,6 +402,7 @@
 				CA1B26112559852F00EA0BAA /* HomeViewController.swift */,
 				CA1B26132559852F00EA0BAA /* Home.storyboard */,
 				CA24C1E225681DAE00849519 /* HomeViewCell.swift */,
+				0BF134D925CB903800BD1E5A /* HomeScreenCollectionViewDelegateDataSource.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -694,6 +697,7 @@
 				CA28AB61256BD5CD00ED2157 /* SearchProtocol.swift in Sources */,
 				193EF9E925ABB09800932ECB /* OfficialArtwork.swift in Sources */,
 				0B3AA0FC25AC1B0800E1E149 /* InitialRegistrationSearchBarDelegate.swift in Sources */,
+				0BF134DA25CB903800BD1E5A /* HomeScreenCollectionViewDelegateDataSource.swift in Sources */,
 				CA28AB582568CB5700ED2157 /* PokemonTemp.swift in Sources */,
 				193EF9E325ABB04700932ECB /* Form.swift in Sources */,
 				CA65BAB225714CD000207EC0 /* UILabelBordersExtensions copy.swift in Sources */,
