@@ -17,19 +17,36 @@ class CompletePokemonRealm: Object {
     var height = RealmOptional<Int>()
     var heldItems: [AnyObject]? = []
     var id = RealmOptional<Int>()
-    var isDefault : Bool!
-    var isFavorite: Bool!
-    @objc dynamic var locationAreaEncounters : String!
+    var isDefault = RealmOptional<Bool>()
+    var isFavorite = RealmOptional<Bool>()
+    @objc dynamic var locationAreaEncounters: String? = nil
     var moves: [Form]? = []
     var order = RealmOptional<Int>()
     var species : Form? = nil
     @objc dynamic var sprites : String? = nil
     var stats: [Form]? = []
-    var types: [Form]? = []
+    var types = List<TypeRealm>()
     var weight = RealmOptional<Int>()
     
+    
+    private static func convertToRealmType(_ types: [Type]) -> List<TypeRealm> {
+        let convertedTypes = List<TypeRealm>()
+        for index in 0...(types.count - 1) {
+            let newType = TypeRealm()
+            let newForm = FormRealm()
+            newType.slot = RealmOptional(types[index].slot)
+            newForm.name = types[index].type.name
+            newForm.url = types[index].type.url
+            newType.type = newForm
+            
+            convertedTypes.append(newType)
+        }
+        
+        return convertedTypes
+    }
+    
     static func convertPokemonToRealm(original: Pokemon) -> CompletePokemonRealm {
-        var converted = CompletePokemonRealm()
+        let converted = CompletePokemonRealm()
         
         converted.abilities = original.abilities
         converted.baseExperience = RealmOptional(original.baseExperience)
@@ -38,15 +55,17 @@ class CompletePokemonRealm: Object {
         converted.height = RealmOptional(original.height)
         converted.heldItems = original.heldItems
         converted.id = RealmOptional(original.id)
-        converted.isDefault = original.isDefault
-        converted.isFavorite = original.isFavorite
+        converted.isDefault = RealmOptional(original.isDefault)
+        converted.isFavorite = RealmOptional(original.isFavorite)
         converted.locationAreaEncounters = original.locationAreaEncounters
         converted.moves = original.moves
         converted.order = RealmOptional(original.order)
         converted.species = original.species
         converted.sprites = original.sprites.other.officialartwork.frontDefault!
         converted.stats = original.stats
-        converted.types = original.types
+        //print(original.types)
+        
+        converted.types = self.convertToRealmType(original.types)
         converted.weight = RealmOptional(original.weight)
         
         return converted

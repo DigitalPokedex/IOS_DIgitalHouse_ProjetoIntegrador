@@ -24,7 +24,7 @@ class SignUpScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
-        viewModel.setupNavigationController(navigationController: self.navigationController)
+        viewModel.setupNavigationController(navigationController: self.navigationController, screen: self)
     }
     
     override func viewDidLayoutSubviews() {

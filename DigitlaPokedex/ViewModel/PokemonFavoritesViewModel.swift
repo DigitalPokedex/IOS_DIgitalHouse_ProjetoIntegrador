@@ -16,6 +16,9 @@ import UIKit
 import UIScrollView_InfiniteScroll
 import Realm
 import RealmSwift
+import Firebase
+import GoogleSignIn
+import FBSDKLoginKit
 
 
 class PokemonFavoritesViewModel {
@@ -57,9 +60,27 @@ class PokemonFavoritesViewModel {
     
     
     func getCustomCollectionCell(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FavoritesViewCell", for: indexPath) as! FavoritesViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeAndFavoriteCollectionViewCell", for: indexPath) as! HomeAndFavoriteCollectionViewCell
         cell.setup(pokemon: returnFavorites()[indexPath.row])
         return cell
     }
+
+    func setupNavigationController(navigationController: UINavigationController!) {
+        self.navigationController = navigationController
+    }
     
+    func logOutConnections() {
+        let firebaseAuth = Auth.auth()
+        do {
+            //Facebook Logout
+            let loginManager = LoginManager()
+            loginManager.logOut()
+            //Google Logout
+            GIDSignIn.sharedInstance().signOut()
+            //Firebase Logout
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+    }
 }
