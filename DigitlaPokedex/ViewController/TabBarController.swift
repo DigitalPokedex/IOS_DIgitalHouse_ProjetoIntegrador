@@ -35,6 +35,13 @@ class TabBarController: UITabBarController {
 
             arrayViews.append(viewController2)
         }
+        
+        if let viewController3 = UIStoryboard(name: "Profile", bundle: nil).instantiateInitialViewController() as? ProfileViewController {
+            let image = UIImage(named: "ProfileIcon")
+            let selectedImage = UIImage(named: "ProfileIcon")
+            viewController3.tabBarItem = UITabBarItem(title: "Perfil", image: image, selectedImage: selectedImage)
+            arrayViews.append(viewController3)
+        }
 
         /// AQUI
                 
