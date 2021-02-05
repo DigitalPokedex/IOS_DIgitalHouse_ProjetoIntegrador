@@ -30,7 +30,7 @@
                                     <action selector="previousScreenAction:" destination="b0j-p6-3fT" eventType="touchUpInside" id="Hak-SP-kWb"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Informe seus Pokémon favoritos" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLk-ab-rZD">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select your favorite Pokémons" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLk-ab-rZD">
                                 <rect key="frame" x="93.666666666666686" y="54" width="188" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="188" id="OhL-Q2-tz3"/>
@@ -40,7 +40,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HgM-y6-r6b">
-                                <rect key="frame" x="16" y="189" width="343" height="102"/>
+                                <rect key="frame" x="16" y="118" width="343" height="102"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="102" id="FdE-f0-Jua"/>
@@ -103,7 +103,7 @@
                                 </cells>
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QA8-ls-TlP">
-                                <rect key="frame" x="0.0" y="309" width="375" height="414"/>
+                                <rect key="frame" x="0.0" y="238" width="375" height="485"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PokemonTableViewCell" id="qtn-5L-9O6" customClass="PokemonTableViewCell" customModule="DigitlaPokedex" customModuleProvider="target">
@@ -180,7 +180,7 @@
                                     <constraint firstAttribute="height" constant="45" id="5HH-RS-9WW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                <state key="normal" title="SALVAR">
+                                <state key="normal" title="SAVE">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -192,42 +192,42 @@
                                     <action selector="saveButtonAction:" destination="b0j-p6-3fT" eventType="touchUpInside" id="e10-gr-od2"/>
                                 </connections>
                             </button>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="8Y1-Ji-Ik7">
-                                <rect key="frame" x="0.0" y="118" width="375" height="38"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnE-rq-W6R">
+                                <rect key="frame" x="334" y="64" width="25" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="38" id="NI3-VC-KYm"/>
+                                    <constraint firstAttribute="height" constant="25" id="ist-ei-5Pv"/>
+                                    <constraint firstAttribute="width" constant="25" id="uIt-gS-sdq"/>
                                 </constraints>
-                                <color key="tintColor" name="Primary"/>
-                                <color key="barTintColor" name="Primary"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="magnifyingglass" catalog="system"/>
+                                <connections>
+                                    <action selector="searchButtonAction:" destination="b0j-p6-3fT" eventType="touchUpInside" id="FvU-f9-RlK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dUR-4i-S6h"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="3P6-DR-Mvm" firstAttribute="top" secondItem="QA8-ls-TlP" secondAttribute="bottom" id="0bP-UI-o5V"/>
                             <constraint firstItem="zLk-ab-rZD" firstAttribute="centerX" secondItem="uIa-NY-hec" secondAttribute="centerX" id="7CL-Vk-9xO"/>
-                            <constraint firstItem="8Y1-Ji-Ik7" firstAttribute="leading" secondItem="dUR-4i-S6h" secondAttribute="leading" id="Abn-aD-gJd"/>
+                            <constraint firstItem="dUR-4i-S6h" firstAttribute="trailing" secondItem="bnE-rq-W6R" secondAttribute="trailing" constant="16" id="9Ps-hN-UEd"/>
                             <constraint firstItem="3P6-DR-Mvm" firstAttribute="leading" secondItem="dUR-4i-S6h" secondAttribute="leading" constant="16" id="BhX-j1-LiM"/>
-                            <constraint firstItem="8Y1-Ji-Ik7" firstAttribute="trailing" secondItem="dUR-4i-S6h" secondAttribute="trailing" id="CVj-bb-msq"/>
                             <constraint firstItem="QA8-ls-TlP" firstAttribute="top" secondItem="HgM-y6-r6b" secondAttribute="bottom" constant="18" id="H5A-nm-knh"/>
                             <constraint firstItem="dUR-4i-S6h" firstAttribute="trailing" secondItem="QA8-ls-TlP" secondAttribute="trailing" id="Hxv-RC-S8A"/>
+                            <constraint firstItem="bnE-rq-W6R" firstAttribute="top" secondItem="dUR-4i-S6h" secondAttribute="top" constant="20" id="JSS-Pw-dSh"/>
                             <constraint firstItem="wWt-Xm-Sbs" firstAttribute="leading" secondItem="dUR-4i-S6h" secondAttribute="leading" constant="20" id="KAD-Z0-RUo"/>
                             <constraint firstItem="dUR-4i-S6h" firstAttribute="trailing" secondItem="3P6-DR-Mvm" secondAttribute="trailing" constant="16" id="KN4-TE-NZf"/>
                             <constraint firstItem="zLk-ab-rZD" firstAttribute="top" secondItem="dUR-4i-S6h" secondAttribute="top" constant="10" id="QX9-jZ-quc"/>
                             <constraint firstItem="dUR-4i-S6h" firstAttribute="trailing" secondItem="HgM-y6-r6b" secondAttribute="trailing" constant="16" id="Rce-SB-ouW"/>
                             <constraint firstItem="HgM-y6-r6b" firstAttribute="leading" secondItem="dUR-4i-S6h" secondAttribute="leading" constant="16" id="WIH-xW-nM2"/>
                             <constraint firstItem="dUR-4i-S6h" firstAttribute="bottom" secondItem="3P6-DR-Mvm" secondAttribute="bottom" constant="10" id="YS1-ff-2Jz"/>
-                            <constraint firstItem="HgM-y6-r6b" firstAttribute="top" secondItem="8Y1-Ji-Ik7" secondAttribute="bottom" constant="33" id="iUd-WS-gTM"/>
-                            <constraint firstItem="8Y1-Ji-Ik7" firstAttribute="top" secondItem="zLk-ab-rZD" secondAttribute="bottom" constant="16" id="kvF-9X-o95"/>
+                            <constraint firstItem="HgM-y6-r6b" firstAttribute="top" secondItem="zLk-ab-rZD" secondAttribute="bottom" constant="16" id="qfF-6O-Kre"/>
                             <constraint firstItem="wWt-Xm-Sbs" firstAttribute="top" secondItem="dUR-4i-S6h" secondAttribute="top" constant="20" id="sNC-c1-Xir"/>
                             <constraint firstItem="QA8-ls-TlP" firstAttribute="leading" secondItem="dUR-4i-S6h" secondAttribute="leading" id="ywR-2b-yU0"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="HgM-y6-r6b" id="8GV-em-dCe"/>
-                        <outlet property="searchBar" destination="8Y1-Ji-Ik7" id="F22-U3-zRy"/>
                         <outlet property="tableView" destination="QA8-ls-TlP" id="fJf-dI-fN5"/>
                     </connections>
                 </viewController>
@@ -238,6 +238,7 @@
     </scenes>
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="minus" width="15" height="15"/>
         <image name="plus" width="20" height="20"/>
         <namedColor name="Primary">

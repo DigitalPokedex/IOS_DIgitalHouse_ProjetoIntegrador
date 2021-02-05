@@ -17,6 +17,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="DhG-Tn-W3n">
+                                <rect key="frame" x="110.5" y="421" width="193" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="NB3-lO-ZvR"/>
+                                    <constraint firstAttribute="width" constant="193" id="npT-fp-3Cr"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IzP-F1-Mzk">
                                 <rect key="frame" x="20" y="60" width="25" height="25"/>
                                 <constraints>
@@ -29,7 +36,7 @@
                                     <action selector="previousScreenAction:" destination="H2G-Xb-3x1" eventType="touchUpInside" id="c8j-vt-fWw"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Informe seus dados" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5h6-px-kgE">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your data" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5h6-px-kgE">
                                 <rect key="frame" x="45" y="60" width="324" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -38,8 +45,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nxi-7h-fhx">
                                 <rect key="frame" x="0.0" y="271" width="414" height="591"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEO-nV-nkL">
-                                        <rect key="frame" x="20" y="33" width="42.5" height="16"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEO-nV-nkL">
+                                        <rect key="frame" x="20" y="33" width="42" height="16"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -51,7 +58,7 @@
                                             <constraint firstAttribute="height" constant="45" id="NX9-yy-Sdj"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="0.0"/>
@@ -71,9 +78,9 @@
                                             <constraint firstAttribute="height" constant="45" id="S0k-xb-cem"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senha:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTj-J2-CjB">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTj-J2-CjB">
                                         <rect key="frame" x="20" y="197" width="374" height="16"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                         <nil key="textColor"/>
@@ -95,7 +102,7 @@
                                             <constraint firstAttribute="height" constant="45" id="eOo-KL-md5"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="SALVAR">
+                                        <state key="normal" title="SAVE">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -145,11 +152,14 @@
                             <constraint firstItem="EjM-U5-ab6" firstAttribute="bottom" secondItem="nxi-7h-fhx" secondAttribute="bottom" id="duc-cb-W7b"/>
                             <constraint firstItem="EjM-U5-ab6" firstAttribute="trailing" secondItem="nxi-7h-fhx" secondAttribute="trailing" id="khg-pE-NZP"/>
                             <constraint firstItem="5h6-px-kgE" firstAttribute="top" secondItem="EjM-U5-ab6" secondAttribute="top" constant="16" id="u4V-Cx-MKy"/>
+                            <constraint firstItem="DhG-Tn-W3n" firstAttribute="centerX" secondItem="7Ad-T1-VcJ" secondAttribute="centerX" id="uiz-Sx-JsW"/>
+                            <constraint firstItem="EjM-U5-ab6" firstAttribute="bottom" secondItem="DhG-Tn-W3n" secondAttribute="bottom" constant="380" id="x5S-fb-zxW"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="sTb-6t-e5Z" id="kf7-zI-rbM"/>
                         <outlet property="inputsContainer" destination="nxi-7h-fhx" id="o6p-cc-M8V"/>
+                        <outlet property="logoImage" destination="DhG-Tn-W3n" id="59X-Kh-fsh"/>
                         <outlet property="nameTextField" destination="Abf-FG-HHL" id="w5B-FG-qaH"/>
                         <outlet property="passwordTextField" destination="5Pi-px-1HR" id="nVR-Fx-waO"/>
                     </connections>
@@ -160,6 +170,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Logo" width="193" height="61"/>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <namedColor name="BackgroundGrey">
             <color red="0.94900000095367432" green="0.94900000095367432" blue="0.94900000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

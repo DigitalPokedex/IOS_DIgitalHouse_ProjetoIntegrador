@@ -45,7 +45,7 @@
                                                     <constraint firstAttribute="width" constant="254" id="SDs-MJ-wh0"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                                <state key="normal" title="CADASTRE-SE">
+                                                <state key="normal" title="SIGN UP">
                                                     <color key="titleColor" red="0.53725490200000003" green="0.65098039220000004" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
@@ -67,11 +67,20 @@
                                     <constraint firstItem="5Sx-6M-Iat" firstAttribute="leading" secondItem="Gcc-ZQ-qmP" secondAttribute="leading" id="nfJ-24-hQH"/>
                                 </constraints>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="BFO-Nc-Pxc">
+                                <rect key="frame" x="110.66666666666669" y="587" width="193" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="193" id="A2s-Xa-CSt"/>
+                                    <constraint firstAttribute="height" constant="61" id="ss7-2j-kXN"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Gcc-ZQ-qmP" secondAttribute="bottom" id="Fqv-ct-fPG"/>
+                            <constraint firstItem="BFO-Nc-Pxc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mqs-ex-uun"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BFO-Nc-Pxc" secondAttribute="bottom" constant="214" id="SOU-yo-aMK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Gcc-ZQ-qmP" secondAttribute="trailing" id="aLv-bH-oMm"/>
                             <constraint firstItem="Gcc-ZQ-qmP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="z4p-T2-dz6"/>
                         </constraints>
@@ -107,6 +116,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Logo" width="193" height="61"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

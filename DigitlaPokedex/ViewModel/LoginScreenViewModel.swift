@@ -5,8 +5,8 @@
 //  Created by Jorge Carvalho on 05/01/21.
 //
 
-import Foundation
 import UIKit
+import Foundation
 import Firebase
 import GoogleSignIn
 import FBSDKLoginKit
@@ -14,9 +14,20 @@ import FBSDKLoginKit
 
 class LoginScreenViewModel {
     private var navigationController: UINavigationController!
+    var screen: LoginScreenViewController!
     
-    func setupNavigationController(navigationController: UINavigationController!) {
+    func isConnected() -> Bool {
+        let isConnected = Reachability.isConnectedToNetwork()
+        if(!isConnected) { showAlert(isConnectionAlert: true) }
+        
+        return isConnected
+    }
+    
+    func setupNavigationController(navigationController: UINavigationController!, screen: LoginScreenViewController!) {
         self.navigationController = navigationController
+        self.screen = screen
+        
+        self.isConnected()
     }
     
     func toPreviousScreen() {
@@ -33,12 +44,41 @@ class LoginScreenViewModel {
         navigationController?.pushViewController(tabbar, animated: true)
     }
     
+    func showAlert(isConnectionAlert: Bool) {
+        let title = isConnectionAlert ? "No internet connection!" : "Invalid email or password"
+        let message = isConnectionAlert ? "Please check your network settings and try again." : "Please, try again."
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { action in
+            if (isConnectionAlert) { self.toPreviousScreen() }
+        }))
+        screen.present(alert, animated: true, completion: nil)
+    }
+    
+    func isValidEmailAndPassword(_ email: String, _ password: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        
+        let isInvalidEmail = email == "" || !emailPred.evaluate(with: email)
+        let isInvalidPassword = password == "" || password.count < 6
+        
+        if(isInvalidEmail || isInvalidPassword) {
+            showAlert(isConnectionAlert: false)
+            return false
+        }
+        
+        return true
+    }
+    
     func loginButtonAction(email: String, password: String) {
-        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
-          guard let strongSelf = self else { return }
-          if((authResult != nil) && error == nil) {
-              strongSelf.toHomeScreen()
-          }
+        if(isConnected() && isValidEmailAndPassword(email, password)) {
+            Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+                guard let strongSelf = self else { return }
+                if((authResult != nil) && error == nil) {
+                    strongSelf.toHomeScreen()
+                } else {
+                    self?.showAlert(isConnectionAlert: false)
+                }
+            }
         }
     }
     
@@ -53,5 +93,5 @@ class LoginScreenViewModel {
             toHomeScreen()
         }
     }
-   
+    
 }

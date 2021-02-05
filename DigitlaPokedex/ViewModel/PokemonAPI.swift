@@ -9,9 +9,9 @@ import Foundation
 
 class PokemonAPI: NSObject {
     var apiManager = APIManager()
-    private var pokemonIndex = 1
+    private var pokemonIndex = 0
     private var indexLimit = 0
-    private var maxIndex = 151
+    private var maxIndex = 1118
     private var numberOfTasks = 0
     let dispatchQueue = DispatchQueue(label: "any-label-name")
     let dispatchGroup = DispatchGroup()
@@ -51,7 +51,8 @@ class PokemonAPI: NSObject {
         else { return false }
     }
     
-    private func updateIndexLimit() {
+    private func updateIndexes() {
+        pokemonIndex = pokemonIndex + 1
         indexLimit = indexLimit + 20
     }
     
@@ -84,14 +85,12 @@ class PokemonAPI: NSObject {
     
     func getListWithCompleteData(completion: @escaping ([Pokemon]?, Bool) -> Void) {
         var array = [Pokemon]()
-        updateIndexLimit()
-        print(indexLimit)
+        updateIndexes()
         for index in pokemonIndex...self.indexLimit {
             if(self.shouldLoadMore()) {
                 addTask()
                 self.pokemonIndex = index
                 self.getPokemon{(pokemon, success)  in
-                    //print(pokemon)
                     if let value = pokemon {
                         array.append(value)
                         self.removeTask()
@@ -103,10 +102,5 @@ class PokemonAPI: NSObject {
                 }
             }
         }
-        
-        
-        
-        //print(indexLimit, maxIndex, pokemonIndex, shouldLoadMore())
-        //print(array)
     }
 }

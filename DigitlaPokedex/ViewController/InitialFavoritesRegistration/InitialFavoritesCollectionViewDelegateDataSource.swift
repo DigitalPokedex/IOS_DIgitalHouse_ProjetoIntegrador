@@ -18,7 +18,8 @@ class InitialFavoritesCollectionViewDelegateDataSource: NSObject, UICollectionVi
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(viewModel.favoritesList[indexPath.row])
+        
+        //print(viewModel.favoritesList[indexPath.row])
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
