@@ -68,6 +68,9 @@
 		CADFBCC1255989F2009F02E1 /* PokemonFavorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CADFBCC0255989F2009F02E1 /* PokemonFavorites.storyboard */; };
 		CADFBCC5255A2A88009F02E1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADFBCC4255A2A88009F02E1 /* TabBarController.swift */; };
 		CAF515EA25C43A8C00EACA31 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF515E925C43A8C00EACA31 /* FavoritesViewModel.swift */; };
+		CAF72DF325CAF098008B84A9 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAF72DF225CAF098008B84A9 /* Profile.storyboard */; };
+		CAF72DFB25CAF356008B84A9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF72DFA25CAF356008B84A9 /* ProfileViewController.swift */; };
+		CAF72E1325CCD056008B84A9 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF72E1225CCD056008B84A9 /* ProfileViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -136,6 +139,9 @@
 		CADFBCC0255989F2009F02E1 /* PokemonFavorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PokemonFavorites.storyboard; sourceTree = "<group>"; };
 		CADFBCC4255A2A88009F02E1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		CAF515E925C43A8C00EACA31 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		CAF72DF225CAF098008B84A9 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		CAF72DFA25CAF356008B84A9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		CAF72E1225CCD056008B84A9 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,6 +307,7 @@
 				CA1B2623255987C300EA0BAA /* PokemonDetail */,
 				CA953A9A25713B8000363E2E /* PokemonEvolutions */,
 				0BDFEAEA256C90BF0068BF14 /* CustomCells */,
+				CAF72DF125CAF06D008B84A9 /* Profile */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -315,6 +322,7 @@
 				19D3D8EC25A5451400B6C9D8 /* InitialFavoritesRegistrationViewModel.swift */,
 				19D3D8EF25A54A5400B6C9D8 /* PokemonAPI.swift */,
 				CAF515E925C43A8C00EACA31 /* FavoritesViewModel.swift */,
+				CAF72E1225CCD056008B84A9 /* ProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -396,6 +404,15 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		CAF72DF125CAF06D008B84A9 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				CAF72DF225CAF098008B84A9 /* Profile.storyboard */,
+				CAF72DFA25CAF356008B84A9 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		F0F557FE33F3F436BB80AF80 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -471,6 +488,7 @@
 				CADFBCC1255989F2009F02E1 /* PokemonFavorites.storyboard in Resources */,
 				CA1B26172559853300EA0BAA /* Assets.xcassets in Resources */,
 				0BEAFA932568973300110547 /* SignUpScreen.storyboard in Resources */,
+				CAF72DF325CAF098008B84A9 /* Profile.storyboard in Resources */,
 				0BEAFA8F2568973300110547 /* FirstScreen.storyboard in Resources */,
 				CA1B26152559852F00EA0BAA /* Home.storyboard in Resources */,
 				0BDDD3FC25B1BFDF0071615A /* GoogleService-Info.plist in Resources */,
@@ -567,6 +585,7 @@
 				0BDFEAEC256C90E00068BF14 /* FavoriteCollectionViewCell.swift in Sources */,
 				CA28AB61256BD5CD00ED2157 /* SearchProtocol.swift in Sources */,
 				193EF9E925ABB09800932ECB /* OfficialArtwork.swift in Sources */,
+				CAF72DFB25CAF356008B84A9 /* ProfileViewController.swift in Sources */,
 				0B3AA0FC25AC1B0800E1E149 /* InitialRegistrationSearchBarDelegate.swift in Sources */,
 				CA28AB582568CB5700ED2157 /* PokemonTemp.swift in Sources */,
 				193EF9E325ABB04700932ECB /* Form.swift in Sources */,
@@ -574,6 +593,7 @@
 				0BCB83A9256E7C49003A7FB3 /* PokemonTemp2.swift in Sources */,
 				193EF9DD25ABB01300932ECB /* Stat.swift in Sources */,
 				193EF9D725ABAFD100932ECB /* Pokemon.swift in Sources */,
+				CAF72E1325CCD056008B84A9 /* ProfileViewModel.swift in Sources */,
 				193EF9F225ABB25D00932ECB /* VersionGroupDetail.swift in Sources */,
 				19D3D8F325A550D900B6C9D8 /* PokemonSimpleData.swift in Sources */,
 				19D3D8EA25A533E400B6C9D8 /* SignUpScreenViewModel.swift in Sources */,
