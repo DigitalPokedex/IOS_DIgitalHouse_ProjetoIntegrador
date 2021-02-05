@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FEa-Jy-apx">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Profile View Controller-->
+        <scene sceneID="KgS-ni-30F">
+            <objects>
+                <viewController id="FEa-Jy-apx" customClass="ProfileViewController" customModule="DigitlaPokedex" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Sp-GI-pzK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uoC-vX-IdC">
+                                <rect key="frame" x="20" y="654" width="374" height="45"/>
+                                <color key="backgroundColor" name="Primary"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="1P6-ra-6Yh"/>
+                                    <constraint firstAttribute="height" constant="45" id="iUN-F7-tf7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                <state key="normal" title="LOGOUT">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="actionButtonLogOut:" destination="FEa-Jy-apx" eventType="touchUpInside" id="M6P-j1-g16"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogOut Image" translatesAutoresizingMaskIntoConstraints="NO" id="0pi-mA-Xjb">
+                                <rect key="frame" x="87" y="233" width="240" height="348"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FyR-Hy-RQ0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="uoC-vX-IdC" firstAttribute="leading" secondItem="FyR-Hy-RQ0" secondAttribute="leading" constant="20" id="Bm9-rq-7dE"/>
+                            <constraint firstItem="FyR-Hy-RQ0" firstAttribute="trailing" secondItem="0pi-mA-Xjb" secondAttribute="trailing" constant="87" id="DBp-du-MS6"/>
+                            <constraint firstItem="0pi-mA-Xjb" firstAttribute="leading" secondItem="FyR-Hy-RQ0" secondAttribute="leading" constant="87" id="LIV-Og-C9l"/>
+                            <constraint firstItem="FyR-Hy-RQ0" firstAttribute="bottom" secondItem="uoC-vX-IdC" secondAttribute="bottom" constant="163" id="Li1-f2-Jbh"/>
+                            <constraint firstItem="uoC-vX-IdC" firstAttribute="top" secondItem="0pi-mA-Xjb" secondAttribute="bottom" constant="73" id="Vbr-JV-5Oy"/>
+                            <constraint firstItem="0pi-mA-Xjb" firstAttribute="top" secondItem="FyR-Hy-RQ0" secondAttribute="top" constant="189" id="cgI-g1-B0L"/>
+                            <constraint firstItem="FyR-Hy-RQ0" firstAttribute="trailing" secondItem="uoC-vX-IdC" secondAttribute="trailing" constant="20" id="oWQ-fB-rrx"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zDc-hH-qCL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-200.00000000000003" y="21.428571428571427"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="LogOut Image" width="1012" height="1347"/>
+        <namedColor name="Primary">
+            <color red="0.53700000047683716" green="0.65100002288818359" blue="0.83899998664855957" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

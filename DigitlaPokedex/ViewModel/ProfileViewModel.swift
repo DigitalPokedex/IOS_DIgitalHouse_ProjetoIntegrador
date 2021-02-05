@@ -1,19 +1,24 @@
 //
-//  FavoritesViewModel.swift
+//  ProfileViewModel.swift
 //  DigitlaPokedex
 //
-//  Created by Cesar A. Tavares on 29/01/21.
+//  Created by Cesar A. Tavares on 04/02/21.
 //
 
 import Foundation
 import UIKit
 import Firebase
-import GoogleSignIn
 import FBSDKLoginKit
+import GoogleSignIn
 
 
-class FavoritesViewModel {
+class ProfileViewModel {
     
+    private var navigationController: UINavigationController!
+
+    func setupNavigationController(navigationController: UINavigationController!) {
+        self.navigationController = navigationController
+    }
     
     func logOutConnections() {
         let firebaseAuth = Auth.auth()
@@ -29,6 +34,4 @@ class FavoritesViewModel {
             print ("Error signing out: %@", signOutError)
         }
     }
-    
-    
 }
