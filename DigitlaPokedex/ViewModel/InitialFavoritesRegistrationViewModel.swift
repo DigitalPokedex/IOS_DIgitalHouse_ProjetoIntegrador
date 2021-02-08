@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Firebase
 import UIScrollView_InfiniteScroll
 import Realm
 import RealmSwift
@@ -170,6 +171,8 @@ class InitialFavoritesRegistrationViewModel: DefaultViewModelProtocol {
     func toPreviousScreen() {
         navigationController?.popViewController(animated: true)
     }
+    
+    
     
     func toHomeScreen() {
         let tabbar = TabBarController.shared

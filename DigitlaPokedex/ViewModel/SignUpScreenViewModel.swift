@@ -59,7 +59,18 @@ class SignUpScreenViewModel {
         navigationController?.popViewController(animated: true)
     }
     
+    func saveUserOnFirebase() {
+        var ref: DatabaseReference!
+        //rootRef.child("users").childByAutoId().setValue("hey", forKey: "yo")
+        ref = Database.database().reference()
+        //ref.child("users").childByAutoId().setValue("username", forKey: "yo")
+        ref.child("users").child("64raU3Ex74YwcDkVsZ6a1cIzzBt2").setValue(["username": "Jorge"])
+        //ref.child("users").child("64raU3Ex74YwcDkVsZ6a1cIzzBt2")
+        ref.child("users/64raU3Ex74YwcDkVsZ6a1cIzzBt2/favorites").setValue(["0": "pikachu", "1": "bulbasaur"])
+    }
+    
     func saveButtonAction(email: String, password: String) {
+        self.saveUserOnFirebase()
         if(isConnected() && isValidEmailAndPassword(email, password)) {
             Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                 if((authResult != nil) && error == nil) {
