@@ -96,8 +96,10 @@ class ResumeScreenViewModel {
                                 self.setTitleText()
                             })
     }
-    func toLoginScreen(navigationController: UINavigationController?) {
-        let loginViewController = UIStoryboard(name: "LoginScreen", bundle: nil).instantiateInitialViewController() as! LoginScreenViewController
-        navigationController?.pushViewController(loginViewController, animated: true)
+    func toLoginScreen() {
+        let nav = UIStoryboard(name: "FirstScreen", bundle: nil).instantiateInitialViewController() as! UINavigationController
+        UIApplication.shared.windows.first?.rootViewController = nav
+        //UINavigationController(rootViewController: loginViewController)
+        //navigationController?.pushViewController(loginViewController, animated: true)
     }
 }

@@ -23,9 +23,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let isShowedResumeScreen = UserDefaults.standard.bool(forKey: "isShowedResumeScreen")
         if (!isShowedResumeScreen) {
-            if let viewDefault = ResumeScreenViewController.getFirstScreen() {
-                window?.rootViewController = UINavigationController(rootViewController: viewDefault)
+            if let onboradingVC = ResumeScreenViewController.getFirstScreen() {
+                window?.rootViewController = onboradingVC
+                 //   UINavigationController(rootViewController: viewDefault)
             }
+        } else {
+            //  window?.rootViewController =  UINavigationController(rootViewController: viewDefault) // login view controller
         }
         
         /*else {
