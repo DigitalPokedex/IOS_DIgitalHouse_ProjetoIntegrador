@@ -82,7 +82,7 @@ class SignUpScreenViewController: UIViewController {
     }
     
     @IBAction func saveButtonAction(_ sender: Any) {
-        viewModel.saveButtonAction(email: emailTextField.text!, password: passwordTextField.text!)
+        viewModel.saveButtonAction(name: nameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!)
     }
 }
 

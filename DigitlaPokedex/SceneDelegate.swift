@@ -20,9 +20,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if #available(iOS 13.0, *) {
             window?.overrideUserInterfaceStyle = .light
         }
-        if let viewDefault = ResumeScreenViewController.getFirstScreen() {
-            window?.rootViewController = UINavigationController(rootViewController: viewDefault)
+        
+        let isShowedResumeScreen = UserDefaults.standard.bool(forKey: "isShowedResumeScreen")
+        if (!isShowedResumeScreen) {
+            if let viewDefault = ResumeScreenViewController.getFirstScreen() {
+                window?.rootViewController = UINavigationController(rootViewController: viewDefault)
+            }
         }
+        
         /*else {
             let tabbar = TabBarController.shared
             window?.rootViewController = tabbar

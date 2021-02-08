@@ -22,7 +22,11 @@ class ProfileViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Cancelar", style: .destructive, handler: nil))
         alert.addAction(UIAlertAction(title: "Sair", style: .default, handler: { action in
             self.viewModel.logOutConnections()
-            self.navigationController?.popToRootViewController(animated: true)
+            //viewModel.changeRootViewController()
+            guard let loginVC =  self.navigationController?.viewControllers[1] else { return }
+            self.navigationController?.popToViewController(loginVC, animated: true)
+            
+          //  self.navigationController?.popToRootViewController(animated: true)
         }))
         present(alert, animated: true)
     }

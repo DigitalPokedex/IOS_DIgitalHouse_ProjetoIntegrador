@@ -26,6 +26,7 @@ class ResumeScreenViewController: UIViewController {
     static func getFirstScreen() -> ResumeScreenViewController? {
         if(!ResumeScreenViewModel.existSaveData()) {
             let viewDefault = UIStoryboard(name: "ResumeScreen", bundle: nil).instantiateInitialViewController() as! ResumeScreenViewController
+            UserDefaults.standard.set(true, forKey: "isShowedResumeScreen")
             return viewDefault
         }
         

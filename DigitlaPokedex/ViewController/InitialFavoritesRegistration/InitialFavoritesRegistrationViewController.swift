@@ -48,7 +48,7 @@ class InitialFavoritesRegistrationViewController: UIViewController {
     }
     
     @IBAction func saveButtonAction(_ sender: Any) {
-        viewModel.toHomeScreen()
+        viewModel.saveButtonAction()
     }
     
     @IBAction func previousScreenAction(_ sender: Any) {
