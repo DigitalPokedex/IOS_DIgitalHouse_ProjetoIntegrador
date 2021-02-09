@@ -71,6 +71,21 @@ class PokemonAPI: NSObject {
         completion(nil, false)
     }
     
+    private func getPokemon(index: Int, completion: @escaping (Pokemon?, Bool) -> Void) {
+        apiManager.request(url: "\(baseUrl)/pokemon/\(index)") { (response) in
+            if let dictionary = response as? [String: Any] {
+                let loadedData = Pokemon(fromDictionary: dictionary)
+                
+                //array.append(loadedData)
+                completion(loadedData, true)
+                
+                return
+            }
+            completion(nil, false)
+        }
+        completion(nil, false)
+    }
+    
     func addTask() {
         numberOfTasks = numberOfTasks + 1
     }
@@ -90,7 +105,28 @@ class PokemonAPI: NSObject {
             if(self.shouldLoadMore()) {
                 addTask()
                 self.pokemonIndex = index
-                self.getPokemon{(pokemon, success)  in
+                self.getPokemon(index: index) {(pokemon, success)  in
+                    if let value = pokemon {
+                        array.append(value)
+                        self.removeTask()
+                    }
+                    
+                    if(self.numberOfTasks == 0) {
+                        completion(array, true)
+                    }
+                }
+            }
+        }
+    }
+    
+    func getFavoritesList(ids: [String: Any], completion: @escaping ([Pokemon]?, Bool) -> Void) {
+        var array = [Pokemon]()
+        updateIndexes()
+        
+        for (key, value) in ids {
+            if(self.shouldLoadMore()) {
+                addTask()
+                self.getPokemon(index: Int(key) ?? 0) {(pokemon, success)  in
                     if let value = pokemon {
                         array.append(value)
                         self.removeTask()

@@ -69,6 +69,14 @@ class LoginScreenViewModel {
         return true
     }
     
+    func saveUser() {
+        let firebaseUser = Auth.auth().currentUser
+        let defaults = UserDefaults.standard
+        if let firebaseUser = firebaseUser {
+            defaults.setValue(firebaseUser.uid, forKey: "savedUserId")
+        }
+    }
+    
     func loginButtonAction(email: String, password: String) {
         if(isConnected() && isValidEmailAndPassword(email, password)) {
             Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in

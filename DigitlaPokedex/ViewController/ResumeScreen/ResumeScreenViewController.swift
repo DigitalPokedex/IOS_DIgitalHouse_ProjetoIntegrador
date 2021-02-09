@@ -96,7 +96,6 @@ class ResumeScreenViewController: UIViewController {
         self.viewModel.animateTo(orientation: "right", imagesContainer: imagesContainer, indicatorsContainer: indicatorsContainer)
     }
     @IBAction func toLoginScreenButtonAction(_ sender: Any) {
-       // viewModel.toLoginScreen(navigationController: navigationController)
-        viewModel.toLoginScreen()
+        viewModel.toFirstScreen()
     }
 }

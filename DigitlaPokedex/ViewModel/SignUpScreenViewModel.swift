@@ -71,14 +71,19 @@ class SignUpScreenViewModel {
         //ref.child("users/64raU3Ex74YwcDkVsZ6a1cIzzBt2/favorites").setValue(["0": "pikachu", "1": "bulbasaur"])
     }
     
+    func saveUserDefaults(user: String) {
+        let defaults = UserDefaults.standard
+        defaults.setValue(user, forKey: "savedUserId")
+    }
+    
     func saveButtonAction(name: String, email: String, password: String) {
         if(isConnected() && isValidUser(email, password, name)) {
             Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                 if((authResult != nil) && error == nil) {
-                    print(authResult)
                     let user = Auth.auth().currentUser
                     if let user = user {
                         self.saveUserOnFirebase(user: user.uid, name: name)
+                        self.saveUserDefaults(user: user.uid)
                     }
                     
                     self.toInitialFavoritesRegistrationScreen()

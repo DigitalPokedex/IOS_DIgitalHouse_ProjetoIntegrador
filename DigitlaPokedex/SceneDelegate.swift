@@ -21,20 +21,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window?.overrideUserInterfaceStyle = .light
         }
         
-        let isShowedResumeScreen = UserDefaults.standard.bool(forKey: "isShowedResumeScreen")
+        let defaults = UserDefaults.standard
+        
+        let isShowedResumeScreen = defaults.bool(forKey: "isShowedResumeScreen")
+        let userId = defaults.object(forKey:"savedUserId") as? String ?? ""
+
         if (!isShowedResumeScreen) {
             if let onboradingVC = ResumeScreenViewController.getFirstScreen() {
                 window?.rootViewController = onboradingVC
-                 //   UINavigationController(rootViewController: viewDefault)
             }
-        } else {
-            //  window?.rootViewController =  UINavigationController(rootViewController: viewDefault) // login view controller
-        }
-        
-        /*else {
+        } else if(userId != "")  {
             let tabbar = TabBarController.shared
             window?.rootViewController = tabbar
-        }*/
+        }
         
         window?.makeKeyAndVisible()
         

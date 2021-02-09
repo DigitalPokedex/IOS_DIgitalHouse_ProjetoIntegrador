@@ -30,7 +30,6 @@ class TabBarController: UITabBarController {
         
         if let viewController2 = UIStoryboard(name: "PokemonFavorites", bundle: nil).instantiateInitialViewController() as? PokemonFavoritesViewController {
             let image = UIImage(named: "FavoritesIcon")
-            //let selectedImage = UIImage(named: "ActiveFavoritesIcon")
             viewController2.tabBarItem = UITabBarItem(title: "Favorites", image: image, selectedImage: image)
 
             arrayViews.append(viewController2)

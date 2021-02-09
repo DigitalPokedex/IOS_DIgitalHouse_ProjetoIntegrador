@@ -27,6 +27,10 @@ class PokemonFavoritesViewController: UIViewController {
         collectionViewPokemon.delegate = self
         collectionViewPokemon.dataSource = self
         
+        viewModel.collectionView = collectionViewPokemon
+        
+        viewModel.verifyFavorites()
+        
         let nib = UINib(nibName: "HomeAndFavoriteCollectionViewCell", bundle: nil)
         self.collectionViewPokemon.register(nib, forCellWithReuseIdentifier: "HomeAndFavoriteCollectionViewCell")
     }
