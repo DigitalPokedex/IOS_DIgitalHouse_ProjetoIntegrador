@@ -17,6 +17,7 @@ class PokemonFavoritesViewController: UIViewController {
     @IBOutlet weak var collectionViewPokemon: UICollectionView!
     
     var viewModel = PokemonFavoritesViewModel()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,13 +27,15 @@ class PokemonFavoritesViewController: UIViewController {
         
         collectionViewPokemon.delegate = self
         collectionViewPokemon.dataSource = self
-        
         viewModel.collectionView = collectionViewPokemon
-        
-        viewModel.verifyFavorites()
         
         let nib = UINib(nibName: "HomeAndFavoriteCollectionViewCell", bundle: nil)
         self.collectionViewPokemon.register(nib, forCellWithReuseIdentifier: "HomeAndFavoriteCollectionViewCell")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.verifyFavorites()
     }
     
     @IBAction func logoutButtonAction(_ sender: Any) {

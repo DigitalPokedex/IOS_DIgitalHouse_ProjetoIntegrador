@@ -15,7 +15,7 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
         loadViewControllers()
     }
-
+    
     func loadViewControllers() {
         var arrayViews = [UIViewController]()
 

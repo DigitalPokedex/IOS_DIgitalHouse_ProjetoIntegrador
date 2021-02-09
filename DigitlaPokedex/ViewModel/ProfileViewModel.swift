@@ -75,5 +75,6 @@ class ProfileViewModel {
         removeAllFavorites()
         clearSavedUser()
         changeRootViewController()
+        TabBarController.shared.selectedIndex = 0
     }
 }
