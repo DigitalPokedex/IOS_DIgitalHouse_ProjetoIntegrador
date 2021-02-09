@@ -83,6 +83,7 @@ class LoginScreenViewModel {
                 guard let strongSelf = self else { return }
                 if((authResult != nil) && error == nil) {
                     strongSelf.toHomeScreen()
+                    self?.saveUser()
                 } else {
                     self?.showAlert(isConnectionAlert: false)
                 }
