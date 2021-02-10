@@ -19,11 +19,12 @@ class ProfileViewController: UIViewController {
         
         let alert = UIAlertController(title: "LOGOUT", message: "Tem certeza que deseja sair?", preferredStyle: .actionSheet)
 
-        alert.addAction(UIAlertAction(title: "Cancelar", style: .destructive, handler: nil))
         alert.addAction(UIAlertAction(title: "Sair", style: .default, handler: { action in
+            self.viewModel.setupLogout()
             self.viewModel.logOutConnections()
             self.navigationController?.popToRootViewController(animated: true)
         }))
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .destructive, handler: nil))
         present(alert, animated: true)
     }
     

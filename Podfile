@@ -12,6 +12,7 @@ target 'DigitlaPokedex' do
   pod 'RealmSwift'
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
+  pod 'Firebase/Database'
   pod 'GoogleSignIn'
   pod 'FBSDKLoginKit'
 
