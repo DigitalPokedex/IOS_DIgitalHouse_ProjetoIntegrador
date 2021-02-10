@@ -27,15 +27,25 @@ class HomeScreenCollectionViewDelegateDataSource: NSObject, UICollectionViewDele
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let detailView = PokemonDetailViewController.getPokemonDetails() {
-            screen.present(detailView, animated: true, completion: nil)
-        }
-    }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let screenWidth = ScreenSettings.screenWidth
         let cellWidth = ((screenWidth - 35) / 2)
         return CGSize(width: cellWidth, height: 80)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let detailView = PokemonDetailViewController.getPokemonDetails() {
+            let pokemon = viewModel.filterArray[indexPath.row]
+            detailView.image = pokemon.sprites.other.officialartwork.frontDefault
+            detailView.name = pokemon.name.capitalizingFirstLetter()
+            detailView.hp = String(pokemon.stats[0].baseStat)
+            detailView.atk = String(pokemon.stats[1].baseStat)
+            detailView.def = String(pokemon.stats[2].baseStat)
+            detailView.stak = String(pokemon.stats[3].baseStat)
+            detailView.sdef = String(pokemon.stats[4].baseStat)
+            detailView.spd = String(pokemon.stats[5].baseStat)
+            screen.present(detailView, animated: true, completion: nil)
+        }
+        
     }
 }

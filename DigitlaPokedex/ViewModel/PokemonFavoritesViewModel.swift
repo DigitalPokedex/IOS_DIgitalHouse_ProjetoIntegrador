@@ -31,6 +31,7 @@ class PokemonFavoritesViewModel {
         let firebaseUser = Auth.auth().currentUser
         let defaults = UserDefaults.standard
         let savedUserId = defaults.object(forKey:"savedUserId") as? String ?? ""
+        
         if let firebaseUser = firebaseUser {
             
             defaults.setValue(firebaseUser.uid, forKey: "savedUserId")

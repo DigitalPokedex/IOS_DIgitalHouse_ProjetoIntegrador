@@ -8,12 +8,13 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    
     @IBOutlet weak var imageViewLogo: UIImageView!
     @IBOutlet weak var collectionViewPokemon: UICollectionView!
     var collectionViewDelegateDataSource: HomeScreenCollectionViewDelegateDataSource?
     var searchScreen: UIView!
     var viewModel = HomeScreenViewModel()
+    //    var controller = PokemonConsetuptroller()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,8 +39,8 @@ class HomeViewController: UIViewController {
             let screenWidth = ScreenSettings.screenWidth
             let horizontalPosition = (screenWidth - 350) / 2
             let verticalPosition = (screenHeight / 2) - 205
-            let emptyState = EmptyState(frame: CGRect(x: CGFloat(horizontalPosition), y: CGFloat(verticalPosition), width: 350.0, height: 410.0))
-            self.view.addSubview(emptyState)
+            //            let emptyState = EmptyState(frame: CGRect(x: CGFloat(horizontalPosition), y: CGFloat(verticalPosition), width: 350.0, height: 410.0))
+            //            self.view.addSubview(emptyState)
         }
     }
     
@@ -64,11 +65,11 @@ class HomeViewController: UIViewController {
         
         DispatchQueue.main.async {
             self.collectionViewPokemon.reloadData()
+            
         }
-
     }
-    
     @IBAction func searchButtonAction(_ sender: Any) {
         self.configureSearchScreen()
     }
+    
 }

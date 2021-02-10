@@ -7,6 +7,34 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+<<<<<<< HEAD
+            uuid = "5F6F481E-6FC1-484C-A4A4-FA8E4A052267"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DigitlaPokedex/ViewController/PokemonDetail/PokemonDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "loadDetails()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "95B5C057-E3F2-4017-81CF-8FBB1C12D159"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DigitlaPokedex/ViewController/PokemonDetail/PokemonDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "loadDetails()"
+=======
             uuid = "3216F6C9-CECF-4C94-8065-A35A7A7A95F1"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -17,6 +45,7 @@
             startingLineNumber = "19"
             endingLineNumber = "19"
             landmarkName = "loadViewControllers()"
+>>>>>>> dev
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

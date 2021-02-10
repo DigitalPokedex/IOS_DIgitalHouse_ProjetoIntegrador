@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PokemonDetailViewController: UIViewController {
 
@@ -18,6 +19,13 @@ class PokemonDetailViewController: UIViewController {
     @IBOutlet weak var labelStak: UILabel!
     @IBOutlet weak var labelSdef: UILabel!
     @IBOutlet weak var labelSpd: UILabel!
+
+    @IBOutlet weak var progressViewHp: UIProgressView!
+    @IBOutlet weak var progressViewAtk: UIProgressView!
+    @IBOutlet weak var progressViewDef: UIProgressView!
+    @IBOutlet weak var progressViewStak: UIProgressView!
+    @IBOutlet weak var progressViewSdef: UIProgressView!
+    @IBOutlet weak var progressViewSpd: UIProgressView!
     
     var name: String?
     var pokemonDescription: String?
@@ -29,7 +37,8 @@ class PokemonDetailViewController: UIViewController {
     var sdef: String?
     var spd: String?
     
-    @IBOutlet var progressViewHp: UIView!
+    var maxProgress: Float = 0
+    var currentProgress: Float = 0
     
     
     override func viewDidLoad() {
@@ -39,13 +48,23 @@ class PokemonDetailViewController: UIViewController {
 
     }
     
+    @objc func updateProgress(sender:UIProgressView) {
+        currentProgress = currentProgress + 1.0
+        progressViewHp.progress = currentProgress/100
+        
+        if currentProgress < maxProgress {
+            perform(#selector(updateProgress), with: nil, afterDelay: 0.025)
+        }
+    }
+    
     func loadDetails() {
         if let name = name {
             labelName.text = name
         }
         
         if let image = image {
-            imageViewPokemon.image = UIImage(named: image)
+            let url = URL(string: image)
+            imageViewPokemon.kf.setImage(with: url)
         }
         
         if let description = pokemonDescription {
@@ -54,35 +73,59 @@ class PokemonDetailViewController: UIViewController {
         
         if let hp = hp {
             labelHp.text = hp
+            
+            maxProgress = Float(hp) ?? 0
+            
+            progressViewHp.setProgress(currentProgress, animated: true)
+            progressViewHp.updateProgress(currentProgress: currentProgress, maxProgress: maxProgress)
         }
         
         if let atk = atk {
             labelAtk.text = atk
+            
+            maxProgress = Float(atk) ?? 0
+
+            progressViewAtk.setProgress(currentProgress, animated: true)
+            progressViewAtk.updateProgress(currentProgress: currentProgress, maxProgress: maxProgress)
         }
         
         if let def = def {
             labelDef.text = def
+            
+            maxProgress = Float(def) ?? 0
+
+            progressViewDef.setProgress(currentProgress, animated: true)
+            progressViewDef.updateProgress(currentProgress: currentProgress, maxProgress: maxProgress)
         }
         
         if let stak = stak {
             labelStak.text = stak
+            
+            maxProgress = Float(stak) ?? 0
+
+            progressViewStak.setProgress(currentProgress, animated: true)
+            progressViewStak.updateProgress(currentProgress: currentProgress, maxProgress: maxProgress)
         }
         
         if let sdef = sdef {
             labelSdef.text = sdef
+            
+            maxProgress = Float(sdef) ?? 0
+
+            progressViewSdef.setProgress(currentProgress, animated: true)
+            progressViewSdef.updateProgress(currentProgress: currentProgress, maxProgress: maxProgress)
         }
         
         if let spd = spd {
             labelSpd.text = spd
+            
+            maxProgress = Float(spd) ?? 0
+
+            progressViewSpd.setProgress(currentProgress, animated: true)
+            progressViewSpd.updateProgress(currentProgress: currentProgress, maxProgress: maxProgress)
         }
     }
     
-    
-    @IBAction func actionButtonInfo(_ sender: Any) {
-    }
-    
-    @IBAction func actionButtonEvolution(_ sender: Any) {
-    }
     
     @IBAction func actionButtonClose(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -136,3 +179,4 @@ class PokemonDetailViewController: UIViewController {
 
 
 }
+

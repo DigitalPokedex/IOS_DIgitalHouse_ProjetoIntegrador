@@ -366,8 +366,8 @@
             filePath = "DigitlaPokedex/ViewModel/PokemonFavoritesViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "saveDataOnRealm(favoritesList:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -430,8 +430,8 @@
             filePath = "DigitlaPokedex/ViewModel/PokemonFavoritesViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "verifyFavorites()"
             landmarkType = "7">
          </BreakpointContent>
@@ -478,13 +478,13 @@
             filePath = "DigitlaPokedex/ViewModel/PokemonFavoritesViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "updateFavoritesList(withId:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "8BA56C59-2B03-4F14-A4DB-406B374DA5EF - a6d0aedcce180ce3"
+                  uuid = "8BA56C59-2B03-4F14-A4DB-406B374DA5EF - a6d0aedcce180cc0"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -494,12 +494,12 @@
                   urlString = "file:///Users/jorgeroberto/Documents/IOS%20Projects/IOS_DIgitalHouse_ProjetoIntegrador/DigitlaPokedex/ViewModel/PokemonFavoritesViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
                   offsetFromSymbolStart = "268">
                </Location>
                <Location
-                  uuid = "8BA56C59-2B03-4F14-A4DB-406B374DA5EF - 91dc92fee090a11"
+                  uuid = "8BA56C59-2B03-4F14-A4DB-406B374DA5EF - 91dc92fee090a36"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -509,8 +509,8 @@
                   urlString = "file:///Users/jorgeroberto/Documents/IOS%20Projects/IOS_DIgitalHouse_ProjetoIntegrador/DigitlaPokedex/ViewModel/PokemonFavoritesViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
                   offsetFromSymbolStart = "218">
                </Location>
             </Locations>
@@ -542,8 +542,8 @@
             filePath = "DigitlaPokedex/ViewModel/PokemonFavoritesViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "updateFavoritesList(withId:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -558,8 +558,8 @@
             filePath = "DigitlaPokedex/ViewModel/PokemonFavoritesViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "updateFavoritesList(withId:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -574,8 +574,8 @@
             filePath = "DigitlaPokedex/ViewModel/PokemonFavoritesViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "updateFavoritesList(withId:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -584,7 +584,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "1A79B7D5-D6A4-4FE3-B97A-D8C02B992DBE"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DigitlaPokedex/ViewController/CustomCells/HomeAndFavoriteCollectionViewCell/HomeAndFavoriteCollectionViewCell.swift"
@@ -600,7 +600,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "869CF31C-BA45-49BE-AFBD-BE434B2401A2"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DigitlaPokedex/ViewModel/PokemonAPI.swift"
@@ -609,6 +609,38 @@
             startingLineNumber = "77"
             endingLineNumber = "77"
             landmarkName = "getPokemon(index:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5448855C-6CCA-4F40-BFAE-FC4ABD0B7100"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DigitlaPokedex/ViewModel/PokemonFavoritesViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "verifyFavorites()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4B9DAAA5-60C2-467D-BA94-878434886F05"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DigitlaPokedex/ViewModel/PokemonFavoritesViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "updateFavoritesList(withId:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

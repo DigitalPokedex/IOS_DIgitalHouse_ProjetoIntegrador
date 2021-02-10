@@ -9,9 +9,9 @@ import Foundation
 
 class PokemonController {
     
-    var arrayPokemons = [PokemonTemp]()
-    
-    func getArrayCount() -> Int {
-        return arrayPokemons.count
-    }
+//    var arrayPokemons = [PokemonTemp]()
+//    
+//    func getArrayCount() -> Int {
+//        return arrayPokemons.count
+//    }
 }
