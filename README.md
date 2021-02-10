@@ -59,7 +59,7 @@ Para coletar os dados de cada Pokémon, utilizamos a [PokeAPI](https://pokeapi.c
 <div align="center">
 
 Login | Cadastro
----|---|---
+---|---
 <img width="264" height="568" alt="Preview Login Digital Pokedex" src="loginPreview.gif"> | <img width="264" height="568" alt="Preview Cadastro Digital Pokedex" src="signUpPreview.gif"> 
 
 
@@ -68,7 +68,7 @@ Login | Cadastro
 <br>
 
 Detalhes | Logout
----|---|---
+---|---
 <img width="264" height="568" alt="Preview Login Digital Pokedex" src="detailsPreview.gif"> | <img width="264" height="568" alt="Preview Cadastro Digital Pokedex" src="logoutPreview.gif"> 
 
 </div>
