@@ -60,7 +60,16 @@ Para coletar os dados de cada Pokémon, utilizamos a [PokeAPI](https://pokeapi.c
 
 Login | Cadastro
 ---|---|---
-<img width="264" height="568" alt="Preview Login Digital Pokedex" src=""> | <img width="264" height="568" alt="Preview Cadastro Digital Pokedex" src=""> 
+<img width="264" height="568" alt="Preview Login Digital Pokedex" src="loginPreview.gif"> | <img width="264" height="568" alt="Preview Cadastro Digital Pokedex" src="signUpPreview.gif"> 
+
+
+<br>
+<br>
+<br>
+
+Detalhes | Logout
+---|---|---
+<img width="264" height="568" alt="Preview Login Digital Pokedex" src="detailsPreview.gif"> | <img width="264" height="568" alt="Preview Cadastro Digital Pokedex" src="logoutPreview.gif"> 
 
 </div>
 
@@ -99,20 +108,6 @@ $ pod install
 Abrir o projeto no Xcode e executar a aplicação.
 ```
 
-<br> <br>
-
----
----
-
-<br> <br>
-
-<p align="center">
-  <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png" alt="BackEndBR" width="200" />
-</p>
-
-## Aceitamos sugestões para melhorar o nosso projeto :)
-
-**Qualquer dificuldade na instalação do Xcode ou na execução do projeto, estamos a disposição nos emails: cetava@gmail.com e joorgercj@dcomp.ufs.br**
 
 <br> <br>
 
@@ -154,3 +149,19 @@ Abrir o projeto no Xcode e executar a aplicação.
   [![Gmail Badge](https://img.shields.io/badge/-jorgercjo@dcomp.ufs.br-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:jorgercjo@dcomp.ufs.br)](mailto:jorgercjo@dcomp.ufs.br)
   </div>
 </div>
+
+
+<br> <br>
+
+---
+---
+
+<br> <br>
+
+<p align="center">
+  <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png" alt="BackEndBR" width="200" />
+</p>
+
+## Aceitamos sugestões para melhorar o nosso projeto :)
+
+**Qualquer dificuldade na instalação do Xcode ou na execução do projeto, estamos a disposição nos emails: cetava@gmail.com e joorgercj@dcomp.ufs.br**
