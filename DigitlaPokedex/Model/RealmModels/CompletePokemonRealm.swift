@@ -24,7 +24,7 @@ class CompletePokemonRealm: Object {
     var order = RealmOptional<Int>()
     var species : Form? = nil
     @objc dynamic var sprites : String? = nil
-    var stats: [Form]? = []
+    var stats: [Stat]? = []
     var types = List<TypeRealm>()
     var weight = RealmOptional<Int>()
     

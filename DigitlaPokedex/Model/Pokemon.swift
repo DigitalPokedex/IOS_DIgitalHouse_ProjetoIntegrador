@@ -24,7 +24,7 @@ class Pokemon: NSObject, NSCoding{
     var order : Int!
     var species : Form!
     var sprites : Sprite!
-    var stats : [Form]!
+    var stats : [Stat]!
     var types : [Type]!
     var weight : Int!
 
@@ -68,10 +68,10 @@ class Pokemon: NSObject, NSCoding{
         if let spritesData = dictionary["sprites"] as? [String:Any]{
             sprites = Sprite(fromDictionary: spritesData)
         }
-        stats = [Form]()
+        stats = [Stat]()
         if let statsArray = dictionary["stats"] as? [[String:Any]]{
             for dic in statsArray{
-                let value = Form(fromDictionary: dic)
+                let value = Stat(fromDictionary: dic)
                 stats.append(value)
             }
         }
@@ -187,7 +187,7 @@ class Pokemon: NSObject, NSCoding{
          order = aDecoder.decodeObject(forKey: "order") as? Int
          species = aDecoder.decodeObject(forKey: "species") as? Form
          sprites = aDecoder.decodeObject(forKey: "sprites") as? Sprite
-         stats = aDecoder.decodeObject(forKey :"stats") as? [Form]
+         stats = aDecoder.decodeObject(forKey :"stats") as? [Stat]
          types = aDecoder.decodeObject(forKey :"types") as? [Type]
          weight = aDecoder.decodeObject(forKey: "weight") as? Int
 

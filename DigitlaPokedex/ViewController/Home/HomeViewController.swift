@@ -13,7 +13,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var collectionViewPokemon: UICollectionView!
     var searchScreen: UIView!
     var viewModel = HomeScreenViewModel()
-    //var controller = PokemonController()
+//    var controller = PokemonConsetuptroller()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,15 +68,15 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let detailView = PokemonDetailViewController.getPokemonDetails() {
-            /*detailView.image = controller.arrayPokemons[indexPath.row].image
-            detailView.name = controller.arrayPokemons[indexPath.row].name
-            detailView.pokemonDescription = controller.arrayPokemons[indexPath.row].type
-            detailView.hp = String(controller.arrayPokemons[indexPath.row].hp)
-            detailView.atk = String(controller.arrayPokemons[indexPath.row].atk)
-            detailView.def = String(controller.arrayPokemons[indexPath.row].def)
-            detailView.stak = String(controller.arrayPokemons[indexPath.row].stak)
-            detailView.sdef = String(controller.arrayPokemons[indexPath.row].sdef)
-            detailView.spd = String(controller.arrayPokemons[indexPath.row].spd)*/
+            let pokemon = viewModel.filterArray[indexPath.row]
+            detailView.image = pokemon.sprites.other.officialartwork.frontDefault
+            detailView.name = pokemon.name
+            detailView.hp = String(pokemon.stats[0].baseStat)
+            detailView.atk = String(pokemon.stats[1].baseStat)
+            detailView.def = String(pokemon.stats[2].baseStat)
+            detailView.stak = String(pokemon.stats[3].baseStat)
+            detailView.sdef = String(pokemon.stats[4].baseStat)
+            detailView.spd = String(pokemon.stats[5].baseStat)
             present(detailView, animated: true, completion: nil)
         }
     }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PokemonDetailViewController: UIViewController {
 
@@ -21,6 +22,10 @@ class PokemonDetailViewController: UIViewController {
 
     @IBOutlet weak var progressViewHp: UIProgressView!
     @IBOutlet weak var progressViewAtk: UIProgressView!
+    @IBOutlet weak var progressViewDef: UIProgressView!
+    @IBOutlet weak var progressViewStak: UIProgressView!
+    @IBOutlet weak var progressViewSdef: UIProgressView!
+    @IBOutlet weak var progressViewSpd: UIProgressView!
     
     var name: String?
     var pokemonDescription: String?
@@ -58,7 +63,8 @@ class PokemonDetailViewController: UIViewController {
         }
         
         if let image = image {
-            imageViewPokemon.image = UIImage(named: image)
+            let url = URL(string: image)
+            imageViewPokemon.kf.setImage(with: url)
         }
         
         if let description = pokemonDescription {
@@ -79,52 +85,47 @@ class PokemonDetailViewController: UIViewController {
             
             maxProgress = Float(atk) ?? 0
 
+            progressViewAtk.setProgress(currentProgress, animated: true)
             progressViewAtk.updateProgress(currentProgress: currentProgress, maxProgress: maxProgress)
         }
         
         if let def = def {
             labelDef.text = def
             
-//            maxProgress = Float(def) ?? 0
-//
-//            progressViewHP.setProgress(currentProgress, animated: true)
-//            perform(#selector(updateProgress), with: nil, afterDelay: 0.025)
+            maxProgress = Float(def) ?? 0
+
+            progressViewDef.setProgress(currentProgress, animated: true)
+            progressViewDef.updateProgress(currentProgress: currentProgress, maxProgress: maxProgress)
         }
         
         if let stak = stak {
             labelStak.text = stak
             
-//            maxProgress = Float(stak) ?? 0
-//
-//            progressViewHP.setProgress(currentProgress, animated: true)
-//            perform(#selector(updateProgress), with: nil, afterDelay: 0.025)
+            maxProgress = Float(stak) ?? 0
+
+            progressViewStak.setProgress(currentProgress, animated: true)
+            progressViewStak.updateProgress(currentProgress: currentProgress, maxProgress: maxProgress)
         }
         
         if let sdef = sdef {
             labelSdef.text = sdef
             
-//            maxProgress = Float(sdef) ?? 0
-//
-//            progressViewHP.setProgress(currentProgress, animated: true)
-//            perform(#selector(updateProgress), with: nil, afterDelay: 0.025)
+            maxProgress = Float(sdef) ?? 0
+
+            progressViewSdef.setProgress(currentProgress, animated: true)
+            progressViewSdef.updateProgress(currentProgress: currentProgress, maxProgress: maxProgress)
         }
         
         if let spd = spd {
             labelSpd.text = spd
             
-//            maxProgress = Float(spd) ?? 0
-//
-//            progressViewHP.setProgress(currentProgress, animated: true)
-//            perform(#selector(updateProgress), with: nil, afterDelay: 0.025)
+            maxProgress = Float(spd) ?? 0
+
+            progressViewSpd.setProgress(currentProgress, animated: true)
+            progressViewSpd.updateProgress(currentProgress: currentProgress, maxProgress: maxProgress)
         }
     }
     
-    
-    @IBAction func actionButtonInfo(_ sender: Any) {
-    }
-    
-    @IBAction func actionButtonEvolution(_ sender: Any) {
-    }
     
     @IBAction func actionButtonClose(_ sender: Any) {
         dismiss(animated: true, completion: nil)
