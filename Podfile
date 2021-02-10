@@ -7,6 +7,13 @@ target 'DigitlaPokedex' do
 
   # Pods for DigitlaPokedex
   pod 'Alamofire'
-
+  pod 'Kingfisher'
+  pod 'UIScrollView-InfiniteScroll', '~> 1.0.0'
+  pod 'RealmSwift'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
+  pod 'GoogleSignIn'
+  pod 'FBSDKLoginKit'
 
 end
