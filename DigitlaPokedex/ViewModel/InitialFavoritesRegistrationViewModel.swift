@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Firebase
 import UIScrollView_InfiniteScroll
 import Realm
 import RealmSwift
@@ -60,6 +61,10 @@ class InitialFavoritesRegistrationViewModel: DefaultViewModelProtocol {
             let objectsToDelete = realm.objects(CompletePokemonRealm.self).filter("id == \(withId)")
             realm.delete(objectsToDelete)
         }
+    }
+    
+    func getFavoritesID() {
+        
     }
     
     func returnFavorites() -> List<CompletePokemonRealm> {
@@ -167,8 +172,36 @@ class InitialFavoritesRegistrationViewModel: DefaultViewModelProtocol {
         return cell
     }
     
+    func saveFavoritesOnFirebase(user: String) {
+        var ref: DatabaseReference!
+        //rootRef.child("users").childByAutoId().setValue("hey", forKey: "yo")
+        ref = Database.database().reference()
+        
+        //ref.child("users").childByAutoId().setValue("username", forKey: "yo")
+        //ref.child("users").child(user).setValue(["username": "Jorge"])
+        //ref.child("users").child("64raU3Ex74YwcDkVsZ6a1cIzzBt2")
+        
+        var favorites = [String: String]()
+        for favorite in returnFavorites() {
+            if let name = favorite.name, let id = favorite.id.value {
+                favorites.updateValue(name, forKey: "\(id)")
+            }
+        }
+        
+        ref.child("users/\(user)/favorites").setValue(favorites)
+    }
+    
     func toPreviousScreen() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    func saveButtonAction() {
+        let user = Auth.auth().currentUser
+        if let user = user {
+            self.saveFavoritesOnFirebase(user: user.uid)
+            
+            self.toHomeScreen()
+        }
     }
     
     func toHomeScreen() {

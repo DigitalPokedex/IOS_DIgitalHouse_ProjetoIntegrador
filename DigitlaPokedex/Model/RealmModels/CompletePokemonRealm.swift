@@ -46,7 +46,7 @@ class CompletePokemonRealm: Object {
     }
     
     static func convertPokemonToRealm(original: Pokemon) -> CompletePokemonRealm {
-        var converted = CompletePokemonRealm()
+        let converted = CompletePokemonRealm()
         
         converted.abilities = original.abilities
         converted.baseExperience = RealmOptional(original.baseExperience)

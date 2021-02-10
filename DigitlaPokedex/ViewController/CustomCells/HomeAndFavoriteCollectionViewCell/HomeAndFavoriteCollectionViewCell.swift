@@ -137,6 +137,8 @@ class HomeAndFavoriteCollectionViewCell: UICollectionViewCell {
     }
     
     func setup(pokemon: AnyObject?) {
+        print(pokemon)
+        
         setupPokemonName()
         if let setupData = pokemon as? CompletePokemonRealm  {
             setupFromDB(setupData)

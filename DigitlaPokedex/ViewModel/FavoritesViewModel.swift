@@ -14,11 +14,6 @@ import FBSDKLoginKit
 
 class FavoritesViewModel {
     
-    private var navigationController: UINavigationController!
-
-    func setupNavigationController(navigationController: UINavigationController!) {
-        self.navigationController = navigationController
-    }
     
     func logOutConnections() {
         let firebaseAuth = Auth.auth()
@@ -34,4 +29,6 @@ class FavoritesViewModel {
             print ("Error signing out: %@", signOutError)
         }
     }
+    
+    
 }

@@ -15,7 +15,7 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
         loadViewControllers()
     }
-
+    
     func loadViewControllers() {
         var arrayViews = [UIViewController]()
 
@@ -30,9 +30,16 @@ class TabBarController: UITabBarController {
         
         if let viewController2 = UIStoryboard(name: "PokemonFavorites", bundle: nil).instantiateInitialViewController() as? PokemonFavoritesViewController {
             let image = UIImage(named: "FavoritesIcon")
-            let selectedImage = UIImage(named: "ActiveFavoritesIcon")
-            viewController2.tabBarItem = UITabBarItem(title: "Favoritos", image: image, selectedImage: selectedImage)
+            viewController2.tabBarItem = UITabBarItem(title: "Favorites", image: image, selectedImage: image)
+
             arrayViews.append(viewController2)
+        }
+        
+        if let viewController3 = UIStoryboard(name: "Profile", bundle: nil).instantiateInitialViewController() as? ProfileViewController {
+            let image = UIImage(named: "ProfileIcon")
+            let selectedImage = UIImage(named: "ProfileIcon")
+            viewController3.tabBarItem = UITabBarItem(title: "Perfil", image: image, selectedImage: selectedImage)
+            arrayViews.append(viewController3)
         }
 
         /// AQUI

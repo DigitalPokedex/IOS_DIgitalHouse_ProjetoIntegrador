@@ -13,12 +13,11 @@ import GoogleSignIn
 
 class PokemonFavoritesViewController: UIViewController {
     
-    let viewModel = FavoritesViewModel()
-    
     @IBOutlet weak var imageViewLogo: UIImageView!
     @IBOutlet weak var collectionViewPokemon: UICollectionView!
     
-    var viewModel2 = PokemonFavoritesViewModel()
+    var viewModel = PokemonFavoritesViewModel()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +27,15 @@ class PokemonFavoritesViewController: UIViewController {
         
         collectionViewPokemon.delegate = self
         collectionViewPokemon.dataSource = self
+        viewModel.collectionView = collectionViewPokemon
         
         let nib = UINib(nibName: "HomeAndFavoriteCollectionViewCell", bundle: nil)
         self.collectionViewPokemon.register(nib, forCellWithReuseIdentifier: "HomeAndFavoriteCollectionViewCell")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.verifyFavorites()
     }
     
     @IBAction func logoutButtonAction(_ sender: Any) {
@@ -59,11 +64,11 @@ extension PokemonFavoritesViewController: UICollectionViewDelegate {
 
 extension PokemonFavoritesViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.viewModel2.getNumberOfCells(collectionView: collectionView)
+        return self.viewModel.getNumberOfCells(collectionView: collectionView)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = viewModel2.getCustomCollectionCell(collectionView: collectionView, indexPath: indexPath)
+        let cell = viewModel.getCustomCollectionCell(collectionView: collectionView, indexPath: indexPath)
         
         return cell
     }

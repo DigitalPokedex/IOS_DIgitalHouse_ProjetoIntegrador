@@ -40,19 +40,19 @@
                                 <rect key="frame" x="0.0" y="416" width="414" height="446"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="idt-hL-TP1">
-                                        <rect key="frame" x="97.5" y="398" width="219" height="28"/>
+                                        <rect key="frame" x="130" y="398" width="154.5" height="28"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="É um novo usuário? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Gw-F4-48R">
-                                                <rect key="frame" x="0.0" y="0.0" width="128" height="28"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I'm a new user" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Gw-F4-48R">
+                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="28"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cj-lR-ak5">
-                                                <rect key="frame" x="138" y="0.0" width="81" height="28"/>
+                                                <rect key="frame" x="103.5" y="0.0" width="51" height="28"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                 <color key="tintColor" name="Primary"/>
-                                                <state key="normal" title="Cadastre-se"/>
+                                                <state key="normal" title="Sign Up"/>
                                                 <connections>
                                                     <action selector="signUpButtonAction:" destination="f53-GV-LAg" eventType="touchUpInside" id="jie-LH-VNZ"/>
                                                 </connections>
@@ -103,7 +103,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senha:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0s8-MA-SUi">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0s8-MA-SUi">
                                         <rect key="frame" x="20" y="110" width="374" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="textColor"/>
@@ -216,7 +216,7 @@
     </scenes>
     <designables>
         <designable name="ac5-no-nqI">
-            <size key="intrinsicContentSize" width="202" height="28"/>
+            <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
     </designables>
     <resources>

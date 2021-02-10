@@ -30,7 +30,7 @@
                                     <action selector="previousScreenAction:" destination="b0j-p6-3fT" eventType="touchUpInside" id="Hak-SP-kWb"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Informe seus Pokémon favoritos" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLk-ab-rZD">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select your favorite Pokémons" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLk-ab-rZD">
                                 <rect key="frame" x="93.666666666666686" y="54" width="188" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="188" id="OhL-Q2-tz3"/>
@@ -180,7 +180,7 @@
                                     <constraint firstAttribute="height" constant="45" id="5HH-RS-9WW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                <state key="normal" title="SALVAR">
+                                <state key="normal" title="SAVE">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
