@@ -91,10 +91,10 @@
 		CADFBCC5255A2A88009F02E1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADFBCC4255A2A88009F02E1 /* TabBarController.swift */; };
 		CAE5B3D9257E726800901863 /* UIProgressViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE5B3D8257E726800901863 /* UIProgressViewExtension.swift */; };
 		CAF515EA25C43A8C00EACA31 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF515E925C43A8C00EACA31 /* FavoritesViewModel.swift */; };
+		CAF57F1225BB3BDE00147BF1 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF57F1125BB3BDE00147BF1 /* DetailViewModel.swift */; };
 		CAF72DF325CAF098008B84A9 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAF72DF225CAF098008B84A9 /* Profile.storyboard */; };
 		CAF72DFB25CAF356008B84A9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF72DFA25CAF356008B84A9 /* ProfileViewController.swift */; };
 		CAF72E1325CCD056008B84A9 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF72E1225CCD056008B84A9 /* ProfileViewModel.swift */; };
-		CAF57F1225BB3BDE00147BF1 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF57F1125BB3BDE00147BF1 /* DetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -186,10 +186,10 @@
 		CADFBCC4255A2A88009F02E1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		CAE5B3D8257E726800901863 /* UIProgressViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIProgressViewExtension.swift; sourceTree = "<group>"; };
 		CAF515E925C43A8C00EACA31 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		CAF57F1125BB3BDE00147BF1 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		CAF72DF225CAF098008B84A9 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		CAF72DFA25CAF356008B84A9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		CAF72E1225CCD056008B84A9 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
-		CAF57F1125BB3BDE00147BF1 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -397,7 +397,6 @@
 			children = (
 				CA1B26112559852F00EA0BAA /* HomeViewController.swift */,
 				CA1B26132559852F00EA0BAA /* Home.storyboard */,
-				CA24C1E225681DAE00849519 /* HomeViewCell.swift */,
 				0BF134D925CB903800BD1E5A /* HomeScreenCollectionViewDelegateDataSource.swift */,
 			);
 			path = Home;
@@ -407,7 +406,6 @@
 			isa = PBXGroup;
 			children = (
 				0B7D8B7725CCB96600C37C76 /* ResumeScreen */,
-				1917EC4A25C7AE2D0055DBB1 /* EmptyState */,
 				0BE83AD425AF7D6F002C6428 /* SearchScreen */,
 				CA1B26182559853300EA0BAA /* LaunchScreen.storyboard */,
 				CADFBCC4255A2A88009F02E1 /* TabBarController.swift */,
@@ -516,13 +514,6 @@
 				CADFBCC0255989F2009F02E1 /* PokemonFavorites.storyboard */,
 			);
 			path = PokemonFavorites;
-			sourceTree = "<group>";
-		};
-		CADFBCC325599154009F02E1 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Classes;
 			sourceTree = "<group>";
 		};
 		CAF72DF125CAF06D008B84A9 /* Profile */ = {
@@ -718,25 +709,19 @@
 				0B7DD4B425B9CD82000C51DC /* SimplePokemonRealm.swift in Sources */,
 				CA24C1E325681DAE00849519 /* HomeViewCell.swift in Sources */,
 				19D3D8ED25A5451400B6C9D8 /* InitialFavoritesRegistrationViewModel.swift in Sources */,
-				1917EC4525C7A8100055DBB1 /* Reachability.swift in Sources */,
 				0B7D8B7F25CCC48700C37C76 /* ResumeScreenViewModel.swift in Sources */,
 				CAE5B3D9257E726800901863 /* UIProgressViewExtension.swift in Sources */,
 				0BFA2C19256E0DA1000CFD22 /* UIViewControllerExtensions.swift in Sources */,
 				0BDFEAEC256C90E00068BF14 /* FavoriteCollectionViewCell.swift in Sources */,
 				CA28AB61256BD5CD00ED2157 /* SearchProtocol.swift in Sources */,
-				193EF9E925ABB09800932ECB /* OfficialArtwork.swift in Sources */,
 				CAF72DFB25CAF356008B84A9 /* ProfileViewController.swift in Sources */,
 				0B3AA0FC25AC1B0800E1E149 /* InitialRegistrationSearchBarDelegate.swift in Sources */,
 				CAD5ADF725CAD9A0002F1245 /* Ability.swift in Sources */,
 				CA65BAB225714CD000207EC0 /* UILabelBordersExtensions.swift in Sources */,
 				0BF134DA25CB903800BD1E5A /* HomeScreenCollectionViewDelegateDataSource.swift in Sources */,
-				CA28AB582568CB5700ED2157 /* PokemonTemp.swift in Sources */,
-				193EF9E325ABB04700932ECB /* Form.swift in Sources */,
-				CA65BAB225714CD000207EC0 /* UILabelBordersExtensions copy.swift in Sources */,
+				CA65BAB225714CD000207EC0 /* UILabelBordersExtensions.swift in Sources */,
 				0BB2A28125BAB93600F12114 /* PokemonFavoritesViewModel.swift in Sources */,
 				CAD5ADFC25CAD9A0002F1245 /* VersionGroupDetail.swift in Sources */,
-				193EF9DD25ABB01300932ECB /* Stat.swift in Sources */,
-				193EF9D725ABAFD100932ECB /* Pokemon.swift in Sources */,
 				CAF72E1325CCD056008B84A9 /* ProfileViewModel.swift in Sources */,
 				0B7DD4B825B9CF43000C51DC /* SearchScreenTableViewDelegateDataSource.swift in Sources */,
 				19D3D8EA25A533E400B6C9D8 /* SignUpScreenViewModel.swift in Sources */,
@@ -924,13 +909,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7QQ8S647LF;
+				DEVELOPMENT_TEAM = U2BKJ22455;
 				INFOPLIST_FILE = DigitlaPokedex/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cetava.DigitlaPokedex;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cetava.DigitalPokedex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -944,13 +929,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7QQ8S647LF;
+				DEVELOPMENT_TEAM = U2BKJ22455;
 				INFOPLIST_FILE = DigitlaPokedex/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cetava.DigitlaPokedex;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cetava.DigitalPokedex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
