@@ -56,7 +56,7 @@ class PokemonAPI: NSObject {
         indexLimit = indexLimit + 20
     }
     
-    private func getPokemon(completion: @escaping (Pokemon?, Bool) -> Void) {
+    /*private func getPokemon(completion: @escaping (Pokemon?, Bool) -> Void) {
         apiManager.request(url: "\(baseUrl)/pokemon/\(pokemonIndex)") { (response) in
             if let dictionary = response as? [String: Any] {
                 let loadedData = Pokemon(fromDictionary: dictionary)
@@ -69,11 +69,12 @@ class PokemonAPI: NSObject {
             completion(nil, false)
         }
         completion(nil, false)
-    }
+    }*/
     
     private func getPokemon(index: Int, completion: @escaping (Pokemon?, Bool) -> Void) {
         apiManager.request(url: "\(baseUrl)/pokemon/\(index)") { (response) in
             if let dictionary = response as? [String: Any] {
+                
                 let loadedData = Pokemon(fromDictionary: dictionary)
                 
                 //array.append(loadedData)

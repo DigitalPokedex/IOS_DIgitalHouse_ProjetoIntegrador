@@ -63,10 +63,13 @@ class PokemonFavoritesViewModel {
             let username = value?["username"] as? String ?? ""
             let favorites = value?["favorites"] as? [String: Any]
             self.collectionView.reloadData()
+            
             if let favorites = favorites {
                 
                 self.pokemonAPI.getFavoritesList(ids: favorites) { (favoritesList, success) in
+                    
                     if(favoritesList != nil) {
+                        
                         if let favoritesList = favoritesList {
                             self.saveDataOnRealm(favoritesList: favoritesList)
                             self.collectionView.reloadData()

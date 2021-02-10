@@ -66,13 +66,14 @@ class SignUpScreenViewModel {
         ref = Database.database().reference()
         
         //ref.child("users").childByAutoId().setValue("username", forKey: "yo")
-        ref.child("users").child(user).setValue(["username": "Jorge"])
+        ref.child("users").child(user).setValue(["username": name])
         //ref.child("users").child("64raU3Ex74YwcDkVsZ6a1cIzzBt2")
         //ref.child("users/64raU3Ex74YwcDkVsZ6a1cIzzBt2/favorites").setValue(["0": "pikachu", "1": "bulbasaur"])
     }
     
     func saveUserDefaults(user: String) {
         let defaults = UserDefaults.standard
+        
         defaults.setValue(user, forKey: "savedUserId")
     }
     
